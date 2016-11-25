@@ -20,8 +20,7 @@ class UniverseScene: SKScene {
     private var systemUI: SystemUI! {
         get {
             if _systemUI == nil {
-                let nib = UINib(nibName: "SystemUI", bundle: Bundle.main)
-                _systemUI = nib.instantiate(withOwner: self, options: nil)[0] as? SystemUI
+                _systemUI = SystemUI.loadFromNib()
                 _systemUI!.isHidden = true
             }
             return _systemUI!
@@ -91,9 +90,8 @@ class UniverseScene: SKScene {
     
     private func showSystemUI(with system: System) {
         self.systemUI.system = system
-        self.systemUI.isHidden = false
+        self.systemUI.show()
     }
-    
     
     override func update(_ currentTime: TimeInterval) {
         /*
@@ -111,7 +109,7 @@ class UniverseScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         updateInfoText(touches, with: event)
         
-        self.systemUI.isHidden = true
+        self.systemUI.hide()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

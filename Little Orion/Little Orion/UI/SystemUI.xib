@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,19 +22,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-aV-49c">
-                                <rect key="frame" x="25" y="190" width="250" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="System Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-aV-49c">
+                                <rect key="frame" x="25" y="36" width="250" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l4G-H6-p0i">
+                                <rect key="frame" x="0.0" y="137" width="300" height="263"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.52941179279999995" green="0.52941179279999995" blue="0.52941179279999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iN0-l3-epB" id="4t1-BQ-ZpU"/>
+                                    <outlet property="delegate" destination="iN0-l3-epB" id="Qya-mm-4BF"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dwarf" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-7N-vEH">
+                                <rect key="frame" x="125" y="62" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="W95-Oh-m3f"/>
+                                    <constraint firstAttribute="height" constant="50" id="0vS-aS-HhG"/>
+                                    <constraint firstAttribute="width" constant="50" id="nGT-NE-L2R"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star: name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-vN-R2E">
+                                <rect key="frame" x="8" y="107" width="284" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="kFE-aV-49c" firstAttribute="centerY" secondItem="vxS-fM-uIP" secondAttribute="centerY" id="TNO-To-C9T"/>
-                            <constraint firstItem="kFE-aV-49c" firstAttribute="centerX" secondItem="vxS-fM-uIP" secondAttribute="centerX" id="XNL-ft-JUH"/>
+                            <constraint firstItem="eEf-vN-R2E" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leadingMargin" id="0a0-Ki-HfG"/>
+                            <constraint firstItem="kFE-aV-49c" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leading" constant="25" id="5K7-cr-EkB"/>
+                            <constraint firstItem="eEf-vN-R2E" firstAttribute="top" secondItem="kFE-aV-49c" secondAttribute="bottom" constant="53" id="9xF-u3-atI"/>
+                            <constraint firstAttribute="bottom" secondItem="l4G-H6-p0i" secondAttribute="bottom" id="BIi-7w-4aS"/>
+                            <constraint firstItem="kaI-7N-vEH" firstAttribute="top" secondItem="kFE-aV-49c" secondAttribute="bottom" constant="8" symbolic="YES" id="D7f-OX-zBI"/>
+                            <constraint firstItem="l4G-H6-p0i" firstAttribute="top" secondItem="kaI-7N-vEH" secondAttribute="bottom" constant="25" id="Iu4-g6-lxF"/>
+                            <constraint firstItem="kFE-aV-49c" firstAttribute="top" secondItem="vxS-fM-uIP" secondAttribute="top" constant="36" id="NQx-WR-S2a"/>
+                            <constraint firstItem="l4G-H6-p0i" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leading" id="RQ9-lC-vLb"/>
+                            <constraint firstItem="kaI-7N-vEH" firstAttribute="centerX" secondItem="eEf-vN-R2E" secondAttribute="centerX" id="jLt-GX-tTY"/>
+                            <constraint firstItem="kFE-aV-49c" firstAttribute="centerX" secondItem="kaI-7N-vEH" secondAttribute="centerX" id="r08-X8-UVO"/>
+                            <constraint firstItem="eEf-vN-R2E" firstAttribute="centerX" secondItem="l4G-H6-p0i" secondAttribute="centerX" id="tbh-pW-5ZL"/>
+                            <constraint firstAttribute="trailing" secondItem="l4G-H6-p0i" secondAttribute="trailing" id="yxh-rT-Cp3"/>
                         </constraints>
                     </view>
                     <blurEffect style="dark"/>
@@ -41,17 +71,23 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="dLt-ay-Yr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JGu-Aq-B1z"/>
-                <constraint firstItem="dLt-ay-Yr3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JzE-24-9wU"/>
-                <constraint firstAttribute="bottom" secondItem="dLt-ay-Yr3" secondAttribute="bottom" id="SRq-2S-Cw1"/>
-                <constraint firstAttribute="trailing" secondItem="dLt-ay-Yr3" secondAttribute="trailing" id="isF-ZW-BzQ"/>
+                <constraint firstItem="dLt-ay-Yr3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JWK-wh-pyj"/>
+                <constraint firstItem="dLt-ay-Yr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eDC-Wp-6qO"/>
+                <constraint firstAttribute="bottom" secondItem="dLt-ay-Yr3" secondAttribute="bottom" id="eVD-Yk-foA"/>
+                <constraint firstAttribute="trailing" secondItem="dLt-ay-Yr3" secondAttribute="trailing" id="hFl-Ts-Szz"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="starImageView" destination="kaI-7N-vEH" id="lV7-vJ-5Ec"/>
+                <outlet property="starName" destination="eEf-vN-R2E" id="J6A-fC-WXw"/>
+                <outlet property="tableView" destination="l4G-H6-p0i" id="gkn-9H-VTs"/>
                 <outlet property="titleLabel" destination="kFE-aV-49c" id="lTV-hP-tzu"/>
             </connections>
             <point key="canvasLocation" x="26" y="-11"/>
         </view>
     </objects>
+    <resources>
+        <image name="Dwarf" width="300" height="300"/>
+    </resources>
 </document>

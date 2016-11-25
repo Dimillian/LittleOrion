@@ -10,26 +10,28 @@ import GameplayKit
 
 class System: UniverseEntity {
     
-    private var _stars = [Star]()
-    var stars: [Star] {
+    private var _planets = [Planet]()
+    var planets: [Planet] {
         get {
-            return _stars
+            return _planets
         }
     }
+    
+    var star = Star(name: "Star")
     
     let name: String
     
     override var description: String {
         get {
-            return"System: \(self.name), Stars: \(self.starsCount())"
+            return"System: \(self.name), Planets: \(self.planetsCount())"
         }
     }
     
     override var extraInfo: String? {
         get {
             var text = ""
-            for star in self.stars {
-                text += "\(star.name): \(star.kind.name()), "
+            for planet in self.planets {
+                text += "\(planet.name): \(planet.kind.name()), "
             }
             return text
         }
@@ -39,27 +41,27 @@ class System: UniverseEntity {
         self.name = name
         super.init()
         
-        makeStars()
+        makePlanets()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func makeStars() {
-        let startCount = Int(arc4random_uniform(6))
-        for index in 0...startCount {
-            let star = Star(name: "Star \(index)")
-            _stars.append(star)
+    private func makePlanets() {
+        let planetsCount = Int(arc4random_uniform(6))
+        for index in 0...planetsCount {
+            let star = Planet(name: "Planet \(index)")
+            _planets.append(star)
         }
     }
     
-    func star(at: Int) -> Star {
-        return _stars[at]
+    func planet(at: Int) -> Planet {
+        return _planets[at]
     }
     
-    func starsCount() -> Int {
-        return _stars.count
+    func planetsCount() -> Int {
+        return _planets.count
     }
     
 }

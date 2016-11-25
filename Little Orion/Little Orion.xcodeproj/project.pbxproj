@@ -29,10 +29,14 @@
 		9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E631DE8837A0050A53F /* GameViewController.swift */; };
 		9FA36E671DE886B10050A53F /* SystemUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E661DE886B10050A53F /* SystemUI.xib */; };
 		9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E681DE889AB0050A53F /* SystemUI.swift */; };
+		9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E6A1DE890F40050A53F /* StarCell.xib */; };
 		9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47F31DE7294D00334D7B /* Pop.swift */; };
 		9FCF47F81DE72A3E00334D7B /* raceKind.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF47F71DE72A3E00334D7B /* raceKind.plist */; };
 		9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */; };
 		9FCF480B1DE72BCB00334D7B /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */; };
+		9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFB1DE89B5300085666 /* SystemBody.swift */; };
+		9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFD1DE89C5700085666 /* Planet.swift */; };
+		9FEF6B001DE89D2600085666 /* planets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFF1DE89D2600085666 /* planets.plist */; };
 		9FF941B01DE734A9009658F7 /* raceForce.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF941AF1DE734A9009658F7 /* raceForce.plist */; };
 /* End PBXBuildFile section */
 
@@ -71,12 +75,16 @@
 		9FA36E631DE8837A0050A53F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = viewControllers/GameViewController.swift; sourceTree = "<group>"; };
 		9FA36E661DE886B10050A53F /* SystemUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SystemUI.xib; path = UI/SystemUI.xib; sourceTree = "<group>"; };
 		9FA36E681DE889AB0050A53F /* SystemUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemUI.swift; path = UI/SystemUI.swift; sourceTree = "<group>"; };
+		9FA36E6A1DE890F40050A53F /* StarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StarCell.xib; path = UI/StarCell.xib; sourceTree = "<group>"; };
 		9FCF47F31DE7294D00334D7B /* Pop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pop.swift; path = models/pop/Pop.swift; sourceTree = "<group>"; };
 		9FCF47F71DE72A3E00334D7B /* raceKind.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceKind.plist; path = resources/text/raceKind.plist; sourceTree = "<group>"; };
 		9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesLoader.swift; path = helpers/ResourcesLoader.swift; sourceTree = "<group>"; };
 		9FCF48001DE72B4A00334D7B /* OrionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCF48041DE72B4A00334D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
+		9FEF6AFB1DE89B5300085666 /* SystemBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemBody.swift; path = models/space/SystemBody.swift; sourceTree = "<group>"; };
+		9FEF6AFD1DE89C5700085666 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Planet.swift; path = models/space/Planet.swift; sourceTree = "<group>"; };
+		9FEF6AFF1DE89D2600085666 /* planets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planets.plist; path = resources/text/planets.plist; sourceTree = "<group>"; };
 		9FF941AF1DE734A9009658F7 /* raceForce.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceForce.plist; path = resources/modifiers/raceForce.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +159,9 @@
 				9F32D0AF1DE33240004455BB /* Universe.swift */,
 				9FA36E561DE877050050A53F /* Empty.swift */,
 				9F32D0AE1DE33240004455BB /* System.swift */,
+				9FEF6AFB1DE89B5300085666 /* SystemBody.swift */,
 				9F32D0AD1DE33240004455BB /* Star.swift */,
+				9FEF6AFD1DE89C5700085666 /* Planet.swift */,
 				9F163D131DE84A2C000CE8F5 /* Dimension.swift */,
 			);
 			name = space;
@@ -205,6 +215,7 @@
 			children = (
 				9FA36E661DE886B10050A53F /* SystemUI.xib */,
 				9FA36E681DE889AB0050A53F /* SystemUI.swift */,
+				9FA36E6A1DE890F40050A53F /* StarCell.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 				9FCF47F71DE72A3E00334D7B /* raceKind.plist */,
 				9F9644E41DE72D20002328AC /* tests.plist */,
 				9FA36E581DE87F370050A53F /* stars.plist */,
+				9FEF6AFF1DE89D2600085666 /* planets.plist */,
 			);
 			name = text;
 			sourceTree = "<group>";
@@ -355,8 +367,10 @@
 				9FA36E531DE861190050A53F /* universe.plist in Resources */,
 				9F32D09E1DE32ED8004455BB /* LaunchScreen.storyboard in Resources */,
 				9FA36E591DE87F370050A53F /* stars.plist in Resources */,
+				9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */,
 				9F9644E51DE72D20002328AC /* tests.plist in Resources */,
 				9FCF47F81DE72A3E00334D7B /* raceKind.plist in Resources */,
+				9FEF6B001DE89D2600085666 /* planets.plist in Resources */,
 				9FA36E671DE886B10050A53F /* SystemUI.xib in Resources */,
 				9FA36E601DE883570050A53F /* UniverseScene.sks in Resources */,
 			);
@@ -387,9 +401,11 @@
 				9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */,
 				9F32D0B11DE33240004455BB /* System.swift in Sources */,
 				9FA36E571DE877050050A53F /* Empty.swift in Sources */,
+				9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */,
 				9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */,
 				9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */,
 				9FA36E551DE873C00050A53F /* UniverseSpriteComponent.swift in Sources */,
+				9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

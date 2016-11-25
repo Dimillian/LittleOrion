@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="starCell" rowHeight="100" id="8qg-BV-Cow" customClass="StarCell" customModule="Little_Orion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8qg-BV-Cow" id="IrB-f0-APf">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet1" translatesAutoresizingMaskIntoConstraints="NO" id="i3o-ld-QLm">
+                        <rect key="frame" x="8" y="3" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="BR3-ty-dCw"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3L-Gf-ICM">
+                        <rect key="frame" x="66" y="7" width="301" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJK-1m-3vv">
+                        <rect key="frame" x="66" y="31" width="301" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="o3L-Gf-ICM" firstAttribute="leading" secondItem="i3o-ld-QLm" secondAttribute="trailing" constant="8" symbolic="YES" id="5WW-34-eoF"/>
+                    <constraint firstItem="QJK-1m-3vv" firstAttribute="bottom" secondItem="IrB-f0-APf" secondAttribute="bottomMargin" id="HJf-Kc-041"/>
+                    <constraint firstItem="o3L-Gf-ICM" firstAttribute="trailing" secondItem="IrB-f0-APf" secondAttribute="trailingMargin" id="KvP-2c-ia0"/>
+                    <constraint firstItem="o3L-Gf-ICM" firstAttribute="top" secondItem="IrB-f0-APf" secondAttribute="topMargin" constant="-1" id="bsw-kg-EFB"/>
+                    <constraint firstItem="o3L-Gf-ICM" firstAttribute="leading" secondItem="QJK-1m-3vv" secondAttribute="leading" id="d77-wR-xEp"/>
+                    <constraint firstItem="i3o-ld-QLm" firstAttribute="top" secondItem="IrB-f0-APf" secondAttribute="topMargin" constant="-5" id="geF-us-gAz"/>
+                    <constraint firstItem="i3o-ld-QLm" firstAttribute="leading" secondItem="IrB-f0-APf" secondAttribute="leadingMargin" id="k5R-jl-HZS"/>
+                    <constraint firstItem="i3o-ld-QLm" firstAttribute="centerY" secondItem="IrB-f0-APf" secondAttribute="centerY" id="mcT-j2-kcS"/>
+                    <constraint firstItem="o3L-Gf-ICM" firstAttribute="trailing" secondItem="QJK-1m-3vv" secondAttribute="trailing" id="pDg-aE-V84"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="kindTitleLabel" destination="QJK-1m-3vv" id="eWe-aU-XwL"/>
+                <outlet property="starImageView" destination="i3o-ld-QLm" id="FF7-qR-yvf"/>
+                <outlet property="starTitleLabel" destination="o3L-Gf-ICM" id="n89-of-FW6"/>
+            </connections>
+            <point key="canvasLocation" x="224.5" y="-101.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="planet1" width="300" height="300"/>
+    </resources>
+</document>
