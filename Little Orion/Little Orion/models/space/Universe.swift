@@ -38,13 +38,14 @@ class UniverseEntity: GKEntity {
         let size = CGSize(width: Int(UniverseSpriteComponent.size.width), height: Int(UniverseSpriteComponent.size.height))
         var node: SKNode
         if let _ = self as? Empty {
-            node = SKSpriteNode(color: UIColor.black, size: size)
+            node = SKSpriteNode(color: UIColor.clear, size: size)
             node.name = "Empty node"
-        } else {
-            node = SKSpriteNode(color: UIColor.yellow, size: size)
+            self.addComponent(UniverseSpriteComponent(node: node))
+        } else if let system = self as? System {
+            node = SKSpriteNode(texture: SKTexture(imageNamed: system.star.kind.name()), size: size)
             node.name = "System node"
+            self.addComponent(UniverseSpriteComponent(node: node))
         }
-        self.addComponent(UniverseSpriteComponent(node: node))
     }
     
     required init?(coder aDecoder: NSCoder) {

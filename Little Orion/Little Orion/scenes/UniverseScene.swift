@@ -15,6 +15,7 @@ class UniverseScene: SKScene {
     private let universe = Universe(size: .small)
     private let infoNode = SKLabelNode(text: "Touch a case!")
     private let subInfoNode = SKLabelNode(text: "")
+    private var loaded = false
     
     private var _systemUI: SystemUI?
     private var systemUI: SystemUI! {
@@ -30,37 +31,43 @@ class UniverseScene: SKScene {
     
     override func sceneDidLoad() {
         
-        self.lastUpdateTime = 0
+        self.backgroundColor = UIColor.black
         
-        infoNode.position = CGPoint(x: 0, y: (self.frame.height / 2) - 70)
-        
-        if infoNode.parent == nil {
-            addChild(infoNode)
-        }
-        
-        subInfoNode.position = CGPoint(x: 0, y: (self.frame.height / 2) - 110)
-        
-        if subInfoNode.parent == nil {
-            addChild(subInfoNode)
-        }
-        
-        
-        let mapNode = SKNode()
-        for node in self.universe.grid.nodes! {
-            if let node = node as? UniverseNode {
-                let spriteNode = node.entity.spriteNode
-                spriteNode.position = CGPoint(x: CGFloat(CGFloat(node.gridPosition.x) * node.entity.spriteNode.size.width),
-                                              y: CGFloat(CGFloat(node.gridPosition.y) * node.entity.spriteNode.size.height))
-                if spriteNode.parent == nil {
-                    mapNode.addChild(spriteNode)
+        if (!loaded) {
+            self.lastUpdateTime = 0
+            
+            infoNode.position = CGPoint(x: 0, y: (self.frame.height / 2) - 70)
+            
+            if infoNode.parent == nil {
+                addChild(infoNode)
+            }
+            
+            subInfoNode.position = CGPoint(x: 0, y: (self.frame.height / 2) - 110)
+            
+            if subInfoNode.parent == nil {
+                addChild(subInfoNode)
+            }
+            
+            
+            let mapNode = SKNode()
+            for node in self.universe.grid.nodes! {
+                if let node = node as? UniverseNode {
+                    let spriteNode = node.entity.spriteNode
+                    spriteNode.position = CGPoint(x: CGFloat(CGFloat(node.gridPosition.x) * node.entity.spriteNode.size.width),
+                                                  y: CGFloat(CGFloat(node.gridPosition.y) * node.entity.spriteNode.size.height))
+                    if spriteNode.parent == nil {
+                        mapNode.addChild(spriteNode)
+                    }
                 }
             }
+            mapNode.position = CGPoint(x: CGFloat(-((UniverseSpriteComponent.size.width * self.universe.size.width) / 2)),
+                                       y: CGFloat(-((UniverseSpriteComponent.size.height * self.universe.size.height) / 2)))
+            addChild(mapNode)
+            
+            generateStarField()
         }
-        mapNode.position = CGPoint(x: CGFloat(-((UniverseSpriteComponent.size.width * self.universe.size.width) / 2)),
-                                   y: CGFloat(-((UniverseSpriteComponent.size.height * self.universe.size.height) / 2)))
-        addChild(mapNode)
         
-        
+        self.loaded = true
     }
     
     
@@ -91,6 +98,41 @@ class UniverseScene: SKScene {
     private func showSystemUI(with system: System) {
         self.systemUI.system = system
         self.systemUI.show()
+    }
+    
+    func generateStarField() {
+        var emitterNode = starfieldEmitter(color: SKColor.lightGray, starSpeedY: 50, starsPerSecond: 1, starScaleFactor: 0.2)
+        emitterNode.zPosition = -10
+        self.addChild(emitterNode)
+        
+        emitterNode = starfieldEmitter(color: SKColor.gray, starSpeedY: 30, starsPerSecond: 2, starScaleFactor: 0.1)
+        emitterNode.zPosition = -11
+        self.addChild(emitterNode)
+        
+        emitterNode = starfieldEmitter(color: SKColor.darkGray, starSpeedY: 15, starsPerSecond: 4, starScaleFactor: 0.05)
+        emitterNode.zPosition = -12
+        self.addChild(emitterNode)
+    }
+    
+    func starfieldEmitter(color: SKColor, starSpeedY: CGFloat, starsPerSecond: CGFloat, starScaleFactor: CGFloat) -> SKEmitterNode {
+        
+        let lifetime =  frame.size.height * UIScreen.main.scale / starSpeedY
+        
+        let emitterNode = SKEmitterNode()
+        emitterNode.particleTexture = SKTexture(imageNamed: "StarParticle")
+        emitterNode.particleBirthRate = starsPerSecond
+        emitterNode.particleColor = color
+        emitterNode.particleSpeed = starSpeedY * -1
+        emitterNode.particleScale = starScaleFactor
+        emitterNode.particleColorBlendFactor = 1
+        emitterNode.particleLifetime = lifetime
+        
+        emitterNode.position = CGPoint(x: 0, y: frame.size.height)
+        emitterNode.particlePositionRange = CGVector(dx: frame.size.width, dy: 0)
+        
+        emitterNode.advanceSimulationTime(TimeInterval(lifetime))
+        
+        return emitterNode
     }
     
     override func update(_ currentTime: TimeInterval) {
