@@ -20,6 +20,7 @@ class StarCell: UITableViewCell {
             starTitleLabel.text = planet!.name
             kindTitleLabel.text = planet!.kind.name()
             starImageView.image = planet!.kind.image()
+            starImageView.transform = CGAffineTransform(scaleX: planet!.scale, y: planet!.scale)
         }
     }
 }

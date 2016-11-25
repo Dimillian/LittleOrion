@@ -40,30 +40,33 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dwarf" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-7N-vEH">
                                 <rect key="frame" x="125" y="62" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0vS-aS-HhG"/>
-                                    <constraint firstAttribute="width" constant="50" id="nGT-NE-L2R"/>
+                                    <constraint firstAttribute="width" constant="50" id="783-S2-BQg"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star: name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-vN-R2E">
                                 <rect key="frame" x="8" y="107" width="284" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="0ID-sC-UJ5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="eEf-vN-R2E" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leadingMargin" id="0a0-Ki-HfG"/>
-                            <constraint firstItem="kFE-aV-49c" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leading" constant="25" id="5K7-cr-EkB"/>
-                            <constraint firstItem="eEf-vN-R2E" firstAttribute="top" secondItem="kFE-aV-49c" secondAttribute="bottom" constant="53" id="9xF-u3-atI"/>
-                            <constraint firstAttribute="bottom" secondItem="l4G-H6-p0i" secondAttribute="bottom" id="BIi-7w-4aS"/>
-                            <constraint firstItem="kaI-7N-vEH" firstAttribute="top" secondItem="kFE-aV-49c" secondAttribute="bottom" constant="8" symbolic="YES" id="D7f-OX-zBI"/>
-                            <constraint firstItem="l4G-H6-p0i" firstAttribute="top" secondItem="kaI-7N-vEH" secondAttribute="bottom" constant="25" id="Iu4-g6-lxF"/>
-                            <constraint firstItem="kFE-aV-49c" firstAttribute="top" secondItem="vxS-fM-uIP" secondAttribute="top" constant="36" id="NQx-WR-S2a"/>
-                            <constraint firstItem="l4G-H6-p0i" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leading" id="RQ9-lC-vLb"/>
-                            <constraint firstItem="kaI-7N-vEH" firstAttribute="centerX" secondItem="eEf-vN-R2E" secondAttribute="centerX" id="jLt-GX-tTY"/>
-                            <constraint firstItem="kFE-aV-49c" firstAttribute="centerX" secondItem="kaI-7N-vEH" secondAttribute="centerX" id="r08-X8-UVO"/>
-                            <constraint firstItem="eEf-vN-R2E" firstAttribute="centerX" secondItem="l4G-H6-p0i" secondAttribute="centerX" id="tbh-pW-5ZL"/>
-                            <constraint firstAttribute="trailing" secondItem="l4G-H6-p0i" secondAttribute="trailing" id="yxh-rT-Cp3"/>
+                            <constraint firstItem="eEf-vN-R2E" firstAttribute="centerX" secondItem="l4G-H6-p0i" secondAttribute="centerX" id="CKE-Aq-XEm"/>
+                            <constraint firstItem="kFE-aV-49c" firstAttribute="centerX" secondItem="kaI-7N-vEH" secondAttribute="centerX" id="DJK-Al-wMX"/>
+                            <constraint firstAttribute="bottom" secondItem="l4G-H6-p0i" secondAttribute="bottom" id="DL9-vh-HZK"/>
+                            <constraint firstItem="l4G-H6-p0i" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leading" id="FJd-2A-goQ"/>
+                            <constraint firstItem="kaI-7N-vEH" firstAttribute="top" secondItem="kFE-aV-49c" secondAttribute="bottom" constant="8" symbolic="YES" id="IBN-lZ-DXg"/>
+                            <constraint firstItem="l4G-H6-p0i" firstAttribute="top" secondItem="kaI-7N-vEH" secondAttribute="bottom" constant="25" id="Rsb-PW-iEy"/>
+                            <constraint firstItem="eEf-vN-R2E" firstAttribute="top" secondItem="kFE-aV-49c" secondAttribute="bottom" constant="53" id="UcO-bb-kvV"/>
+                            <constraint firstItem="kFE-aV-49c" firstAttribute="top" secondItem="vxS-fM-uIP" secondAttribute="top" constant="36" id="W76-pA-IYh"/>
+                            <constraint firstItem="l4G-H6-p0i" firstAttribute="top" secondItem="eEf-vN-R2E" secondAttribute="bottom" constant="13" id="eat-nD-W8K"/>
+                            <constraint firstItem="kFE-aV-49c" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leading" constant="25" id="hGq-rk-Zzv"/>
+                            <constraint firstItem="kaI-7N-vEH" firstAttribute="centerX" secondItem="eEf-vN-R2E" secondAttribute="centerX" id="p0x-UI-NiX"/>
+                            <constraint firstAttribute="trailing" secondItem="l4G-H6-p0i" secondAttribute="trailing" id="tpp-R4-qWb"/>
+                            <constraint firstItem="eEf-vN-R2E" firstAttribute="leading" secondItem="vxS-fM-uIP" secondAttribute="leadingMargin" id="uLB-XT-lbR"/>
                         </constraints>
                     </view>
                     <blurEffect style="dark"/>
@@ -71,10 +74,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="dLt-ay-Yr3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JWK-wh-pyj"/>
-                <constraint firstItem="dLt-ay-Yr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eDC-Wp-6qO"/>
-                <constraint firstAttribute="bottom" secondItem="dLt-ay-Yr3" secondAttribute="bottom" id="eVD-Yk-foA"/>
-                <constraint firstAttribute="trailing" secondItem="dLt-ay-Yr3" secondAttribute="trailing" id="hFl-Ts-Szz"/>
+                <constraint firstAttribute="trailing" secondItem="dLt-ay-Yr3" secondAttribute="trailing" id="IOv-ZQ-UvA"/>
+                <constraint firstItem="dLt-ay-Yr3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YMf-QZ-ZcA"/>
+                <constraint firstItem="dLt-ay-Yr3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iaN-11-zlR"/>
+                <constraint firstAttribute="bottom" secondItem="dLt-ay-Yr3" secondAttribute="bottom" id="t7t-82-qFC"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

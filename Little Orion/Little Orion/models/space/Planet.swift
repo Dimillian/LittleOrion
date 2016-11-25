@@ -36,12 +36,22 @@ class Planet: SystemBody {
     }
 
     let kind: Kind
+    let scale: CGFloat
     
     //A planet may or may not have inhabitants.
     var inhabitants: [Pop]?
     
     public override init(name: String) {
         self.kind = Kind.randomKind()
+        var tmpScale = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+        if tmpScale < 0.4 {
+            //Can be smaller than 0.4
+            tmpScale = 0.4
+        } else if tmpScale > 0.9 && arc4random_uniform(10) == 1{
+            //1 out of 10 chance to generate a super planet if scale is already big.
+            tmpScale = 1.5
+        }
+        self.scale = tmpScale
         super.init(name: name)
     }
     
