@@ -34,6 +34,7 @@
 		9FCF47F81DE72A3E00334D7B /* raceKind.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF47F71DE72A3E00334D7B /* raceKind.plist */; };
 		9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */; };
 		9FCF480B1DE72BCB00334D7B /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */; };
+		9FED3FCA1DE8CA3900DFC36E /* BaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FED3FC91DE8CA3900DFC36E /* BaseUI.swift */; };
 		9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFB1DE89B5300085666 /* SystemBody.swift */; };
 		9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFD1DE89C5700085666 /* Planet.swift */; };
 		9FEF6B001DE89D2600085666 /* planets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFF1DE89D2600085666 /* planets.plist */; };
@@ -82,6 +83,7 @@
 		9FCF48001DE72B4A00334D7B /* OrionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCF48041DE72B4A00334D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
+		9FED3FC91DE8CA3900DFC36E /* BaseUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseUI.swift; path = UI/BaseUI.swift; sourceTree = "<group>"; };
 		9FEF6AFB1DE89B5300085666 /* SystemBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemBody.swift; path = models/space/SystemBody.swift; sourceTree = "<group>"; };
 		9FEF6AFD1DE89C5700085666 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Planet.swift; path = models/space/Planet.swift; sourceTree = "<group>"; };
 		9FEF6AFF1DE89D2600085666 /* planets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planets.plist; path = resources/text/planets.plist; sourceTree = "<group>"; };
@@ -127,8 +129,8 @@
 		9F32D08C1DE32ED8004455BB /* Little Orion */ = {
 			isa = PBXGroup;
 			children = (
-				9FA36E651DE8869A0050A53F /* UI */,
 				9FA36E621DE883620050A53F /* viewControllers */,
+				9FA36E651DE8869A0050A53F /* UI */,
 				9FA36E5B1DE883230050A53F /* actions */,
 				9FA36E5A1DE883090050A53F /* scenes */,
 				9FCF47F91DE72A9F00334D7B /* helpers */,
@@ -213,6 +215,7 @@
 		9FA36E651DE8869A0050A53F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				9FED3FC91DE8CA3900DFC36E /* BaseUI.swift */,
 				9FA36E661DE886B10050A53F /* SystemUI.xib */,
 				9FA36E681DE889AB0050A53F /* SystemUI.swift */,
 				9FA36E6A1DE890F40050A53F /* StarCell.xib */,
@@ -392,6 +395,7 @@
 			files = (
 				9FA36E611DE883570050A53F /* UniverseScene.swift in Sources */,
 				9F32D0B21DE33240004455BB /* Universe.swift in Sources */,
+				9FED3FCA1DE8CA3900DFC36E /* BaseUI.swift in Sources */,
 				9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */,
 				9F32D0B51DE33280004455BB /* Race.swift in Sources */,
 				9F9644E91DE73119002328AC /* Nation.swift in Sources */,

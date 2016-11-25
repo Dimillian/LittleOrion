@@ -26,7 +26,7 @@ class StarCell: UITableViewCell {
     }
 }
 
-class SystemUI: UIView, UITableViewDelegate, UITableViewDataSource {
+class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var starName: UILabel!

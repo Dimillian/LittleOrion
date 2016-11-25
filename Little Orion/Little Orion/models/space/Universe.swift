@@ -60,7 +60,7 @@ class Universe: GKEntity {
     let grid: GKGridGraph<UniverseNode>
     
     enum UniverseSize: String {
-        case tiny, small, standard, huge
+        case tiny, small, standard, big
         
         func size() -> Size {
             return ResourcesLoader.loadDimensionResource(name: "universe", dimensionName: self.rawValue)!
@@ -85,7 +85,7 @@ class Universe: GKEntity {
     private func generate() {
         for node in self.grid.nodes! {
             if let node = node as? UniverseNode {
-                if arc4random_uniform(2) == 1 {
+                if arc4random_uniform(6) == 1 {
                     node.entity = System(name: "Node x:\(node.gridPosition.x) y:\(node.gridPosition.y)")
                 } else {
                     node.entity = Empty()
@@ -100,7 +100,6 @@ class Universe: GKEntity {
                     if let neighboor = neighboor as? UniverseNode {
                         if let _ = neighboor.entity as? System, let _ = node.entity as? System {
                             neighboor.entity = Empty()
-                            break
                         }
                     }
                 }
