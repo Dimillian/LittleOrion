@@ -10,6 +10,8 @@ import GameplayKit
 
 class Planet: SystemBody {
 
+    static let baseRadius: CGFloat = 9580
+    
     enum Kind: UInt32 {
         case desert, oceanic, toxic, continental
         
@@ -37,6 +39,11 @@ class Planet: SystemBody {
 
     let kind: Kind
     let scale: CGFloat
+    var radius: CGFloat {
+        get {
+            return Planet.baseRadius * self.scale
+        }
+    }
     
     //A planet may or may not have inhabitants.
     var inhabitants: [Pop]?
