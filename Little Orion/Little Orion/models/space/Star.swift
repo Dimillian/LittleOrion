@@ -27,7 +27,7 @@ class Star: SystemBody {
         }
         
         func name() -> String {
-            return ResourcesLoader.loadArrayTextResource(name: "stars")![Int(self.rawValue)]
+            return ResourcesLoader.loadArrayTextResource(name: "stars")![Int(rawValue)]
         }
         
         func imageName() -> String {
@@ -52,7 +52,7 @@ class Star: SystemBody {
     let kind: Kind
         
     public override init(name: String) {
-        self.kind = Kind.randomKind()
+        kind = Kind.randomKind()
         super.init(name: name)
     }
     

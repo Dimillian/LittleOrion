@@ -33,7 +33,8 @@ class UniverseScene: SKScene {
     
     var mapNode = SKNode()
     var mapMoved = false
-    
+    var mapNewPosition: CGPoint?
+
     var selectedNode: SKShapeNode?
     
     override func sceneDidLoad() {
@@ -120,16 +121,10 @@ class UniverseScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        /*
-        // Initialize _lastUpdateTime if it has not already been
-        if (lastUpdateTime == 0) {
-            lastUpdateTime = currentTime
+
+        if mapNewPosition != nil {
+            mapNode.position = mapNewPosition!
         }
-        // Calculate time since last update
-        let dt = currentTime - lastUpdateTime
-        
-        lastUpdateTime = currentTime
-         */
     }
     
 }
@@ -205,7 +200,8 @@ extension UniverseScene {
             let delX = position.x - startX
             let delY = position.y - startY
             
-            mapNode.position = CGPoint(x: currentMapPosition.x + delX , y: currentMapPosition.y + delY)
+            //Will be updated in the update method
+            mapNewPosition = CGPoint(x: currentMapPosition.x + delX , y: currentMapPosition.y + delY)
             
             startX = position.x
             startY = position.y

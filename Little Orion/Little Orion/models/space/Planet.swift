@@ -27,11 +27,11 @@ class Planet: SystemBody {
         }
         
         func name() -> String {
-            return ResourcesLoader.loadArrayTextResource(name: "planets")![Int(self.rawValue)]
+            return ResourcesLoader.loadArrayTextResource(name: "planets")![Int(rawValue)]
         }
         
         func image() -> UIImage {
-            return UIImage(named: ResourcesLoader.loadArrayTextResource(name: "planets")![Int(self.rawValue)])!
+            return UIImage(named: ResourcesLoader.loadArrayTextResource(name: "planets")![Int(rawValue)])!
         }
     }
 
@@ -39,7 +39,7 @@ class Planet: SystemBody {
     let scale: CGFloat
     var radius: CGFloat {
         get {
-            return UniverseRules.basePlanetsRadius * self.scale
+            return UniverseRules.basePlanetsRadius * scale
         }
     }
     
@@ -47,7 +47,7 @@ class Planet: SystemBody {
     var inhabitants: [Pop]?
     
     public override init(name: String) {
-        self.kind = Kind.randomKind()
+        kind = Kind.randomKind()
         var tmpScale = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
         if tmpScale < 0.4 {
             //Can be smaller than 0.4
@@ -56,7 +56,7 @@ class Planet: SystemBody {
             //1 out of 10 chance to generate a super planet if scale is already big.
             tmpScale = 1.5
         }
-        self.scale = tmpScale
+        scale = tmpScale
         super.init(name: name)
     }
     

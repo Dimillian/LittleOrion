@@ -23,14 +23,14 @@ class System: UniverseEntity {
     
     override var description: String {
         get {
-            return"System: \(self.name), Planets: \(self.planetsCount())"
+            return"System: \(name), Planets: \(planetsCount())"
         }
     }
     
     override var extraInfo: String? {
         get {
             var text = ""
-            for planet in self.planets {
+            for planet in planets {
                 text += "\(planet.name): \(planet.kind.name()), "
             }
             return text

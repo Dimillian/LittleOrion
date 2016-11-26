@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
         if let scene = GKScene(fileNamed: "UniverseScene") {
             if let sceneNode = scene.rootNode as! UniverseScene? {
                 sceneNode.scaleMode = .aspectFill
-                if let view = self.view as! SKView? {
+                if let view = view as! SKView? {
                     view.presentScene(sceneNode)
                     
                     view.ignoresSiblingOrder = true

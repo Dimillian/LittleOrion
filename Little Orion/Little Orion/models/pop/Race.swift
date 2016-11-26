@@ -14,7 +14,7 @@ class Race: GKEntity {
         case human, lizard, plantoid
         
         func description() -> String {
-            return ResourcesLoader.loadTextResource(name: "raceKind")![self.rawValue]!
+            return ResourcesLoader.loadTextResource(name: "raceKind")![rawValue]!
         }
     }
     
@@ -22,7 +22,7 @@ class Race: GKEntity {
         case weak, average, strong
         
         func modifier() -> Float {
-            return ResourcesLoader.loadModifierResource(name: "raceForce")![self.rawValue]!
+            return ResourcesLoader.loadModifierResource(name: "raceForce")![rawValue]!
         }
     }
     

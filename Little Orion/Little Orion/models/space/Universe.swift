@@ -26,7 +26,7 @@ class UniverseEntity: GKEntity {
         
     var spriteNode: SKNode {
         get {
-            return (self.component(ofType: UniverseSpriteComponent.self)?.node)!
+            return (component(ofType: UniverseSpriteComponent.self)?.node)!
         }
     }
     
@@ -45,7 +45,7 @@ class UniverseEntity: GKEntity {
     override init() {
         super.init()
         
-        self.addComponent(UniverseSpriteComponent.component(with: self))
+        addComponent(UniverseSpriteComponent.component(with: self))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -64,7 +64,7 @@ class Universe: GKEntity {
         case tiny, small, standard, big
         
         func size() -> Size {
-            return ResourcesLoader.loadDimensionResource(name: "universe", dimensionName: self.rawValue)!
+            return ResourcesLoader.loadDimensionResource(name: "universe", dimensionName: rawValue)!
         }
     }
     
@@ -84,7 +84,7 @@ class Universe: GKEntity {
     }
     
     private func generate() {
-        for node in self.grid.nodes! {
+        for node in grid.nodes! {
             if let node = node as? UniverseNode {
                 if arc4random_uniform(UniverseRules.systemSpawnProbability) == 1 {
                     node.entity = System(name: "Node x:\(node.gridPosition.x) y:\(node.gridPosition.y)")
@@ -94,7 +94,7 @@ class Universe: GKEntity {
             }
         }
         
-        for node in self.grid.nodes! {
+        for node in grid.nodes! {
             if let node = node as? UniverseNode {
                 let neighboors = node.connectedNodes
                 for neighboor in neighboors {
@@ -109,7 +109,7 @@ class Universe: GKEntity {
     }
     
     public func entityAt(location: Location) -> UniverseEntity {
-        return self.grid.node(atGridPosition: int2(location.x, location.y))!.entity!
+        return grid.node(atGridPosition: int2(location.x, location.y))!.entity!
     }
     
 }

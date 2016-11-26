@@ -35,10 +35,10 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     
     public var system: System? {
         didSet {
-            self.titleLabel.text = system!.description
-            self.starName.text = "Star: \(system!.star.kind.name())"
-            self.starImageView.image = system!.star.kind.image()
-            self.tableView.reloadData()
+            titleLabel.text = system!.description
+            starName.text = "Star: \(system!.star.kind.name())"
+            starImageView.image = system!.star.kind.image()
+            tableView.reloadData()
         }
     }
     
@@ -48,9 +48,9 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     }
     
     public func show() {
-        self.isHidden = false
-        self.alpha = 0
-        self.layer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
+        isHidden = false
+        alpha = 0
+        layer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
         UIView.animate(withDuration: 0.50,
                        delay: 0,
                        usingSpringWithDamping: 0.8,
@@ -73,16 +73,16 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
     
-        self.frame = CGRect(x: 0, y: 0, width: 300, height: 400)
-        self.center = self.superview!.center
+        frame = CGRect(x: 0, y: 0, width: 300, height: 400)
+        center = superview!.center
         
-        self.tableView.register(UINib(nibName: "StarCell", bundle: Bundle.main),
+        tableView.register(UINib(nibName: "StarCell", bundle: Bundle.main),
                                 forCellReuseIdentifier: StarCell.id)
-        self.tableView.rowHeight = 60
+        tableView.rowHeight = 60
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let system = self.system {
+        if let system = system {
             return system.planetsCount()
         }
         return 0
@@ -90,7 +90,7 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StarCell.id, for: indexPath) as! StarCell
-        cell.planet = self.system!.planet(at: indexPath.row)
+        cell.planet = system!.planet(at: indexPath.row)
         return cell
     }
     

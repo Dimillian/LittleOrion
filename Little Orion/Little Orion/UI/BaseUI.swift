@@ -13,9 +13,9 @@ class BaseUI: UIView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         
-        self.layer.borderWidth = 0.5
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.cornerRadius = 5
-        self.clipsToBounds = false
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.white.cgColor
+        layer.cornerRadius = 5
+        clipsToBounds = false
     }
 }
