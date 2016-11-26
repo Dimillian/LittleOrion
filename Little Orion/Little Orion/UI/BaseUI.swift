@@ -16,6 +16,6 @@ class BaseUI: UIView {
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.white.cgColor
         layer.cornerRadius = 5
-        clipsToBounds = false
+        clipsToBounds = true
     }
 }

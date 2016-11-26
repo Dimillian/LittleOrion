@@ -31,7 +31,7 @@ class UniverseSpriteComponent: GKSKNodeComponent {
             node.strokeColor = UIColor.white
             component = UniverseSpriteComponent(node: node)
         }
-        node.lineWidth = 0.25
+        node.lineWidth = 0.50
         return component
         
     }
@@ -42,7 +42,7 @@ extension SKShapeNode {
     
     func highlightNode(highlight: Bool) {
         strokeColor = highlight ? UIColor.yellow : UIColor.white
-        lineWidth = highlight ? 1 : 0.25
+        lineWidth = highlight ? 1 : 0.50
         glowWidth = highlight ? 5 : 0
     }
 }

@@ -34,6 +34,7 @@ class UniverseScene: SKScene {
     var mapNode = SKNode()
     var mapMoved = false
     var mapNewPosition: CGPoint?
+    var inZoomGesture = false
 
     var selectedNode: SKShapeNode?
     
@@ -43,6 +44,7 @@ class UniverseScene: SKScene {
         backgroundColor = UIColor.black
         
         if (!loaded) {
+            
             lastUpdateTime = 0
             
             infoNode.position = CGPoint(x: 0, y: (frame.height / 2) - 70)
@@ -82,6 +84,9 @@ class UniverseScene: SKScene {
     
     override func didMove(to view: SKView) {
         self.view?.addSubview(systemUI)
+        
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.onPinchGesture(pinch:)))
+        self.view?.addGestureRecognizer(pinch)
     }
     
 
@@ -157,11 +162,6 @@ extension UniverseScene {
     func updateInfoText(_ touches: Set<UITouch>, with event: UIEvent?) {
         let node = nodeAt(touches, with: event)
         
-        selectedNode?.highlightNode(highlight: false)
-        if let node = node as? SKShapeNode {
-            node.highlightNode(highlight: true)
-            selectedNode = node
-        }
         if let entity = node?.entity as? UniverseEntity {
             infoNode.text = entity.description
             if let info = entity.extraInfo {
@@ -178,7 +178,7 @@ extension UniverseScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         updateInfoText(touches, with: event)
-        
+        selectedNode?.highlightNode(highlight: false)
         if (touches.count == 1) {
             let position = touches.first!.location(in: self)
             
@@ -193,7 +193,7 @@ extension UniverseScene {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         updateInfoText(touches, with: event)
         
-        if (touches.count == 1) {
+        if (touches.count == 1 && !inZoomGesture) {
             let position = touches.first!.location(in: self)
             let currentMapPosition = mapNode.position
             
@@ -220,8 +220,42 @@ extension UniverseScene {
             if let system = systemAt(touches, with: event) {
                 showSystemUI(with: system)
             }
+            
+            if let node = nodeAt(touches, with: event) as? SKShapeNode {
+                node.highlightNode(highlight: true)
+                selectedNode = node
+            }
         }
+        
         mapMoved = false
+    }
+    
+    func onPinchGesture(pinch: UIPinchGestureRecognizer) {
+        
+        if pinch.state == .began {
+            inZoomGesture = true
+        } else if pinch.state == .ended {
+            inZoomGesture = false
+        }
+        
+
+        
+        var anchorPoint = pinch.location(in: pinch.view)
+        anchorPoint = self.convertPoint(fromView: anchorPoint)
+        let mapAnchorPoint = mapNode.convert(anchorPoint, from: self)
+        
+        let newScale = mapNode.xScale * pinch.scale
+        
+        if (newScale >= 0.7 && newScale <= 3) {
+            mapNode.setScale(newScale)
+            
+            let mapSceneAnchorPoint = self.convert(mapAnchorPoint, from: mapNode)
+            let translationOfAnchorInScene = (x: anchorPoint.x - mapSceneAnchorPoint.x, y: anchorPoint.y - mapSceneAnchorPoint.y)
+            
+            mapNode.position = CGPoint(x: mapNode.position.x + translationOfAnchorInScene.x, y: mapNode.position.y + translationOfAnchorInScene.y)
+        }
+        
+        pinch.scale = 1.0
     }
 }
 

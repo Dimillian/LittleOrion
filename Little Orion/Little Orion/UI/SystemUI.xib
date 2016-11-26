@@ -37,7 +37,7 @@
                                     <outlet property="delegate" destination="iN0-l3-epB" id="Qya-mm-4BF"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dwarf" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-7N-vEH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet1" translatesAutoresizingMaskIntoConstraints="NO" id="kaI-7N-vEH">
                                 <rect key="frame" x="125" y="62" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="783-S2-BQg"/>
@@ -91,6 +91,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Dwarf" width="300" height="300"/>
+        <image name="planet1" width="300" height="300"/>
     </resources>
 </document>
