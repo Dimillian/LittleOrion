@@ -18,7 +18,7 @@ class StarCell: UITableViewCell {
     public var planet: Planet? {
         didSet {
             starTitleLabel.text = planet!.name
-            let radius =  String(format: "%.2f", planet!.radius)
+            let radius = String(format: "%.0f", planet!.radius)
             kindTitleLabel.text = "\(planet!.kind.name()) | Radius  \(radius) Km"
             starImageView.image = planet!.kind.image()
             starImageView.transform = CGAffineTransform(scaleX: planet!.scale, y: planet!.scale)

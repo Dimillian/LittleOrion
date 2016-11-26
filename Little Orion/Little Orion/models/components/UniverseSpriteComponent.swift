@@ -37,3 +37,12 @@ class UniverseSpriteComponent: GKSKNodeComponent {
     }
     
 }
+
+extension SKShapeNode {
+    
+    func highlightNode(highlight: Bool) {
+        self.strokeColor = highlight ? UIColor.yellow : UIColor.white
+        self.lineWidth = highlight ? 1 : 0.25
+        self.glowWidth = highlight ? 5 : 0
+    }
+}
