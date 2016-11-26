@@ -8,15 +8,25 @@
 
 import GameplayKit
 
+class UniverseRules {
+    
+    private static let dic = ResourcesLoader.loadDicResource(name: "universeRules")!
+    
+    static let systemSpawnProbability: UInt32 = dic["systemSpwawnProbability"] as! UInt32
+    static let basePlanetsRadius: CGFloat = dic["basePlanetsRadius"] as! CGFloat
+    static let superPlanetSpwawnProbability: UInt32 = dic["superPlanetSpwawnProbability"] as! UInt32
+    
+}
+
 class UniverseNode: GKGridGraphNode {
     var entity: UniverseEntity!
 }
 
 class UniverseEntity: GKEntity {
         
-    var spriteNode: SKSpriteNode {
+    var spriteNode: SKNode {
         get {
-            return self.component(ofType: UniverseSpriteComponent.self)!.spriteNode
+            return (self.component(ofType: UniverseSpriteComponent.self)?.node)!
         }
     }
     
@@ -35,17 +45,7 @@ class UniverseEntity: GKEntity {
     override init() {
         super.init()
         
-        let size = CGSize(width: Int(UniverseSpriteComponent.size.width), height: Int(UniverseSpriteComponent.size.height))
-        var node: SKNode
-        if let _ = self as? Empty {
-            node = SKSpriteNode(color: UIColor.clear, size: size)
-            node.name = "Empty node"
-            self.addComponent(UniverseSpriteComponent(node: node))
-        } else if let system = self as? System {
-            node = SKSpriteNode(texture: SKTexture(imageNamed: system.star.kind.name()), size: size)
-            node.name = "System node"
-            self.addComponent(UniverseSpriteComponent(node: node))
-        }
+        self.addComponent(UniverseSpriteComponent.component(with: self))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,7 +86,7 @@ class Universe: GKEntity {
     private func generate() {
         for node in self.grid.nodes! {
             if let node = node as? UniverseNode {
-                if arc4random_uniform(6) == 1 {
+                if arc4random_uniform(UniverseRules.systemSpawnProbability) == 1 {
                     node.entity = System(name: "Node x:\(node.gridPosition.x) y:\(node.gridPosition.y)")
                 } else {
                     node.entity = Empty()

@@ -52,9 +52,10 @@ class UniverseScene: SKScene {
             let mapNode = SKNode()
             for node in self.universe.grid.nodes! {
                 if let node = node as? UniverseNode {
+                    let size = UniverseSpriteComponent.nodeSize
                     let spriteNode = node.entity.spriteNode
-                    spriteNode.position = CGPoint(x: CGFloat(CGFloat(node.gridPosition.x) * node.entity.spriteNode.size.width),
-                                                  y: CGFloat(CGFloat(node.gridPosition.y) * node.entity.spriteNode.size.height))
+                    spriteNode.position = CGPoint(x: CGFloat(CGFloat(node.gridPosition.x) * size.width),
+                                                  y: CGFloat(CGFloat(node.gridPosition.y) * size.height))
                     if spriteNode.parent == nil {
                         mapNode.addChild(spriteNode)
                     }

@@ -11,7 +11,7 @@ import GameplayKit
 class Star: SystemBody {
     
     enum Kind: UInt32 {
-        case dwarf, supernova
+        case nova, supernova, dwarf
         
         private static let _count: Kind.RawValue = {
             var maxValue: UInt32 = 0
@@ -30,8 +30,22 @@ class Star: SystemBody {
             return ResourcesLoader.loadArrayTextResource(name: "stars")![Int(self.rawValue)]
         }
         
+        func imageName() -> String {
+            return "Star"
+        }
         func image() -> UIImage {
-            return UIImage(named: ResourcesLoader.loadArrayTextResource(name: "stars")![Int(self.rawValue)])!
+            return #imageLiteral(resourceName: "Star")
+        }
+        
+        func textureFillColor() -> UIColor {
+            switch self {
+            case .nova:
+                return UIColor.purple
+            case .dwarf:
+                return UIColor.red
+            case .supernova:
+                return UIColor.white
+            }
         }
     }
     

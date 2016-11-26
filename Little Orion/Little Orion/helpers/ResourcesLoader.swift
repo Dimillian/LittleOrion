@@ -11,6 +11,14 @@ import UIKit
 
 class ResourcesLoader {
     
+    static func loadDicResource(name: String) -> [String: AnyObject]? {
+        if let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) as? [String : AnyObject] {
+            return dic
+        }
+        return nil
+    }
+    
     static func loadTextResource(name: String) -> [String : String]? {
         if let path = Bundle.main.path(forResource: name, ofType: "plist"), let dic = NSDictionary(contentsOfFile: path) as? [String : String] {
             return dic
@@ -18,7 +26,6 @@ class ResourcesLoader {
         return nil
     }
 
-    
     static func loadArrayTextResource(name: String) -> [String]? {
         if let path = Bundle.main.path(forResource: name, ofType: "plist"), let dic = NSArray(contentsOfFile: path) as? [String] {
             return dic

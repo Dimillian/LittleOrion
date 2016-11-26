@@ -10,8 +10,6 @@ import GameplayKit
 
 class Planet: SystemBody {
 
-    static let baseRadius: CGFloat = 9580
-    
     enum Kind: UInt32 {
         case desert, oceanic, toxic, continental
         
@@ -41,7 +39,7 @@ class Planet: SystemBody {
     let scale: CGFloat
     var radius: CGFloat {
         get {
-            return Planet.baseRadius * self.scale
+            return UniverseRules.basePlanetsRadius * self.scale
         }
     }
     
@@ -54,7 +52,7 @@ class Planet: SystemBody {
         if tmpScale < 0.4 {
             //Can be smaller than 0.4
             tmpScale = 0.4
-        } else if tmpScale > 0.9 && arc4random_uniform(10) == 1{
+        } else if tmpScale > 0.9 && arc4random_uniform(UniverseRules.superPlanetSpwawnProbability) == 1{
             //1 out of 10 chance to generate a super planet if scale is already big.
             tmpScale = 1.5
         }
