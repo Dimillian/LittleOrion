@@ -15,6 +15,8 @@ class UniverseRules {
     static let systemSpawnProbability: UInt32 = dic["systemSpwawnProbability"] as! UInt32
     static let basePlanetsRadius: CGFloat = dic["basePlanetsRadius"] as! CGFloat
     static let superPlanetSpwawnProbability: UInt32 = dic["superPlanetSpwawnProbability"] as! UInt32
+    static let superPlanetScale: CGFloat = dic["superPlanetScale"] as! CGFloat
+    static let planetMaxSpace: Int = dic["planetMaxSpace"] as! Int
     
 }
 
@@ -64,7 +66,7 @@ class Universe: GKEntity {
         case tiny, small, standard, big
         
         func size() -> Size {
-            return ResourcesLoader.loadDimensionResource(name: "universe", dimensionName: rawValue)!
+            return ResourcesLoader.loadDimensionResource(name: "universeDimensions", dimensionName: rawValue)!
         }
     }
     

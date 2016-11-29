@@ -12,7 +12,7 @@ import GameplayKit
 class UniverseScene: SKScene {
     
     var lastUpdateTime : TimeInterval = 0
-    let universe = Universe(size: .small)
+    let universe = Universe(size: .standard)
     let infoNode = SKLabelNode(text: "Touch a case!")
     let subInfoNode = SKLabelNode(text: "")
     var loaded = false
@@ -151,10 +151,11 @@ extension UniverseScene {
 }
 
 //MARK: - UI
-extension UniverseScene {
+extension UniverseScene: SystemUiDelegate {
     
     func showSystemUI(with system: System) {
         systemUI.system = system
+        systemUI.delegate = self
         systemUI.show()
         
     }
@@ -171,6 +172,12 @@ extension UniverseScene {
             }
         }
     }
+    
+    func systemUISelectedPlanet(planet: Planet) {
+        let planetController = PlanetViewController(planet: planet)
+        view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
+    }
+    
 }
 
 //MARK: - Touch

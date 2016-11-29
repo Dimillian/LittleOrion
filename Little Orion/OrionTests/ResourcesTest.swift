@@ -24,7 +24,7 @@ class ResourcesTest: XCTestCase {
     }
     
     func testResourceLoader() {
-        let plist = ResourcesLoader.loadTextResource(name: "tests")
+        let plist = ResourcesLoader.loadTextResource(name: "testsText")
         if let plist = plist {
             XCTAssertEqual(plist["test1"], test1result)
             XCTAssertEqual(plist["test2"], test2result)

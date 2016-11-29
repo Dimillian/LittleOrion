@@ -6,7 +6,11 @@
 	<integer>10</integer>
 	<key>superPlanetSpwawnProbability</key>
 	<integer>10</integer>
+	<key>superPlanetScale</key>
+	<real>1.3</real>
 	<key>basePlanetsRadius</key>
 	<integer>9500</integer>
+	<key>planetMaxSpace</key>
+	<integer>50</integer>
 </dict>
 </plist>

@@ -51,7 +51,7 @@ class System: UniverseEntity {
     private func makePlanets() {
         let planetsCount = Int(arc4random_uniform(6))
         for index in 0...planetsCount {
-            let star = Planet(name: "Planet \(index)")
+            let star = Planet(name: "Planet \(index)" , in: self)
             _planets.append(star)
         }
     }

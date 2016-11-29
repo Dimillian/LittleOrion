@@ -26,12 +26,18 @@ class StarCell: UITableViewCell {
     }
 }
 
+protocol SystemUiDelegate {
+    func systemUISelectedPlanet(planet: Planet)
+}
+
 class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var starName: UILabel!
     @IBOutlet var starImageView: UIImageView!
     @IBOutlet var tableView: UITableView!
+    
+    var delegate: SystemUiDelegate?
     
     public var system: System? {
         didSet {
@@ -96,5 +102,8 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let delegate = delegate {
+            delegate.systemUISelectedPlanet(planet: system!.planet(at: indexPath.row))
+        }
     }
 }

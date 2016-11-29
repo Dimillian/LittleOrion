@@ -27,7 +27,7 @@ class Star: SystemBody {
         }
         
         func name() -> String {
-            return ResourcesLoader.loadArrayTextResource(name: "stars")![Int(rawValue)]
+            return ResourcesLoader.loadArrayTextResource(name: "starsText")![Int(rawValue)]
         }
         
         func imageName() -> String {
