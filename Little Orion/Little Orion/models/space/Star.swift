@@ -40,11 +40,11 @@ class Star: SystemBody {
         func textureFillColor() -> UIColor {
             switch self {
             case .nova:
-                return UIColor.purple
+                return UIColor(red: 5/255, green: 22/255, blue: 177/255, alpha: 1.0)
             case .dwarf:
-                return UIColor.red
+                return UIColor(red: 248/255, green: 187/255, blue: 66/255, alpha: 1.0)
             case .supernova:
-                return UIColor.white
+                return UIColor(red: 199/255, green: 20/255, blue: 21/255, alpha: 1.0)
             }
         }
     }

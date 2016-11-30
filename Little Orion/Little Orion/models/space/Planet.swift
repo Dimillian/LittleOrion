@@ -123,17 +123,21 @@ class Planet3D {
             let textureName = planet.kind.name() + "Texture"
             let material = SCNMaterial()
             material.diffuse.contents = UIImage(named: textureName)
-            switch planet.kind {
-            case .volcanic:
-                material.specular.contents = UIColor(white: 0.9, alpha: 1.0)
-                break
-            default:
-                material.specular.contents = UIColor(white: 0.5, alpha: 1.0)
-                break
-            }
-            material.shininess = 0.5
+            material.specular.contents = planet.system.star.kind.textureFillColor()
+            material.shininess = 0.8
             sphere.materials = [material]
             return sphere
+        }
+    }
+    
+    var light: SCNNode {
+        get {
+            let omniLightNode = SCNNode()
+            omniLightNode.light = SCNLight()
+            omniLightNode.light?.color = planet.system.star.kind.textureFillColor()
+            omniLightNode.light?.type = .omni
+            omniLightNode.position = SCNVector3Make(0, 40, 40)
+            return omniLightNode
         }
     }
  

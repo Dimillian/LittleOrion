@@ -79,13 +79,8 @@ extension PlanetViewController {
         
         mainScene.rootNode.addChildNode(lightNode)
         
-        let omniLightNode = SCNNode()
-        omniLightNode.light = SCNLight()
-        omniLightNode.light?.type = .omni
-        omniLightNode.light?.color = UIColor(white: 0.70, alpha: 1.0)
-        omniLightNode.position = SCNVector3Make(0, 40, 40)
         
-        mainScene.rootNode.addChildNode(omniLightNode)
+        mainScene.rootNode.addChildNode(planet.planet3D.light)
     }
     
     func setupCamera() {
