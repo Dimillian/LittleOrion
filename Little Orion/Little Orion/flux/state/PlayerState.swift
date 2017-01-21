@@ -10,8 +10,8 @@ import Foundation
 import ReSwift
 
 struct PlayerState {
-    var username: String?
     var currentDate = Date()
     var dateTimer: Timer?
     var isPlaying = false
+    var resources = PlayerResources()
 }

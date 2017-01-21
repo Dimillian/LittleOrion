@@ -47,6 +47,7 @@
 		9FBA3E891E33E2CA00B0B70D /* PlayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E881E33E2CA00B0B70D /* PlayerActions.swift */; };
 		9FBA3E8B1E33E5F900B0B70D /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E8A1E33E5F900B0B70D /* TopBar.swift */; };
 		9FBA3E8D1E33E60700B0B70D /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3E8C1E33E60700B0B70D /* TopBar.xib */; };
+		9FBA3E901E33F2B600B0B70D /* PlayerResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */; };
 		9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47F31DE7294D00334D7B /* Pop.swift */; };
 		9FCF47F81DE72A3E00334D7B /* raceText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF47F71DE72A3E00334D7B /* raceText.plist */; };
 		9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */; };
@@ -116,6 +117,7 @@
 		9FBA3E881E33E2CA00B0B70D /* PlayerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerActions.swift; path = flux/actions/PlayerActions.swift; sourceTree = "<group>"; };
 		9FBA3E8A1E33E5F900B0B70D /* TopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopBar.swift; path = UI/TopBar.swift; sourceTree = "<group>"; };
 		9FBA3E8C1E33E60700B0B70D /* TopBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TopBar.xib; path = UI/TopBar.xib; sourceTree = "<group>"; };
+		9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerResources.swift; path = models/Player/PlayerResources.swift; sourceTree = "<group>"; };
 		9FCF47F31DE7294D00334D7B /* Pop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pop.swift; path = models/pop/Pop.swift; sourceTree = "<group>"; };
 		9FCF47F71DE72A3E00334D7B /* raceText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceText.plist; path = resources/text/raceText.plist; sourceTree = "<group>"; };
 		9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesLoader.swift; path = helpers/ResourcesLoader.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		9F32D0A51DE32FC4004455BB /* models */ = {
 			isa = PBXGroup;
 			children = (
+				9FBA3E8E1E33F29A00B0B70D /* player */,
 				9FF941B11DE737FA009658F7 /* components */,
 				9F32D0B31DE33252004455BB /* pop */,
 				9F32D0AC1DE3322B004455BB /* space */,
@@ -331,6 +334,14 @@
 				9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */,
 			);
 			name = middleware;
+			sourceTree = "<group>";
+		};
+		9FBA3E8E1E33F29A00B0B70D /* player */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */,
+			);
+			name = player;
 			sourceTree = "<group>";
 		};
 		9FCF47F51DE72A1800334D7B /* resources */ = {
@@ -583,6 +594,7 @@
 				9FBA3E761E3397B700B0B70D /* UIState.swift in Sources */,
 				9FBA3E781E3398AA00B0B70D /* UniverseActions.swift in Sources */,
 				9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */,
+				9FBA3E901E33F2B600B0B70D /* PlayerResources.swift in Sources */,
 				9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */,
 				9FBA3E8B1E33E5F900B0B70D /* TopBar.swift in Sources */,
 				9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */,

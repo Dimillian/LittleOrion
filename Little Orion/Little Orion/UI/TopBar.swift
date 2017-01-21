@@ -14,6 +14,15 @@ class TopBar: BaseUI {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var playButton: UIButton!
     
+    @IBOutlet var energyIcon: UIImageView!
+    @IBOutlet var energyLabel: UILabel!
+
+    @IBOutlet var mineralIcon: UIImageView!
+    @IBOutlet var mineralLabel: UILabel!
+
+    @IBOutlet var scienceIcon: UIImageView!
+    @IBOutlet var scienceLabel: UILabel!
+    
     public static func loadFromNib() -> TopBar {
         let nib = UINib(nibName: "TopBar", bundle: Bundle.main)
         return nib.instantiate(withOwner: self, options: nil)[0] as! TopBar
@@ -44,5 +53,8 @@ extension TopBar: StoreSubscriber {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateLabel.text = dateFormatter.string(from: state.currentDate)
         playButton.setTitle(state.isPlaying ? "||" : ">", for: .normal)
+        energyLabel.text = "\(state.resources.energy.value)"
+        mineralLabel.text = "\(state.resources.minerals.value)"
+        scienceLabel.text = "\(state.resources.science.value)"
     }
 }
