@@ -34,6 +34,7 @@ class UniverseScene: SKScene {
     var mapNode = SKNode()
     var mapMoved = false
     var mapNewPosition: CGPoint?
+    var mapNewScale: CGFloat?
     var inZoomGesture = false
 
     var selectedNode: SKShapeNode?
@@ -58,7 +59,6 @@ class UniverseScene: SKScene {
             if subInfoNode.parent == nil {
                 addChild(subInfoNode)
             }
-            
             
             for node in universe.grid.nodes! {
                 if let node = node as? UniverseNode {
@@ -130,6 +130,12 @@ class UniverseScene: SKScene {
         if mapNewPosition != nil {
             mapNode.position = mapNewPosition!
         }
+        if mapNewScale != nil {
+            mapNode.setScale(mapNewScale!)
+        }
+        
+        mapNewPosition = nil
+        mapNewScale = nil
     }
     
 }
@@ -192,9 +198,9 @@ extension UniverseScene {
             startX = position.x
             startY = position.y
         }
-        
-        systemUI.hide()
-        
+        if systemAt(touches, with: event) == nil {
+            systemUI.hide()
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -245,8 +251,6 @@ extension UniverseScene {
             inZoomGesture = false
         }
         
-
-        
         var anchorPoint = pinch.location(in: pinch.view)
         anchorPoint = self.convertPoint(fromView: anchorPoint)
         let mapAnchorPoint = mapNode.convert(anchorPoint, from: self)
@@ -254,12 +258,12 @@ extension UniverseScene {
         let newScale = mapNode.xScale * pinch.scale
         
         if (newScale >= 0.7 && newScale <= 3) {
-            mapNode.setScale(newScale)
+            mapNewScale = newScale
             
             let mapSceneAnchorPoint = self.convert(mapAnchorPoint, from: mapNode)
             let translationOfAnchorInScene = (x: anchorPoint.x - mapSceneAnchorPoint.x, y: anchorPoint.y - mapSceneAnchorPoint.y)
             
-            mapNode.position = CGPoint(x: mapNode.position.x + translationOfAnchorInScene.x, y: mapNode.position.y + translationOfAnchorInScene.y)
+            mapNewPosition = CGPoint(x: mapNode.position.x + translationOfAnchorInScene.x, y: mapNode.position.y + translationOfAnchorInScene.y)
         }
         
         pinch.scale = 1.0
