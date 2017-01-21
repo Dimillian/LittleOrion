@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import ReSwift
 
 class PlanetViewController: UIViewController {
 
@@ -16,8 +17,8 @@ class PlanetViewController: UIViewController {
     var mainScene: SCNScene! = nil
     var mainSceneView: SCNView! = nil
     
-    init(planet: Planet){
-        self.planet = planet
+    init(){
+        self.planet = store.state.uiState.selectedPlanet!
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -28,9 +29,22 @@ class PlanetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        store.subscribe(self) {state in
+            state.uiState
+        }
+
         setupScene()
         setupCloseButton()
+    }
+}
+
+// MARK: - State
+extension PlanetViewController: StoreSubscriber {
+    func newState(state: UIState) {
+        if state.currentScene != .planet {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -38,7 +52,7 @@ class PlanetViewController: UIViewController {
 extension PlanetViewController {
     
     func onClose() {
-        dismiss(animated: true, completion: nil)
+        store.dispatch(ShowUniverseScene())
     }
 }
 

@@ -54,6 +54,7 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     }
     
     public func show() {
+        system = store.state.uiState.selectedSystem
         isHidden = false
         alpha = 0
         layer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)

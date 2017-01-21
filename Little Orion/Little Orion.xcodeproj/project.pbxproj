@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B35FF68892B1D3C917EFB4F /* Pods_Little_Orion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494612C965D2DA7321D1163 /* Pods_Little_Orion.framework */; };
 		9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F163D131DE84A2C000CE8F5 /* Dimension.swift */; };
 		9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D08D1DE32ED8004455BB /* AppDelegate.swift */; };
 		9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D0971DE32ED8004455BB /* Main.storyboard */; };
@@ -25,13 +26,24 @@
 		9FA36E551DE873C00050A53F /* UniverseSpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E541DE873C00050A53F /* UniverseSpriteComponent.swift */; };
 		9FA36E571DE877050050A53F /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E561DE877050050A53F /* Empty.swift */; };
 		9FA36E591DE87F370050A53F /* starsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E581DE87F370050A53F /* starsText.plist */; };
-		9FA36E5D1DE8834E0050A53F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E5C1DE8834E0050A53F /* Actions.sks */; };
 		9FA36E601DE883570050A53F /* UniverseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E5E1DE883570050A53F /* UniverseScene.sks */; };
 		9FA36E611DE883570050A53F /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E5F1DE883570050A53F /* UniverseScene.swift */; };
 		9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E631DE8837A0050A53F /* GameViewController.swift */; };
 		9FA36E671DE886B10050A53F /* SystemUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E661DE886B10050A53F /* SystemUI.xib */; };
 		9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E681DE889AB0050A53F /* SystemUI.swift */; };
 		9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E6A1DE890F40050A53F /* StarCell.xib */; };
+		9FBA3E6E1E33977800B0B70D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6D1E33977800B0B70D /* State.swift */; };
+		9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */; };
+		9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E711E33979D00B0B70D /* PlayerState.swift */; };
+		9FBA3E761E3397B700B0B70D /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E751E3397B700B0B70D /* UIState.swift */; };
+		9FBA3E781E3398AA00B0B70D /* UniverseActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E771E3398AA00B0B70D /* UniverseActions.swift */; };
+		9FBA3E7A1E33991C00B0B70D /* UniverseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E791E33991C00B0B70D /* UniverseReducer.swift */; };
+		9FBA3E7C1E33993700B0B70D /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E7B1E33993700B0B70D /* AppReducer.swift */; };
+		9FBA3E7E1E33997500B0B70D /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E7D1E33997500B0B70D /* PlayerReducer.swift */; };
+		9FBA3E801E33998200B0B70D /* UIReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E7F1E33998200B0B70D /* UIReducer.swift */; };
+		9FBA3E831E339A8A00B0B70D /* LogMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */; };
+		9FBA3E851E33D16200B0B70D /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E841E33D16200B0B70D /* UIActions.swift */; };
+		9FBA3E871E33D73100B0B70D /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E861E33D73100B0B70D /* Modal.swift */; };
 		9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47F31DE7294D00334D7B /* Pop.swift */; };
 		9FCF47F81DE72A3E00334D7B /* raceText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF47F71DE72A3E00334D7B /* raceText.plist */; };
 		9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */; };
@@ -42,6 +54,7 @@
 		9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFD1DE89C5700085666 /* Planet.swift */; };
 		9FEF6B001DE89D2600085666 /* planetsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFF1DE89D2600085666 /* planetsText.plist */; };
 		9FF941B01DE734A9009658F7 /* raceForceModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF941AF1DE734A9009658F7 /* raceForceModifier.plist */; };
+		F8FFA4E678A24A207D169127 /* Pods_LittleOrion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565605096015777D3B071676 /* Pods_LittleOrion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1448901B992FED6AE6A9B3D3 /* Pods-Little Orion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Orion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Little Orion/Pods-Little Orion.debug.xcconfig"; sourceTree = "<group>"; };
+		5494612C965D2DA7321D1163 /* Pods_Little_Orion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_Orion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		565605096015777D3B071676 /* Pods_LittleOrion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittleOrion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.release.xcconfig"; sourceTree = "<group>"; };
 		9F163D131DE84A2C000CE8F5 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = models/space/Dimension.swift; sourceTree = "<group>"; };
-		9F32D08A1DE32ED8004455BB /* Little Orion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Little Orion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F32D08A1DE32ED8004455BB /* LittleOrion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleOrion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F32D08D1DE32ED8004455BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F32D0981DE32ED8004455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F32D09A1DE32ED8004455BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,13 +92,24 @@
 		9FA36E541DE873C00050A53F /* UniverseSpriteComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseSpriteComponent.swift; path = models/components/UniverseSpriteComponent.swift; sourceTree = "<group>"; };
 		9FA36E561DE877050050A53F /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		9FA36E581DE87F370050A53F /* starsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = starsText.plist; path = resources/text/starsText.plist; sourceTree = "<group>"; };
-		9FA36E5C1DE8834E0050A53F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Actions.sks; path = actions/Actions.sks; sourceTree = "<group>"; };
 		9FA36E5E1DE883570050A53F /* UniverseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = UniverseScene.sks; path = scenes/UniverseScene.sks; sourceTree = "<group>"; };
 		9FA36E5F1DE883570050A53F /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseScene.swift; path = scenes/UniverseScene.swift; sourceTree = "<group>"; };
 		9FA36E631DE8837A0050A53F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = viewControllers/GameViewController.swift; sourceTree = "<group>"; };
 		9FA36E661DE886B10050A53F /* SystemUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SystemUI.xib; path = UI/SystemUI.xib; sourceTree = "<group>"; };
 		9FA36E681DE889AB0050A53F /* SystemUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemUI.swift; path = UI/SystemUI.swift; sourceTree = "<group>"; };
 		9FA36E6A1DE890F40050A53F /* StarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StarCell.xib; path = UI/StarCell.xib; sourceTree = "<group>"; };
+		9FBA3E6D1E33977800B0B70D /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = State.swift; path = flux/state/State.swift; sourceTree = "<group>"; };
+		9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseState.swift; path = flux/state/UniverseState.swift; sourceTree = "<group>"; };
+		9FBA3E711E33979D00B0B70D /* PlayerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerState.swift; path = flux/state/PlayerState.swift; sourceTree = "<group>"; };
+		9FBA3E751E3397B700B0B70D /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIState.swift; path = flux/state/UIState.swift; sourceTree = "<group>"; };
+		9FBA3E771E3398AA00B0B70D /* UniverseActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseActions.swift; path = flux/actions/UniverseActions.swift; sourceTree = "<group>"; };
+		9FBA3E791E33991C00B0B70D /* UniverseReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseReducer.swift; path = flux/reducers/UniverseReducer.swift; sourceTree = "<group>"; };
+		9FBA3E7B1E33993700B0B70D /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = flux/reducers/AppReducer.swift; sourceTree = "<group>"; };
+		9FBA3E7D1E33997500B0B70D /* PlayerReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerReducer.swift; path = flux/reducers/PlayerReducer.swift; sourceTree = "<group>"; };
+		9FBA3E7F1E33998200B0B70D /* UIReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIReducer.swift; path = flux/reducers/UIReducer.swift; sourceTree = "<group>"; };
+		9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogMiddleware.swift; path = flux/middleware/LogMiddleware.swift; sourceTree = "<group>"; };
+		9FBA3E841E33D16200B0B70D /* UIActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIActions.swift; path = flux/actions/UIActions.swift; sourceTree = "<group>"; };
+		9FBA3E861E33D73100B0B70D /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Modal.swift; path = UI/Modal.swift; sourceTree = "<group>"; };
 		9FCF47F31DE7294D00334D7B /* Pop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pop.swift; path = models/pop/Pop.swift; sourceTree = "<group>"; };
 		9FCF47F71DE72A3E00334D7B /* raceText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceText.plist; path = resources/text/raceText.plist; sourceTree = "<group>"; };
 		9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesLoader.swift; path = helpers/ResourcesLoader.swift; sourceTree = "<group>"; };
@@ -94,6 +122,8 @@
 		9FEF6AFD1DE89C5700085666 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Planet.swift; path = models/space/Planet.swift; sourceTree = "<group>"; };
 		9FEF6AFF1DE89D2600085666 /* planetsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetsText.plist; path = resources/text/planetsText.plist; sourceTree = "<group>"; };
 		9FF941AF1DE734A9009658F7 /* raceForceModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceForceModifier.plist; path = resources/modifiers/raceForceModifier.plist; sourceTree = "<group>"; };
+		C0AE64F64B1E89A5A9C08279 /* Pods-LittleOrion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.debug.xcconfig"; sourceTree = "<group>"; };
+		F8CF2FDF868CAB1EAD43F769 /* Pods-Little Orion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Orion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Little Orion/Pods-Little Orion.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B35FF68892B1D3C917EFB4F /* Pods_Little_Orion.framework in Frameworks */,
+				F8FFA4E678A24A207D169127 /* Pods_LittleOrion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,19 +146,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6516446854A51A71A22EB9B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5494612C965D2DA7321D1163 /* Pods_Little_Orion.framework */,
+				565605096015777D3B071676 /* Pods_LittleOrion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9F32D0811DE32ED8004455BB = {
 			isa = PBXGroup;
 			children = (
 				9F32D08C1DE32ED8004455BB /* Little Orion */,
 				9FCF48011DE72B4A00334D7B /* OrionTests */,
 				9F32D08B1DE32ED8004455BB /* Products */,
+				B9CC439AA08C4B85E98FC23F /* Pods */,
+				6516446854A51A71A22EB9B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		9F32D08B1DE32ED8004455BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F32D08A1DE32ED8004455BB /* Little Orion.app */,
+				9F32D08A1DE32ED8004455BB /* LittleOrion.app */,
 				9FCF48001DE72B4A00334D7B /* OrionTests.xctest */,
 			);
 			name = Products;
@@ -135,9 +178,9 @@
 		9F32D08C1DE32ED8004455BB /* Little Orion */ = {
 			isa = PBXGroup;
 			children = (
+				9FBA3E691E33970500B0B70D /* flux */,
 				9FA36E621DE883620050A53F /* viewControllers */,
 				9FA36E651DE8869A0050A53F /* UI */,
-				9FA36E5B1DE883230050A53F /* actions */,
 				9FA36E5A1DE883090050A53F /* scenes */,
 				9FCF47F91DE72A9F00334D7B /* helpers */,
 				9FCF47F51DE72A1800334D7B /* resources */,
@@ -210,14 +253,6 @@
 			name = scenes;
 			sourceTree = "<group>";
 		};
-		9FA36E5B1DE883230050A53F /* actions */ = {
-			isa = PBXGroup;
-			children = (
-				9FA36E5C1DE8834E0050A53F /* Actions.sks */,
-			);
-			name = actions;
-			sourceTree = "<group>";
-		};
 		9FA36E621DE883620050A53F /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,8 +269,59 @@
 				9FA36E661DE886B10050A53F /* SystemUI.xib */,
 				9FA36E681DE889AB0050A53F /* SystemUI.swift */,
 				9FA36E6A1DE890F40050A53F /* StarCell.xib */,
+				9FBA3E861E33D73100B0B70D /* Modal.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		9FBA3E691E33970500B0B70D /* flux */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3E811E339A7D00B0B70D /* middleware */,
+				9FBA3E6C1E33972000B0B70D /* state */,
+				9FBA3E6A1E33970D00B0B70D /* actions */,
+				9FBA3E6B1E33971300B0B70D /* reducers */,
+			);
+			name = flux;
+			sourceTree = "<group>";
+		};
+		9FBA3E6A1E33970D00B0B70D /* actions */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3E771E3398AA00B0B70D /* UniverseActions.swift */,
+				9FBA3E841E33D16200B0B70D /* UIActions.swift */,
+			);
+			name = actions;
+			sourceTree = "<group>";
+		};
+		9FBA3E6B1E33971300B0B70D /* reducers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3E7B1E33993700B0B70D /* AppReducer.swift */,
+				9FBA3E791E33991C00B0B70D /* UniverseReducer.swift */,
+				9FBA3E7D1E33997500B0B70D /* PlayerReducer.swift */,
+				9FBA3E7F1E33998200B0B70D /* UIReducer.swift */,
+			);
+			name = reducers;
+			sourceTree = "<group>";
+		};
+		9FBA3E6C1E33972000B0B70D /* state */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3E6D1E33977800B0B70D /* State.swift */,
+				9FBA3E751E3397B700B0B70D /* UIState.swift */,
+				9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */,
+				9FBA3E711E33979D00B0B70D /* PlayerState.swift */,
+			);
+			name = state;
+			sourceTree = "<group>";
+		};
+		9FBA3E811E339A7D00B0B70D /* middleware */ = {
+			isa = PBXGroup;
+			children = (
+				9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */,
+			);
+			name = middleware;
 			sourceTree = "<group>";
 		};
 		9FCF47F51DE72A1800334D7B /* resources */ = {
@@ -295,24 +381,38 @@
 			name = components;
 			sourceTree = "<group>";
 		};
+		B9CC439AA08C4B85E98FC23F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1448901B992FED6AE6A9B3D3 /* Pods-Little Orion.debug.xcconfig */,
+				F8CF2FDF868CAB1EAD43F769 /* Pods-Little Orion.release.xcconfig */,
+				C0AE64F64B1E89A5A9C08279 /* Pods-LittleOrion.debug.xcconfig */,
+				5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9F32D0891DE32ED8004455BB /* Little Orion */ = {
+		9F32D0891DE32ED8004455BB /* LittleOrion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F32D0A21DE32ED8004455BB /* Build configuration list for PBXNativeTarget "Little Orion" */;
+			buildConfigurationList = 9F32D0A21DE32ED8004455BB /* Build configuration list for PBXNativeTarget "LittleOrion" */;
 			buildPhases = (
+				DBBA35246EBA856C8176C9F1 /* [CP] Check Pods Manifest.lock */,
 				9F32D0861DE32ED8004455BB /* Sources */,
 				9F32D0871DE32ED8004455BB /* Frameworks */,
 				9F32D0881DE32ED8004455BB /* Resources */,
+				7E1EC401E04CF05DA9B76186 /* [CP] Embed Pods Frameworks */,
+				BE92DD1A0C5340B9A6E11ADF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Little Orion";
+			name = LittleOrion;
 			productName = "Little Orion";
-			productReference = 9F32D08A1DE32ED8004455BB /* Little Orion.app */;
+			productReference = 9F32D08A1DE32ED8004455BB /* LittleOrion.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9FCF47FF1DE72B4A00334D7B /* OrionTests */ = {
@@ -340,7 +440,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Thomas Ricouard";
 				TargetAttributes = {
 					9F32D0891DE32ED8004455BB = {
@@ -369,7 +469,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9F32D0891DE32ED8004455BB /* Little Orion */,
+				9F32D0891DE32ED8004455BB /* LittleOrion */,
 				9FCF47FF1DE72B4A00334D7B /* OrionTests */,
 			);
 		};
@@ -381,7 +481,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */,
-				9FA36E5D1DE8834E0050A53F /* Actions.sks in Resources */,
 				9F32D09B1DE32ED8004455BB /* Assets.xcassets in Resources */,
 				9FF941B01DE734A9009658F7 /* raceForceModifier.plist in Resources */,
 				9FA36E531DE861190050A53F /* universeDimensions.plist in Resources */,
@@ -407,26 +506,86 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E1EC401E04CF05DA9B76186 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE92DD1A0C5340B9A6E11ADF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBBA35246EBA856C8176C9F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F32D0861DE32ED8004455BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9FA36E611DE883570050A53F /* UniverseScene.swift in Sources */,
+				9FBA3E871E33D73100B0B70D /* Modal.swift in Sources */,
 				9F32D0B21DE33240004455BB /* Universe.swift in Sources */,
 				9FD2C4811DEDD05800968FCD /* PlanetViewController.swift in Sources */,
 				9FED3FCA1DE8CA3900DFC36E /* BaseUI.swift in Sources */,
 				9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */,
+				9FBA3E7E1E33997500B0B70D /* PlayerReducer.swift in Sources */,
+				9FBA3E831E339A8A00B0B70D /* LogMiddleware.swift in Sources */,
 				9F32D0B51DE33280004455BB /* Race.swift in Sources */,
 				9F9644E91DE73119002328AC /* Nation.swift in Sources */,
+				9FBA3E761E3397B700B0B70D /* UIState.swift in Sources */,
+				9FBA3E781E3398AA00B0B70D /* UniverseActions.swift in Sources */,
 				9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */,
+				9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */,
 				9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */,
+				9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */,
 				9F32D0B01DE33240004455BB /* Star.swift in Sources */,
+				9FBA3E6E1E33977800B0B70D /* State.swift in Sources */,
+				9FBA3E851E33D16200B0B70D /* UIActions.swift in Sources */,
 				9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */,
 				9F32D0B11DE33240004455BB /* System.swift in Sources */,
 				9FA36E571DE877050050A53F /* Empty.swift in Sources */,
 				9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */,
+				9FBA3E7C1E33993700B0B70D /* AppReducer.swift in Sources */,
+				9FBA3E7A1E33991C00B0B70D /* UniverseReducer.swift in Sources */,
 				9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */,
+				9FBA3E801E33998200B0B70D /* UIReducer.swift in Sources */,
 				9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */,
 				9FA36E551DE873C00050A53F /* UniverseSpriteComponent.swift in Sources */,
 				9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */,
@@ -447,7 +606,7 @@
 /* Begin PBXTargetDependency section */
 		9FCF48061DE72B4A00334D7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9F32D0891DE32ED8004455BB /* Little Orion */;
+			target = 9F32D0891DE32ED8004455BB /* LittleOrion */;
 			targetProxy = 9FCF48051DE72B4A00334D7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -490,6 +649,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -539,6 +699,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -565,6 +726,7 @@
 		};
 		9F32D0A31DE32ED8004455BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0AE64F64B1E89A5A9C08279 /* Pods-LittleOrion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -582,6 +744,7 @@
 		};
 		9F32D0A41DE32ED8004455BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -637,7 +800,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F32D0A21DE32ED8004455BB /* Build configuration list for PBXNativeTarget "Little Orion" */ = {
+		9F32D0A21DE32ED8004455BB /* Build configuration list for PBXNativeTarget "LittleOrion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9F32D0A31DE32ED8004455BB /* Debug */,

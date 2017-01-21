@@ -8,25 +8,21 @@
 
 import SpriteKit
 import GameplayKit
+import ReSwift
 
 class UniverseScene: SKScene {
     
     var lastUpdateTime : TimeInterval = 0
-    let universe = Universe(size: .standard)
-    let infoNode = SKLabelNode(text: "Touch a case!")
-    let subInfoNode = SKLabelNode(text: "")
-    var loaded = false
-    
-    var _systemUI: SystemUI?
-    var systemUI: SystemUI! {
-        get {
-            if _systemUI == nil {
-                _systemUI = SystemUI.loadFromNib()
-                _systemUI!.isHidden = true
+    var universe: Universe? {
+        didSet {
+            if let universe = universe {
+                setupUniverse(universe: universe)
             }
-            return _systemUI!
         }
     }
+
+    var loaded = false
+    var universeLoaded = false
     
     var startX: CGFloat = 0.0
     var startY: CGFloat = 0.0
@@ -40,26 +36,27 @@ class UniverseScene: SKScene {
     var selectedNode: SKShapeNode?
     
     override func sceneDidLoad() {
-        
+
         view?.isMultipleTouchEnabled = true
         backgroundColor = UIColor.black
-        
+
         if (!loaded) {
             
+            store.subscribe(self) {state in
+                state
+            }
+            
             lastUpdateTime = 0
-            
-            infoNode.position = CGPoint(x: 0, y: (frame.height / 2) - 70)
-            
-            if infoNode.parent == nil {
-                addChild(infoNode)
-            }
-            
-            subInfoNode.position = CGPoint(x: 0, y: (frame.height / 2) - 110)
-            
-            if subInfoNode.parent == nil {
-                addChild(subInfoNode)
-            }
-            
+
+            store.dispatch(CreateUnivserse(size: .standard))
+        }
+        
+        loaded = true
+    }
+
+    func setupUniverse(universe: Universe) {
+        if !universeLoaded {
+            universeLoaded = true
             for node in universe.grid.nodes! {
                 if let node = node as? UniverseNode {
                     let size = UniverseSpriteComponent.nodeSize
@@ -77,14 +74,9 @@ class UniverseScene: SKScene {
             
             generateStarField()
         }
-        
-        loaded = true
     }
-    
-    
+
     override func didMove(to view: SKView) {
-        self.view?.addSubview(systemUI)
-        
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.onPinchGesture(pinch:)))
         self.view?.addGestureRecognizer(pinch)
     }
@@ -137,7 +129,40 @@ class UniverseScene: SKScene {
         mapNewPosition = nil
         mapNewScale = nil
     }
-    
+
+}
+
+//MARK: - State
+extension UniverseScene: StoreSubscriber {
+    func newState(state: State) {
+        if let universe = state.universeState.universe {
+            self.universe = universe
+        }
+        updateModal(state: state.uiState)
+        updateScene(state: state.uiState)
+    }
+
+    func updateScene(state: UIState) {
+        switch state.currentScene {
+        case .universe:
+            break
+        case .planet:
+            let planetController = PlanetViewController()
+            view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
+            break
+        }
+    }
+
+    func updateModal(state: UIState) {
+        switch state.currentModal {
+        case .none:
+            ModalUI.dismissSystemUI()
+            break
+        case .system:
+            ModalUI.presentSystemUI(from: self, delegate: self)
+            break
+        }
+    }
 }
 
 //MARK: - Nodes
@@ -158,30 +183,8 @@ extension UniverseScene {
 
 //MARK: - UI
 extension UniverseScene: SystemUiDelegate {
-    
-    func showSystemUI(with system: System) {
-        systemUI.system = system
-        systemUI.delegate = self
-        systemUI.show()
-        
-    }
-    
-    func updateInfoText(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let node = nodeAt(touches, with: event)
-        
-        if let entity = node?.entity as? UniverseEntity {
-            infoNode.text = entity.description
-            if let info = entity.extraInfo {
-                subInfoNode.text = info
-            } else {
-                subInfoNode.text = ""
-            }
-        }
-    }
-    
     func systemUISelectedPlanet(planet: Planet) {
-        let planetController = PlanetViewController(planet: planet)
-        view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
+        store.dispatch(ShowPlanetDetail(planet: planet))
     }
     
 }
@@ -190,7 +193,6 @@ extension UniverseScene: SystemUiDelegate {
 extension UniverseScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        updateInfoText(touches, with: event)
         selectedNode?.highlightNode(highlight: false)
         if (touches.count == 1) {
             let position = touches.first!.location(in: self)
@@ -199,13 +201,11 @@ extension UniverseScene {
             startY = position.y
         }
         if systemAt(touches, with: event) == nil {
-            systemUI.hide()
+            store.dispatch(DismissSystemModal())
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        updateInfoText(touches, with: event)
-        
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {        
         if (touches.count == 1 && !inZoomGesture) {
             let position = touches.first!.location(in: self)
             let currentMapPosition = mapNode.position
@@ -231,7 +231,7 @@ extension UniverseScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !mapMoved {
             if let system = systemAt(touches, with: event) {
-                showSystemUI(with: system)
+                store.dispatch(ShowSelectedSystemModal(system: system))
             }
             
             if let node = nodeAt(touches, with: event) as? SKShapeNode {
