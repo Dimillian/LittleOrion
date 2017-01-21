@@ -21,6 +21,8 @@ class UniverseScene: SKScene {
         }
     }
 
+    let topBar = TopBar.loadFromNib()
+
     var loaded = false
     var universeLoaded = false
     
@@ -49,6 +51,7 @@ class UniverseScene: SKScene {
             lastUpdateTime = 0
 
             store.dispatch(CreateUnivserse(size: .standard))
+            store.dispatch(StartDateTimer())
         }
         
         loaded = true
@@ -79,8 +82,11 @@ class UniverseScene: SKScene {
     override func didMove(to view: SKView) {
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.onPinchGesture(pinch:)))
         self.view?.addGestureRecognizer(pinch)
+
+        self.view?.addSubview(topBar)
+        topBar.frame = CGRect(x: -2, y: -1, width: self.view!.frame.size.width + 4, height: 50)
     }
-    
+
 
     func generateStarField() {
         var emitterNode = starfieldEmitter(color: SKColor.lightGray, starSpeedY: 50, starsPerSecond: 1, starScaleFactor: 0.2)
