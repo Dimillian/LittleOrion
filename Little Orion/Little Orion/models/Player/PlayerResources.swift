@@ -9,9 +9,25 @@
 import Foundation
 import ReSwift
 
+enum PlayerResourceType: String {
+    case energy, minerals, science
+}
+
 class PlayerResource {
+
+    let type: PlayerResourceType
     var value = 0
-    var income = 0
+    var income: Int {
+        get {
+            //TODO: Random for now, will be calculated from player inhabited planets
+            return Int(arc4random_uniform(10))
+        }
+    }
+
+    init(type: PlayerResourceType) {
+        self.type = type
+    }
+
 
     func update() {
         value += income
@@ -19,9 +35,9 @@ class PlayerResource {
 }
 
 class PlayerResources {
-    var energy = PlayerResource()
-    var minerals = PlayerResource()
-    var science = PlayerResource()
+    var energy = PlayerResource(type: .energy)
+    var minerals = PlayerResource(type: .minerals)
+    var science = PlayerResource(type: .science)
 
     func update() {
         self.energy.update()
