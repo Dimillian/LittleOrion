@@ -18,23 +18,20 @@ func uiReducer(state: UIState?, action: Action) -> UIState {
     case let action as ShowSelectedSystemModal:
         state.selectedSystem = action.system
         state.currentModal = .system
-        return state
     case let action as ShowPlanetDetail:
         state.selectedPlanet = action.planet
         state.currentScene = .planet
         state.currentModal = .none
-        return state
     case _ as ShowUniverseScene:
         state.selectedPlanet = nil
         state.selectedSystem = nil
         state.currentScene = .universe
         state.currentModal = .none
-        return state
     case _ as DismissSystemModal:
         state.currentModal = .none
         state.selectedSystem = nil
-        return state
     default:
-        return state
+        break
     }
+    return state
 }

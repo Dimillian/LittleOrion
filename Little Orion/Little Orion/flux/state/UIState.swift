@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-struct UIState {
+struct UIState: Equatable {
 
     var selectedSystem: System?
     var selectedPlanet: Planet?
@@ -26,4 +26,8 @@ enum Modal {
 enum Scene {
     case universe
     case planet
+}
+
+func == (lhs: UIState, rhs: UIState) -> Bool {
+    return lhs.currentModal == rhs.currentModal && lhs.currentScene == rhs.currentScene
 }

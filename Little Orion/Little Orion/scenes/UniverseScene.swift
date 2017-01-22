@@ -23,6 +23,9 @@ class UniverseScene: SKScene {
 
     let topBar = TopBar.loadFromNib()
 
+    var universeSubscriber: UniverseSubscriber?
+    var uiSubscriber: UISubscriber?
+
     var loaded = false
     var universeLoaded = false
     
@@ -43,11 +46,18 @@ class UniverseScene: SKScene {
         backgroundColor = UIColor.black
 
         if (!loaded) {
-            
-            store.subscribe(self) {state in
-                state
+
+            universeSubscriber = UniverseSubscriber(scene: self)
+            uiSubscriber = UISubscriber(scene: self)
+
+            store.subscribe(universeSubscriber!) {state in
+                state.universeState
             }
-            
+
+            store.subscribe(uiSubscriber!) {state in
+                state.uiState
+            }
+
             lastUpdateTime = 0
 
             store.dispatch(CreateUnivserse(size: .standard))
@@ -139,13 +149,38 @@ class UniverseScene: SKScene {
 }
 
 //MARK: - State
-extension UniverseScene: StoreSubscriber {
-    func newState(state: State) {
-        if let universe = state.universeState.universe {
+class UniverseSubscriber: StoreSubscriber {
+    weak var scene: UniverseScene?
+
+    init(scene: UniverseScene) {
+        self.scene = scene
+    }
+
+    func newState(state: UniverseState) {
+        scene?.updateUniverse(state: state)
+    }
+}
+
+class UISubscriber: StoreSubscriber {
+
+    weak var scene: UniverseScene?
+
+    init(scene: UniverseScene) {
+        self.scene = scene
+    }
+
+
+    func newState(state: UIState) {
+        scene?.updateModal(state: state)
+        scene?.updateScene(state: state)
+    }
+}
+
+extension UniverseScene {
+    func updateUniverse(state: UniverseState) {
+        if let universe = state.universe {
             self.universe = universe
         }
-        updateModal(state: state.uiState)
-        updateScene(state: state.uiState)
     }
 
     func updateScene(state: UIState) {

@@ -14,10 +14,10 @@ func universeReducer(state: UniverseState?, action: Action) -> UniverseState {
     switch action {
     case let action as CreateUnivserse:
         state.universe = Universe(size: action.size)
-        return state
     default:
-        return state
+        break
     }
+    return state
 }
 
 

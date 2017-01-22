@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
 class StarCell: UITableViewCell {
     static let id = "starCell"
@@ -30,7 +31,7 @@ protocol SystemUiDelegate {
     func systemUISelectedPlanet(planet: Planet)
 }
 
-class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
+class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource, StoreSubscriber {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var starName: UILabel!
@@ -41,10 +42,12 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     
     public var system: System? {
         didSet {
-            titleLabel.text = system!.description
-            starName.text = "Star: \(system!.star.kind.name())"
-            starImageView.image = system!.star.kind.image()
-            tableView.reloadData()
+            if let system = system {
+                titleLabel.text = system.description
+                starName.text = "Star: \(system.star.kind.name())"
+                starImageView.image = system.star.kind.image()
+                tableView.reloadData()
+            }
         }
     }
     
@@ -55,6 +58,9 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     
     public func show() {
         system = store.state.uiState.selectedSystem
+        store.subscribe(self) {state in
+            state.uiState
+        }
         isHidden = false
         alpha = 0
         layer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
@@ -69,6 +75,7 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
     }
     
     public func hide() {
+        store.unsubscribe(self)
         UIView.animate(withDuration: 0.30, animations: {
             self.alpha = 0
             self.layer.transform = CATransform3DMakeScale(0.2, 0.2, 0.2)
@@ -105,6 +112,12 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         if let delegate = delegate {
             delegate.systemUISelectedPlanet(planet: system!.planet(at: indexPath.row))
+        }
+    }
+
+    func newState(state: UIState) {
+        if system != state.selectedSystem {
+            system = state.selectedSystem
         }
     }
 }

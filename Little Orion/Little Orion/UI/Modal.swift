@@ -12,6 +12,7 @@ import SpriteKit
 
 class ModalUI {
 
+    fileprivate static var systemUIShown = false
     fileprivate static var _systemUI: SystemUI?
     static var systemUI: SystemUI! {
         get {
@@ -24,12 +25,16 @@ class ModalUI {
     }
 
     static func presentSystemUI(from: SKScene, delegate: SystemUiDelegate) {
-        from.view?.addSubview(systemUI)
-        systemUI.delegate = delegate
-        systemUI.show()
+        if (!systemUIShown) {
+            systemUIShown = true
+            from.view?.addSubview(systemUI)
+            systemUI.delegate = delegate
+            systemUI.show()
+        }
     }
 
     static func dismissSystemUI() {
         systemUI.hide()
+        systemUIShown = false
     }
 }
