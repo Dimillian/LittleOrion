@@ -11,7 +11,10 @@ import SceneKit
 
 //MARK: - Planet
 class Planet: SystemBody {
-    
+
+    static let planetRessourceModifier = ResourcesLoader.loadPlanetResource(name: "planetResourcesModifier")!
+    static let planetNames = ResourcesLoader.loadArrayTextResource(name: "planetsText")!
+
     enum Kind: UInt32 {
         case desert, oceanic, toxic, continental, frozen, volcanic
         
@@ -29,11 +32,15 @@ class Planet: SystemBody {
         }
         
         func name() -> String {
-            return ResourcesLoader.loadArrayTextResource(name: "planetsText")![Int(rawValue)]
+            return planetNames[Int(rawValue)]
         }
         
         func image() -> UIImage {
             return UIImage(named: ResourcesLoader.loadArrayTextResource(name: "planetsText")![Int(rawValue)])!
+        }
+
+        func ressources() -> [String: Int] {
+            return planetRessourceModifier[name()]!
         }
         
     }
@@ -43,10 +50,20 @@ class Planet: SystemBody {
     var planet3D: Planet3D! = nil
     
     //resource
-    //let food: Food
-    //let energy: Energy
-    //let mineral: Mineral
-    
+    let food: Food
+    let energy: Energy
+    let mineral: Mineral
+    let reseach: Research
+
+    var resourceScore: Int {
+        get {
+            return food.abundance.rawValue +
+                    energy.abundance.rawValue +
+                    mineral.abundance.rawValue +
+                    reseach.abundance.rawValue
+        }
+    }
+
     //The radius, in KM of the planet.
     var radius: CGFloat {
         get {
@@ -78,6 +95,10 @@ class Planet: SystemBody {
             tmpScale = UniverseRules.superPlanetScale
         }
         scale = tmpScale
+        food = Food(abundance: PlanetResource.Abundance(rawValue: kind.ressources()["Food"]!)!)
+        mineral = Mineral(abundance: PlanetResource.Abundance(rawValue: kind.ressources()["Mineral"]!)!)
+        energy = Energy(abundance: PlanetResource.Abundance(rawValue: kind.ressources()["Energy"]!)!)
+        reseach = Research(abundance: PlanetResource.Abundance(rawValue: kind.ressources()["Research"]!)!)
         
         super.init(name: name)
         
@@ -150,7 +171,7 @@ class Planet3D {
 
 //MARK: - Resources
 class PlanetResource {
-    
+
     var name: String {
         get {
             return ""
@@ -165,8 +186,8 @@ class PlanetResource {
     
     let abundance: Abundance
     
-    enum Abundance: Float {
-        case none = 0, low = 0.25, average = 0.5, plenty = 0.75, rare = 1
+    enum Abundance: Int {
+        case none, low, average, plenty, enormous
         
         func abundancyDescription() -> String {
             return "Coming soon"
@@ -174,7 +195,16 @@ class PlanetResource {
     }
     
     init(abundance: Abundance) {
-        self.abundance = abundance
+        let randomness = arc4random_uniform(3)
+        if randomness == 1 && abundance.rawValue > 0 {
+            self.abundance = Abundance(rawValue: abundance.rawValue - 1)!
+        }
+        else if randomness == 2 && abundance.rawValue < 4 {
+            self.abundance = Abundance(rawValue: abundance.rawValue + 1)!
+        }
+        else {
+            self.abundance = abundance
+        }
     }
 }
 
@@ -220,6 +250,21 @@ class Energy: PlanetResource {
     override var description: String {
         get {
             return "The energy available on the planet"
+        }
+    }
+}
+
+class Research: PlanetResource {
+
+    override var name: String {
+        get {
+            return "Science"
+        }
+    }
+
+    override var description: String {
+        get {
+            return "The research (for science) available on the planet"
         }
     }
 }

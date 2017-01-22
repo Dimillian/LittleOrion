@@ -50,4 +50,12 @@ class ResourcesLoader {
         }
         return nil
     }
+
+    static func loadPlanetResource(name: String) -> [String: [String: Int]]? {
+        if let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) as? [String: [String: Int]] {
+            return dic
+        }
+        return nil
+    }
 }

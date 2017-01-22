@@ -5,9 +5,68 @@
 	<key>Desert</key>
 	<dict>
 		<key>Food</key>
-		<array>
-			<integer>0</integer>
-		</array>
+		<integer>1</integer>
+		<key>Mineral</key>
+		<integer>3</integer>
+		<key>Energy</key>
+		<integer>1</integer>
+		<key>Research</key>
+		<integer>1</integer>
+	</dict>
+	<key>Toxic</key>
+	<dict>
+		<key>Food</key>
+		<integer>0</integer>
+		<key>Mineral</key>
+		<integer>3</integer>
+		<key>Energy</key>
+		<integer>1</integer>
+		<key>Research</key>
+		<integer>0</integer>
+	</dict>
+	<key>Frozen</key>
+	<dict>
+		<key>Food</key>
+		<integer>1</integer>
+		<key>Mineral</key>
+		<integer>1</integer>
+		<key>Energy</key>
+		<integer>1</integer>
+		<key>Research</key>
+		<integer>1</integer>
+	</dict>
+	<key>Volcanic</key>
+	<dict>
+		<key>Food</key>
+		<integer>0</integer>
+		<key>Mineral</key>
+		<integer>3</integer>
+		<key>Energy</key>
+		<integer>2</integer>
+		<key>Research</key>
+		<integer>1</integer>
+	</dict>
+	<key>Oceanic</key>
+	<dict>
+		<key>Food</key>
+		<integer>3</integer>
+		<key>Mineral</key>
+		<integer>1</integer>
+		<key>Energy</key>
+		<integer>1</integer>
+		<key>Research</key>
+		<integer>2</integer>
+	</dict>
+	<key>Continental</key>
+	<dict>
+		<key>Food</key>
+		<integer>2</integer>
+		<key>Mineral</key>
+		<integer>2</integer>
+		<key>Energy</key>
+		<integer>2</integer>
+		<key>Research</key>
+		<integer>3</integer>
 	</dict>
 </dict>
 </plist>
