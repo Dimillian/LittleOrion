@@ -73,3 +73,11 @@ struct UpdateDateTimerMonth: Action {
 struct PauseDateTimer: Action {
 
 }
+
+struct PlayerVisitPlanet: Action {
+    let planet: Planet
+}
+
+struct PlayerColonizePlanet: Action {
+    let planet: Planet
+}

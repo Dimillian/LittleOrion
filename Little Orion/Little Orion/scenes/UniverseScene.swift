@@ -22,12 +22,15 @@ class UniverseScene: SKScene {
     }
 
     let topBar = TopBar.loadFromNib()
+    let bottomBar = BottomBar.loadFromNib()
 
     var universeSubscriber: UniverseSubscriber?
     var uiSubscriber: UISubscriber?
 
     var loaded = false
     var universeLoaded = false
+
+    var loadingPlanetController = false
     
     var startX: CGFloat = 0.0
     var startY: CGFloat = 0.0
@@ -95,6 +98,10 @@ class UniverseScene: SKScene {
 
         self.view?.addSubview(topBar)
         topBar.frame = CGRect(x: -2, y: -1, width: self.view!.frame.size.width + 4, height: 50)
+
+        self.view?.addSubview(bottomBar)
+        bottomBar.frame = CGRect(x: -2, y: self.view!.frame.size.height - 49,
+                                 width: self.view!.frame.size.width + 4, height: 50)
     }
 
 
@@ -186,10 +193,14 @@ extension UniverseScene {
     func updateScene(state: UIState) {
         switch state.currentScene {
         case .universe:
+            loadingPlanetController = false
             break
         case .planet:
-            let planetController = PlanetViewController()
-            view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
+            if !loadingPlanetController {
+                loadingPlanetController = true
+                let planetController = PlanetViewController()
+                view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
+            }
             break
         }
     }

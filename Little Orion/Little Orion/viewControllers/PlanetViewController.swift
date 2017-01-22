@@ -18,7 +18,8 @@ class PlanetViewController: UIViewController {
     var mainSceneView: SCNView! = nil
     
     init(){
-        self.planet = store.state.uiState.selectedPlanet!
+        planet = store.state.uiState.selectedPlanet!
+        store.dispatch(PlayerVisitPlanet(planet: planet))
         super.init(nibName: nil, bundle: nil)
         
     }

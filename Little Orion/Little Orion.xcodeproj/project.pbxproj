@@ -20,6 +20,8 @@
 		9F35DAB91E34C488000B1FBA /* FilterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DAB81E34C488000B1FBA /* FilterMiddleware.swift */; };
 		9F35DABB1E34E8E2000B1FBA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABA1E34E8E2000B1FBA /* Player.swift */; };
 		9F35DABD1E34E9C6000B1FBA /* AIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */; };
+		9F35DABF1E34EB27000B1FBA /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABE1E34EB27000B1FBA /* BottomBar.swift */; };
+		9F35DAC11E34EB35000B1FBA /* BottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F35DAC01E34EB35000B1FBA /* BottomBar.xib */; };
 		9F44B9BA1DEB0E3100DFAFE2 /* planetResourcesModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */; };
 		9F9644E51DE72D20002328AC /* testsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9644E41DE72D20002328AC /* testsText.plist */; };
 		9F9644E71DE72F66002328AC /* RacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9644E61DE72F66002328AC /* RacesTests.swift */; };
@@ -93,6 +95,8 @@
 		9F35DAB81E34C488000B1FBA /* FilterMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterMiddleware.swift; path = flux/middleware/FilterMiddleware.swift; sourceTree = "<group>"; };
 		9F35DABA1E34E8E2000B1FBA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = models/Player/Player.swift; sourceTree = "<group>"; };
 		9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIPlayer.swift; path = models/Player/AIPlayer.swift; sourceTree = "<group>"; };
+		9F35DABE1E34EB27000B1FBA /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomBar.swift; path = UI/BottomBar.swift; sourceTree = "<group>"; };
+		9F35DAC01E34EB35000B1FBA /* BottomBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BottomBar.xib; path = UI/BottomBar.xib; sourceTree = "<group>"; };
 		9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetResourcesModifier.plist; path = resources/modifiers/planetResourcesModifier.plist; sourceTree = "<group>"; };
 		9F9644E41DE72D20002328AC /* testsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testsText.plist; path = resources/text/testsText.plist; sourceTree = "<group>"; };
 		9F9644E61DE72F66002328AC /* RacesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacesTests.swift; sourceTree = "<group>"; };
@@ -287,6 +291,8 @@
 				9FA36E6A1DE890F40050A53F /* StarCell.xib */,
 				9FBA3E8A1E33E5F900B0B70D /* TopBar.swift */,
 				9FBA3E8C1E33E60700B0B70D /* TopBar.xib */,
+				9F35DABE1E34EB27000B1FBA /* BottomBar.swift */,
+				9F35DAC01E34EB35000B1FBA /* BottomBar.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 				9F32D09E1DE32ED8004455BB /* LaunchScreen.storyboard in Resources */,
 				9FA36E591DE87F370050A53F /* starsText.plist in Resources */,
 				9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */,
+				9F35DAC11E34EB35000B1FBA /* BottomBar.xib in Resources */,
 				9FA0E7681DE9A6510086BFD8 /* universeRules.plist in Resources */,
 				9F9644E51DE72D20002328AC /* testsText.plist in Resources */,
 				9FCF47F81DE72A3E00334D7B /* raceText.plist in Resources */,
@@ -622,6 +629,7 @@
 				9FBA3E7A1E33991C00B0B70D /* UniverseReducer.swift in Sources */,
 				9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */,
 				9FBA3E801E33998200B0B70D /* UIReducer.swift in Sources */,
+				9F35DABF1E34EB27000B1FBA /* BottomBar.swift in Sources */,
 				9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */,
 				9FA36E551DE873C00050A53F /* UniverseSpriteComponent.swift in Sources */,
 				9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */,
