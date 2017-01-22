@@ -19,7 +19,7 @@ class PlayerResource {
     var value = 0
     var income: Int {
         get {
-            //TODO: Random for now, will be calculated from player inhabited planets
+            //TODO: Random for now, will be calculated from player inhabited planets    
             return Int(arc4random_uniform(10))
         }
     }

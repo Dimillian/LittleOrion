@@ -17,11 +17,16 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         state.dateTimer = action.timer
         state.isPlaying = true
         return state
+    case let action as UpdatePlayerSpeed:
+        state.currentSpeed = action.speed
+        return state
     case let action as UpdateDateTimer:
-        state.resources.update()
         state.dateTimer = action.timer
         state.currentDate = Calendar.current.date(byAdding: .day, value: 1, to: state.currentDate)!
         state.isPlaying = true
+        return state
+    case _ as UpdateDateTimerMonth:
+        state.resources.update()
         return state
     case _ as PauseDateTimer:
         state.dateTimer?.invalidate()
