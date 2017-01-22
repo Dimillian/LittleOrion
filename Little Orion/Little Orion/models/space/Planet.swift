@@ -145,10 +145,10 @@ class Planet3D {
     var skybox: [UIImage] {
         get {
             return [#imageLiteral(resourceName: "Skybox_PositiveX"),
-                    #imageLiteral(resourceName: "Skybox_PositiveY"),
-                    #imageLiteral(resourceName: "Skybox_PositiveZ"),
                     #imageLiteral(resourceName: "Skybox_NegativeX"),
+                    #imageLiteral(resourceName: "Skybox_PositiveY"),
                     #imageLiteral(resourceName: "Skybox_NegativeY"),
+                    #imageLiteral(resourceName: "Skybox_PositiveZ"),
                     #imageLiteral(resourceName: "Skybox_NegativeZ")]
         }
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B35FF68892B1D3C917EFB4F /* Pods_Little_Orion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494612C965D2DA7321D1163 /* Pods_Little_Orion.framework */; };
 		9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F163D131DE84A2C000CE8F5 /* Dimension.swift */; };
 		9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D08D1DE32ED8004455BB /* AppDelegate.swift */; };
 		9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D0971DE32ED8004455BB /* Main.storyboard */; };
@@ -77,8 +76,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1448901B992FED6AE6A9B3D3 /* Pods-Little Orion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Orion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Little Orion/Pods-Little Orion.debug.xcconfig"; sourceTree = "<group>"; };
-		5494612C965D2DA7321D1163 /* Pods_Little_Orion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Little_Orion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		565605096015777D3B071676 /* Pods_LittleOrion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittleOrion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.release.xcconfig"; sourceTree = "<group>"; };
 		9F163D131DE84A2C000CE8F5 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = models/space/Dimension.swift; sourceTree = "<group>"; };
@@ -141,7 +138,6 @@
 		9FEF6AFF1DE89D2600085666 /* planetsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetsText.plist; path = resources/text/planetsText.plist; sourceTree = "<group>"; };
 		9FF941AF1DE734A9009658F7 /* raceForceModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceForceModifier.plist; path = resources/modifiers/raceForceModifier.plist; sourceTree = "<group>"; };
 		C0AE64F64B1E89A5A9C08279 /* Pods-LittleOrion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.debug.xcconfig"; sourceTree = "<group>"; };
-		F8CF2FDF868CAB1EAD43F769 /* Pods-Little Orion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Little Orion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Little Orion/Pods-Little Orion.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B35FF68892B1D3C917EFB4F /* Pods_Little_Orion.framework in Frameworks */,
 				F8FFA4E678A24A207D169127 /* Pods_LittleOrion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +162,6 @@
 		6516446854A51A71A22EB9B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5494612C965D2DA7321D1163 /* Pods_Little_Orion.framework */,
 				565605096015777D3B071676 /* Pods_LittleOrion.framework */,
 			);
 			name = Frameworks;
@@ -419,8 +413,6 @@
 		B9CC439AA08C4B85E98FC23F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1448901B992FED6AE6A9B3D3 /* Pods-Little Orion.debug.xcconfig */,
-				F8CF2FDF868CAB1EAD43F769 /* Pods-Little Orion.release.xcconfig */,
 				C0AE64F64B1E89A5A9C08279 /* Pods-LittleOrion.debug.xcconfig */,
 				5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */,
 			);
