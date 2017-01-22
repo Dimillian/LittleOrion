@@ -60,8 +60,8 @@ extension TopBar: StoreSubscriber {
         dateLabel.text = dateFormatter.string(from: state.currentDate)
         playButton.setTitle(state.isPlaying ? "||" : ">", for: .normal)
         speedButton.setTitle("x\(state.currentSpeed.displayValue())", for: .normal)
-        energyLabel.text = "\(state.resources.energy.value)"
-        mineralLabel.text = "\(state.resources.minerals.value)"
-        scienceLabel.text = "\(state.resources.science.value)"
+        energyLabel.text = "\(state.player.resources.energy.value)"
+        mineralLabel.text = "\(state.player.resources.minerals.value)"
+        scienceLabel.text = "\(state.player.resources.science.value)"
     }
 }

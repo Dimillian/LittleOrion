@@ -18,6 +18,8 @@
 		9F32D0B21DE33240004455BB /* Universe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D0AF1DE33240004455BB /* Universe.swift */; };
 		9F32D0B51DE33280004455BB /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D0B41DE33280004455BB /* Race.swift */; };
 		9F35DAB91E34C488000B1FBA /* FilterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DAB81E34C488000B1FBA /* FilterMiddleware.swift */; };
+		9F35DABB1E34E8E2000B1FBA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABA1E34E8E2000B1FBA /* Player.swift */; };
+		9F35DABD1E34E9C6000B1FBA /* AIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */; };
 		9F44B9BA1DEB0E3100DFAFE2 /* planetResourcesModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */; };
 		9F9644E51DE72D20002328AC /* testsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9644E41DE72D20002328AC /* testsText.plist */; };
 		9F9644E71DE72F66002328AC /* RacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9644E61DE72F66002328AC /* RacesTests.swift */; };
@@ -89,6 +91,8 @@
 		9F32D0AF1DE33240004455BB /* Universe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Universe.swift; path = models/space/Universe.swift; sourceTree = "<group>"; };
 		9F32D0B41DE33280004455BB /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Race.swift; path = models/pop/Race.swift; sourceTree = "<group>"; };
 		9F35DAB81E34C488000B1FBA /* FilterMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterMiddleware.swift; path = flux/middleware/FilterMiddleware.swift; sourceTree = "<group>"; };
+		9F35DABA1E34E8E2000B1FBA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = models/Player/Player.swift; sourceTree = "<group>"; };
+		9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIPlayer.swift; path = models/Player/AIPlayer.swift; sourceTree = "<group>"; };
 		9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetResourcesModifier.plist; path = resources/modifiers/planetResourcesModifier.plist; sourceTree = "<group>"; };
 		9F9644E41DE72D20002328AC /* testsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testsText.plist; path = resources/text/testsText.plist; sourceTree = "<group>"; };
 		9F9644E61DE72F66002328AC /* RacesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacesTests.swift; sourceTree = "<group>"; };
@@ -342,7 +346,9 @@
 		9FBA3E8E1E33F29A00B0B70D /* player */ = {
 			isa = PBXGroup;
 			children = (
+				9F35DABA1E34E8E2000B1FBA /* Player.swift */,
 				9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */,
+				9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */,
 			);
 			name = player;
 			sourceTree = "<group>";
@@ -599,8 +605,10 @@
 				9F35DAB91E34C488000B1FBA /* FilterMiddleware.swift in Sources */,
 				9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */,
 				9FBA3E901E33F2B600B0B70D /* PlayerResources.swift in Sources */,
+				9F35DABD1E34E9C6000B1FBA /* AIPlayer.swift in Sources */,
 				9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */,
 				9FBA3E8B1E33E5F900B0B70D /* TopBar.swift in Sources */,
+				9F35DABB1E34E8E2000B1FBA /* Player.swift in Sources */,
 				9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */,
 				9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */,
 				9F32D0B01DE33240004455BB /* Star.swift in Sources */,

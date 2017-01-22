@@ -23,7 +23,7 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         state.currentDate = Calendar.current.date(byAdding: .day, value: 1, to: state.currentDate)!
         state.isPlaying = true
     case _ as UpdateDateTimerMonth:
-        state.resources.update()
+        state.player.resources.update()
     case _ as PauseDateTimer:
         state.dateTimer?.invalidate()
         state.dateTimer = nil

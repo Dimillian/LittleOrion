@@ -43,9 +43,9 @@ enum PlayerSpeed: TimeInterval {
 }
 
 struct PlayerState {
+    var player = Player(name: "Player 1")
     var currentDate = Date()
     var dateTimer: Timer?
     var currentSpeed = PlayerSpeed.normal
     var isPlaying = false
-    var resources = PlayerResources()
 }

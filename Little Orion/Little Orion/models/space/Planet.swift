@@ -9,6 +9,19 @@
 import GameplayKit
 import SceneKit
 
+struct PlanetId: Equatable {
+    let id: String
+
+    init(planetName: String, systemName: String) {
+        self.id = "\(systemName):\(planetName)"
+    }
+}
+
+func ==(lhs: PlanetId, rhs: PlanetId) -> Bool {
+    return lhs.id == rhs.id
+}
+
+
 //MARK: - Planet
 class Planet: SystemBody {
 
@@ -45,6 +58,7 @@ class Planet: SystemBody {
         
     }
 
+    let id: PlanetId
     let kind: Kind
     let scale: CGFloat
     var planet3D: Planet3D! = nil
@@ -87,6 +101,7 @@ class Planet: SystemBody {
     let system: System
     
     public init(name: String, in system: System) {
+        self.id = PlanetId(planetName: name, systemName: system.name)
         self.system = system
         kind = Kind.randomKind()
         var tmpScale = CGFloat((arc4random_uniform(600) + 400)) / 1000
