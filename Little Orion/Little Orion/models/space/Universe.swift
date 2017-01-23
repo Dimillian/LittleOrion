@@ -58,11 +58,9 @@ class UniverseEntity: GKEntity {
 
 class Universe: GKEntity {
     
-    var systems = [System]()
     let size: Size
     let grid: GKGridGraph<UniverseNode>
-    
-    
+
     enum UniverseSize: String {
         case tiny, small, standard, big
         

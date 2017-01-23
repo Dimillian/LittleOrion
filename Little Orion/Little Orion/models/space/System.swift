@@ -8,19 +8,26 @@
 
 import GameplayKit
 
-struct SystemId: Equatable {
-    let name: String
+struct SystemId: Equatable, Hashable {
     let location: Location
+    var name: String {
+        get {
+            return "Node x:\(location.x) y:\(location.y)"
+        }
+    }
+    var hashValue: Int {
+        get {
+            return name.hashValue
+        }
+    }
 
-    init(name: String, location: Location) {
-        self.name = name
+    init(location: Location) {
         self.location = location
     }
 }
 
 func ==(lhs: SystemId, rhs: SystemId) -> Bool {
-    return lhs.name == rhs.name &&
-            lhs.location == rhs.location
+    return lhs.location == rhs.location
 }
 
 class System: UniverseEntity {
@@ -54,7 +61,7 @@ class System: UniverseEntity {
     }
     
     public init(location: Location) {
-        self.id = SystemId(name: "Node x:\(location.x) y:\(location.y)", location: location)
+        self.id = SystemId(location: location)
         super.init()
         
         makePlanets()
