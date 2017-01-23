@@ -8,9 +8,27 @@
 
 import GameplayKit
 
+struct SystemId: Equatable {
+    let name: String
+    let location: Location
+
+    init(name: String, location: Location) {
+        self.name = name
+        self.location = location
+    }
+}
+
+func ==(lhs: SystemId, rhs: SystemId) -> Bool {
+    return lhs.name == rhs.name &&
+            lhs.location == rhs.location
+}
+
 class System: UniverseEntity {
-    
+
+    let id: SystemId
+
     private var _planets = [Planet]()
+
     var planets: [Planet] {
         get {
             return _planets
@@ -18,12 +36,10 @@ class System: UniverseEntity {
     }
     
     var star = Star(name: "Star")
-    
-    let name: String
-    
+
     override var description: String {
         get {
-            return"System: \(name), Planets: \(planetsCount())"
+            return "System: \(id.name), Planets: \(planetsCount())"
         }
     }
     
@@ -37,8 +53,8 @@ class System: UniverseEntity {
         }
     }
     
-    public init(name: String) {
-        self.name = name
+    public init(location: Location) {
+        self.id = SystemId(name: "Node x:\(location.x) y:\(location.y)", location: location)
         super.init()
         
         makePlanets()
@@ -51,7 +67,7 @@ class System: UniverseEntity {
     private func makePlanets() {
         let planetsCount = Int(arc4random_uniform(6))
         for index in 0...planetsCount {
-            let star = Planet(name: "Planet \(index)" , in: self)
+            let star = Planet(in: self, order: index)
             _planets.append(star)
         }
     }

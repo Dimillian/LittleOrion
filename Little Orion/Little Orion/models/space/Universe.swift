@@ -90,7 +90,7 @@ class Universe: GKEntity {
         for node in grid.nodes! {
             if let node = node as? UniverseNode {
                 if arc4random_uniform(UniverseRules.systemSpawnProbability) == 1 {
-                    node.entity = System(name: "Node x:\(node.gridPosition.x) y:\(node.gridPosition.y)")
+                    node.entity = System(location: Location(x: node.gridPosition.x, y: node.gridPosition.y))
                 } else {
                     node.entity = Empty()
                 }

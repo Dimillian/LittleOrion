@@ -10,15 +10,17 @@ import GameplayKit
 import SceneKit
 
 struct PlanetId: Equatable {
-    let id: String
+    let name: String
+    let index: Int
 
-    init(planetName: String, systemName: String) {
-        self.id = "\(systemName):\(planetName)"
+    init(name: String, index: Int) {
+        self.name = name
+        self.index = index
     }
 }
 
 func ==(lhs: PlanetId, rhs: PlanetId) -> Bool {
-    return lhs.id == rhs.id
+    return lhs.name == rhs.name && lhs.index == rhs.index
 }
 
 
@@ -100,8 +102,8 @@ class Planet: SystemBody {
     //The parent system of the planet.
     let system: System
     
-    public init(name: String, in system: System) {
-        self.id = PlanetId(planetName: name, systemName: system.name)
+    public init(in system: System, order: Int) {
+        self.id = PlanetId(name: "Planet \(order)", index: order)
         self.system = system
         kind = Kind.randomKind()
         var tmpScale = CGFloat((arc4random_uniform(600) + 400)) / 1000
@@ -115,7 +117,7 @@ class Planet: SystemBody {
         energy = Energy(abundance: PlanetResource.Abundance(rawValue: kind.ressources()["Energy"]!)!)
         reseach = Research(abundance: PlanetResource.Abundance(rawValue: kind.ressources()["Research"]!)!)
         
-        super.init(name: name)
+        super.init(name: id.name)
         
         planet3D = Planet3D(planet: self)
     }
