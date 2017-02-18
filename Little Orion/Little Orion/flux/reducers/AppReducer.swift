@@ -9,13 +9,10 @@
 import Foundation
 import ReSwift
 
-struct AppReducer: Reducer {
-
-    func handleAction(action: Action, state: State?) -> State {
-        return State(
-            universeState: universeReducer(state: state?.universeState, action: action),
-            playerState: playerReducer(state: state?.playerState, action: action),
-            uiState: uiReducer(state: state?.uiState, action: action)
-        )
-    }
+func AppReducer(action: Action, state: AppState?) -> AppState {
+    return AppState(
+        universeState: universeReducer(state: state?.universeState, action: action),
+        playerState: playerReducer(state: state?.playerState, action: action),
+        uiState: uiReducer(state: state?.uiState, action: action)
+    )
 }

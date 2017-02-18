@@ -34,8 +34,8 @@ class TopBar: BaseUI {
 
         layer.cornerRadius = 0
 
-        store.subscribe(self) {state in
-            state.playerState
+        store.subscribe(self) {
+            $0.select{ $0.playerState }.skipRepeats()
         }
     }
 

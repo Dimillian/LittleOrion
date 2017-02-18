@@ -13,7 +13,7 @@ enum PlayerResourceType: String {
     case energy, minerals, science
 }
 
-class PlayerResource {
+class PlayerResource: Equatable {
 
     let type: PlayerResourceType
     var value = 0
@@ -34,7 +34,12 @@ class PlayerResource {
     }
 }
 
-class PlayerResources {
+func ==(lhs: PlayerResource, rhs: PlayerResource) -> Bool {
+    return lhs.value == rhs.value &&
+        rhs.income == lhs.income
+}
+
+class PlayerResources: Equatable {
     var energy = PlayerResource(type: .energy)
     var minerals = PlayerResource(type: .minerals)
     var science = PlayerResource(type: .science)
@@ -44,4 +49,10 @@ class PlayerResources {
         self.minerals.update()
         self.science.update()
     }
+}
+
+func ==(lhs: PlayerResources, rhs: PlayerResources) -> Bool {
+    return lhs.energy == rhs.energy &&
+    lhs.minerals == rhs.minerals &&
+    lhs.science == rhs.science
 }

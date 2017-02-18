@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player {
+class Player: Equatable {
     let name: String
 
     var resources = PlayerResources()
@@ -19,4 +19,11 @@ class Player {
     init(name: String) {
         self.name = name
     }
+}
+
+func ==(lhs: Player, rhs: Player) -> Bool {
+    return lhs.name == rhs.name &&
+        rhs.visitedPlanets == lhs.visitedPlanets &&
+        rhs.ownedPlanets == lhs.ownedPlanets &&
+        rhs.resources == lhs.resources
 }

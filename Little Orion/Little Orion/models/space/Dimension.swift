@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Size {
+class Size: Equatable {
     var width: Int32 = 0
     var height: Int32 = 0;
     
@@ -23,7 +23,7 @@ func ==<T: Size>(lhs: T, rhs: T) -> Bool {
         rhs.height == lhs.height
 }
 
-class Location {
+class Location: Equatable {
     var x: Int32 = 0
     var y: Int32 = 0
     

@@ -3,7 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 def shared_pods
-        pod 'ReSwift'
+    pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift', :branch => 'benji/skip-repeats-prototype'
 end
 
 target 'LittleOrion' do

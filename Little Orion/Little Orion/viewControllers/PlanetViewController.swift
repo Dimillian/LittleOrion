@@ -31,8 +31,8 @@ class PlanetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        store.subscribe(self) {state in
-            state.uiState
+        store.subscribe(self) {
+            $0.select{ $0.uiState }.skipRepeats()
         }
 
         setupScene()

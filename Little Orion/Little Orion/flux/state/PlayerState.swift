@@ -42,10 +42,18 @@ enum PlayerSpeed: TimeInterval {
     }
 }
 
-struct PlayerState {
+struct PlayerState: Equatable {
     var player = Player(name: "Player 1")
     var currentDate = Date()
     var dateTimer: Timer?
     var currentSpeed = PlayerSpeed.normal
     var isPlaying = false
+}
+
+func ==(lhs: PlayerState, rhs: PlayerState) -> Bool {
+    return lhs.player == rhs.player &&
+        lhs.currentDate == rhs.currentDate &&
+        lhs.dateTimer == rhs.dateTimer &&
+        lhs.currentSpeed == rhs.currentSpeed &&
+        lhs.isPlaying == rhs.isPlaying
 }

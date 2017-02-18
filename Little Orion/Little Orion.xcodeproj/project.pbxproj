@@ -36,7 +36,7 @@
 		9FA36E671DE886B10050A53F /* SystemUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E661DE886B10050A53F /* SystemUI.xib */; };
 		9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E681DE889AB0050A53F /* SystemUI.swift */; };
 		9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E6A1DE890F40050A53F /* StarCell.xib */; };
-		9FBA3E6E1E33977800B0B70D /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6D1E33977800B0B70D /* State.swift */; };
+		9FBA3E6E1E33977800B0B70D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6D1E33977800B0B70D /* AppState.swift */; };
 		9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */; };
 		9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E711E33979D00B0B70D /* PlayerState.swift */; };
 		9FBA3E761E3397B700B0B70D /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E751E3397B700B0B70D /* UIState.swift */; };
@@ -109,7 +109,7 @@
 		9FA36E661DE886B10050A53F /* SystemUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SystemUI.xib; path = UI/SystemUI.xib; sourceTree = "<group>"; };
 		9FA36E681DE889AB0050A53F /* SystemUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemUI.swift; path = UI/SystemUI.swift; sourceTree = "<group>"; };
 		9FA36E6A1DE890F40050A53F /* StarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StarCell.xib; path = UI/StarCell.xib; sourceTree = "<group>"; };
-		9FBA3E6D1E33977800B0B70D /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = State.swift; path = flux/state/State.swift; sourceTree = "<group>"; };
+		9FBA3E6D1E33977800B0B70D /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = flux/state/AppState.swift; sourceTree = "<group>"; };
 		9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseState.swift; path = flux/state/UniverseState.swift; sourceTree = "<group>"; };
 		9FBA3E711E33979D00B0B70D /* PlayerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerState.swift; path = flux/state/PlayerState.swift; sourceTree = "<group>"; };
 		9FBA3E751E3397B700B0B70D /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIState.swift; path = flux/state/UIState.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 		9FBA3E6C1E33972000B0B70D /* state */ = {
 			isa = PBXGroup;
 			children = (
-				9FBA3E6D1E33977800B0B70D /* State.swift */,
+				9FBA3E6D1E33977800B0B70D /* AppState.swift */,
 				9FBA3E751E3397B700B0B70D /* UIState.swift */,
 				9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */,
 				9FBA3E711E33979D00B0B70D /* PlayerState.swift */,
@@ -611,7 +611,7 @@
 				9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */,
 				9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */,
 				9F32D0B01DE33240004455BB /* Star.swift in Sources */,
-				9FBA3E6E1E33977800B0B70D /* State.swift in Sources */,
+				9FBA3E6E1E33977800B0B70D /* AppState.swift in Sources */,
 				9FBA3E851E33D16200B0B70D /* UIActions.swift in Sources */,
 				9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */,
 				9F32D0B11DE33240004455BB /* System.swift in Sources */,

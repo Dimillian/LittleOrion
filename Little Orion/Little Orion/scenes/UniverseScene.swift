@@ -53,12 +53,12 @@ class UniverseScene: SKScene {
             universeSubscriber = UniverseSubscriber(scene: self)
             uiSubscriber = UISubscriber(scene: self)
 
-            store.subscribe(universeSubscriber!) {state in
-                state.universeState
+            store.subscribe(universeSubscriber!) {
+                $0.select{ $0.universeState }.skipRepeats()
             }
 
-            store.subscribe(uiSubscriber!) {state in
-                state.uiState
+            store.subscribe(uiSubscriber!) {
+                $0.select{ $0.uiState }.skipRepeats()
             }
 
             lastUpdateTime = 0

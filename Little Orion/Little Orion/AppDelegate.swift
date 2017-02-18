@@ -9,7 +9,7 @@
 import UIKit
 import ReSwift
 
-let store = Store<State>(reducer: AppReducer(),
+let store = Store<AppState>(reducer: AppReducer,
                          state: nil,
                          middleware: [logMiddleware, filterMiddleware])
 

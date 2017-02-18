@@ -114,3 +114,13 @@ class Universe: GKEntity {
     }
     
 }
+
+func ==(lhs: Universe, rhs: Universe) -> Bool {
+    return lhs.size == rhs.size &&
+    lhs.grid == rhs.grid
+}
+
+
+func ==(lhs: Universe?, rhs: Universe?) -> Bool {
+    return false
+}

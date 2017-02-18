@@ -58,8 +58,8 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource, StoreSubscri
     
     public func show() {
         system = store.state.uiState.selectedSystem
-        store.subscribe(self) {state in
-            state.uiState
+        store.subscribe(self) {
+            $0.select{ $0.uiState }.skipRepeats()
         }
         isHidden = false
         alpha = 0

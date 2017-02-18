@@ -9,7 +9,15 @@
 import Foundation
 import ReSwift
 
-struct UniverseState {
+struct UniverseState: Equatable {
     var universe: Universe?
 }
+
+
+func ==(lhs: UniverseState, rhs: UniverseState) -> Bool {
+    return lhs.universe == rhs.universe
+}
+
+
+
 
