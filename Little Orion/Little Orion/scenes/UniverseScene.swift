@@ -29,8 +29,6 @@ class UniverseScene: SKScene {
 
     var loaded = false
     var universeLoaded = false
-
-    var loadingPlanetController = false
     
     var startX: CGFloat = 0.0
     var startY: CGFloat = 0.0
@@ -193,14 +191,10 @@ extension UniverseScene {
     func updateScene(state: UIState) {
         switch state.currentScene {
         case .universe:
-            loadingPlanetController = false
             break
         case .planet:
-            if !loadingPlanetController {
-                loadingPlanetController = true
-                let planetController = PlanetViewController()
-                view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
-            }
+            let planetController = PlanetViewController()
+            view?.window?.rootViewController?.present(planetController, animated: true, completion: nil)
             break
         }
     }

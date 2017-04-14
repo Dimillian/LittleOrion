@@ -29,5 +29,8 @@ enum Scene {
 }
 
 func == (lhs: UIState, rhs: UIState) -> Bool {
-    return lhs.currentModal == rhs.currentModal && lhs.currentScene == rhs.currentScene
+    return lhs.currentModal == rhs.currentModal
+        && lhs.currentScene == rhs.currentScene
+        && lhs.selectedPlanet == rhs.selectedPlanet
+        && lhs.selectedSystem == rhs.selectedSystem
 }
