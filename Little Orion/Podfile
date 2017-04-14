@@ -1,9 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
+inhibit_all_warnings!
 
 def shared_pods
-    pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift', :branch => 'benji/skip-repeats-prototype'
+    pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift', :commit => '27f24d2d0c2a895184a36aabcdccd069bd5a703e'
 end
 
 target 'LittleOrion' do

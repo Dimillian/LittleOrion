@@ -2,21 +2,21 @@ PODS:
   - ReSwift (3.0.0)
 
 DEPENDENCIES:
-  - ReSwift (from `https://github.com/ReSwift/ReSwift`, branch `benji/skip-repeats-prototype`)
+  - ReSwift (from `https://github.com/ReSwift/ReSwift`, commit `27f24d2d0c2a895184a36aabcdccd069bd5a703e`)
 
 EXTERNAL SOURCES:
   ReSwift:
-    :branch: benji/skip-repeats-prototype
+    :commit: 27f24d2d0c2a895184a36aabcdccd069bd5a703e
     :git: https://github.com/ReSwift/ReSwift
 
 CHECKOUT OPTIONS:
   ReSwift:
-    :commit: 796aa1ca3910b1a6c82f5a3bff38b2fef820eb89
+    :commit: 27f24d2d0c2a895184a36aabcdccd069bd5a703e
     :git: https://github.com/ReSwift/ReSwift
 
 SPEC CHECKSUMS:
   ReSwift: 00add9a3eb1b5c93a3728ea88393de390ef6ddff
 
-PODFILE CHECKSUM: 015c0566a78bf2bf80c8a58730a5ed6ce880c98b
+PODFILE CHECKSUM: aed4d148d55fd646fc19aa7a2bac8af129b7aafd
 
 COCOAPODS: 1.2.0

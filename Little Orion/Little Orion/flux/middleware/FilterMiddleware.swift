@@ -8,11 +8,3 @@
 
 import Foundation
 import ReSwift
-
-let filterMiddleware: Middleware = { dispatch, getState in
-    return { next in
-        return { action in
-            return next(action)
-        }
-    }
-}

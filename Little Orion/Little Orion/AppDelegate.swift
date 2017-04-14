@@ -11,7 +11,7 @@ import ReSwift
 
 let store = Store<AppState>(reducer: AppReducer,
                          state: nil,
-                         middleware: [logMiddleware, filterMiddleware])
+                         middleware: [logMiddleware])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
