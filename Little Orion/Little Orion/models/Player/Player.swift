@@ -7,10 +7,17 @@
 //
 
 import Foundation
+import GameplayKit
 
-class Player: Equatable {
+class Player: NSObject, GKGameModelPlayer {
     let name: String
 
+    public var playerId: Int {
+        get {
+            return name.hashValue
+        }
+    }
+    
     var resources = PlayerResources()
 
     var visitedPlanets: [PlanetId] = []
@@ -19,6 +26,7 @@ class Player: Equatable {
     init(name: String) {
         self.name = name
     }
+
 }
 
 func ==(lhs: Player, rhs: Player) -> Bool {
