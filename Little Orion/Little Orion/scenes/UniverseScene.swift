@@ -289,7 +289,7 @@ extension UniverseScene {
         mapMoved = false
     }
     
-    func onPinchGesture(pinch: UIPinchGestureRecognizer) {
+    @objc func onPinchGesture(pinch: UIPinchGestureRecognizer) {
         
         if pinch.state == .began {
             inZoomGesture = true

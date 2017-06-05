@@ -52,7 +52,7 @@ extension PlanetViewController: StoreSubscriber {
 // MARK: - Action
 extension PlanetViewController {
     
-    func onClose() {
+    @objc func onClose() {
         store.dispatch(ShowUniverseScene())
     }
 }

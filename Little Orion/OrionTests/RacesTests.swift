@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Little_Orion
+@testable import LittleOrion
 
 class RacesTests: XCTestCase {
     
