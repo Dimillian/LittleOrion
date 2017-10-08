@@ -70,6 +70,8 @@ class UniverseScene: SKScene {
 
             store.dispatch(UniverseActions.CreateUnivserse(size: .standard))
             store.dispatch(PlayerActions.StartTimer())
+
+            bottomBar.delegate = self
         }
         
         loaded = true
@@ -272,6 +274,14 @@ extension UniverseScene: SystemUiDelegate {
         store.dispatch(UIActions.ShowPlanetDetail(planet: planet))
     }
     
+}
+
+//MARK: - BottomBar delegate
+extension UniverseScene: BottomBarDelegate {
+    func onCenterPlayerButton() {
+        let playerPosition = store.state.playerState.player.spriteNode.position
+        mapNewPosition = CGPoint(x: -playerPosition.x, y: -playerPosition.y)
+    }
 }
 
 //MARK: - Touch

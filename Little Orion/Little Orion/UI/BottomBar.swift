@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 import ReSwift
 
+protocol BottomBarDelegate: class {
+    func onCenterPlayerButton()
+}
+
 class BottomBar: BaseUI, StoreSubscriber {
     
     @IBOutlet var planetNumber: UILabel!
+
+    weak var delegate: BottomBarDelegate?
     
     public static func loadFromNib() -> BottomBar {
         let nib = UINib(nibName: "BottomBar", bundle: Bundle.main)
@@ -31,5 +37,9 @@ class BottomBar: BaseUI, StoreSubscriber {
 
     func newState(state: PlayerState) {
         self.planetNumber.text = "Planets: \(state.player.visitedPlanets.count)"
+    }
+
+    @IBAction func onMeButton(_ sender: Any) {
+        delegate?.onCenterPlayerButton()
     }
 }
