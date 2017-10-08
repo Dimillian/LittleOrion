@@ -248,7 +248,21 @@ extension UniverseScene {
     func nodeAt(_ touches: Set<UITouch>, with event: UIEvent?) -> SKNode? {
         return nodes(at: (touches.first?.location(in: self))!).first
     }
-    
+
+    func gridNodeAt(_ touches: Set<UITouch>, with event: UIEvent?) -> UniverseNode? {
+        if let node = nodeAt(touches, with: event) {
+            return gridNodeRelativeTo(node: node)
+        }
+        return nil
+    }
+
+    func gridNodeRelativeTo(node: SKNode) -> UniverseNode? {
+        let size = UniverseSpriteComponent.nodeSize
+        let gridPosition = Location(x: Int32(Int32(node.position.x) / Int32(size.width)),
+                                    y: Int32(Int32(node.position.y) / Int32(size.height)))
+        let entity = universe?.nodeAt(location: gridPosition)
+        return entity
+    }
 }
 
 //MARK: - UI
@@ -307,6 +321,18 @@ extension UniverseScene {
             if let node = nodeAt(touches, with: event) as? SKShapeNode {
                 node.highlightNode(highlight: true)
                 selectedNode = node
+                /*
+                if let originalGridNode = gridNodeRelativeTo(node: store.state.playerState.player.spriteNode),
+                    let newGridPosition = gridNodeRelativeTo(node: node) {
+                    let paths = originalGridNode.findPath(to: newGridPosition)
+                    for universeNode in paths {
+                        if let universeNode = universeNode as? UniverseNode,
+                            let shapeNode = universeNode.entity.spriteNode as? SKShapeNode {
+                            shapeNode.highlightNode(highlight: true)
+                        }
+                    }
+                }
+                 */
                 store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
             }
         }

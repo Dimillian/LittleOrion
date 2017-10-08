@@ -112,6 +112,10 @@ class Universe: GKEntity {
     public func entityAt(location: Location) -> UniverseEntity {
         return grid.node(atGridPosition: int2(location.x, location.y))!.entity!
     }
+
+    public func nodeAt(location: Location) -> UniverseNode? {
+        return grid.node(atGridPosition: int2(location.x, location.y))
+    }
     
 }
 
