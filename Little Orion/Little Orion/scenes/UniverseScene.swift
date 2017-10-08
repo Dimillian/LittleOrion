@@ -100,8 +100,6 @@ class UniverseScene: SKScene {
                     }
                 }
             }
-            mapNode.position = CGPoint(x: CGFloat(-((UniverseSpriteComponent.size.width * universe.size.width) / 2)),
-                                       y: CGFloat(-((UniverseSpriteComponent.size.height * universe.size.height) / 2)))
             addChild(mapNode)
 
             generateStarField()
