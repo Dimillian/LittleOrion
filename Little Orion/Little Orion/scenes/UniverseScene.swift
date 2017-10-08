@@ -41,7 +41,15 @@ class UniverseScene: SKScene {
     var mapNewScale: CGFloat?
     var inZoomGesture = false
 
-    var selectedNode: SKShapeNode?
+    var selectedNode: SKShapeNode? {
+        didSet {
+            for node in mapNode.children {
+                if let node = node as? SKShapeNode, node != selectedNode {
+                    node.highlightNode(highlight: false)
+                }
+            }
+        }
+    }
     
     override func sceneDidLoad() {
 
@@ -280,6 +288,24 @@ extension UniverseScene: BottomBarDelegate {
         let playerPosition = store.state.playerState.player.spriteNode.position
         mapNewPosition = CGPoint(x: -playerPosition.x, y: -playerPosition.y)
     }
+
+    func onMovePlayerButton() {
+        if let node = selectedNode {
+            if let originalGridNode = gridNodeRelativeTo(node: store.state.playerState.player.spriteNode),
+                let newGridPosition = gridNodeRelativeTo(node: node) {
+                let paths = originalGridNode.findPath(to: newGridPosition)
+                for universeNode in paths {
+                    if let universeNode = universeNode as? UniverseNode,
+                        let shapeNode = universeNode.entity.spriteNode as? SKShapeNode {
+                        shapeNode.highlightNode(highlight: true)
+                    }
+                }
+                store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
+            }
+        } else {
+
+        }
+    }
 }
 
 //MARK: - Touch
@@ -332,19 +358,6 @@ extension UniverseScene {
             if let node = nodeAt(touches, with: event) as? SKShapeNode {
                 node.highlightNode(highlight: true)
                 selectedNode = node
-                /*
-                if let originalGridNode = gridNodeRelativeTo(node: store.state.playerState.player.spriteNode),
-                    let newGridPosition = gridNodeRelativeTo(node: node) {
-                    let paths = originalGridNode.findPath(to: newGridPosition)
-                    for universeNode in paths {
-                        if let universeNode = universeNode as? UniverseNode,
-                            let shapeNode = universeNode.entity.spriteNode as? SKShapeNode {
-                            shapeNode.highlightNode(highlight: true)
-                        }
-                    }
-                }
-                 */
-                store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
             }
         }
 

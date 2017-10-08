@@ -12,6 +12,7 @@ import ReSwift
 
 protocol BottomBarDelegate: class {
     func onCenterPlayerButton()
+    func onMovePlayerButton()
 }
 
 class BottomBar: BaseUI, StoreSubscriber {
@@ -41,5 +42,9 @@ class BottomBar: BaseUI, StoreSubscriber {
 
     @IBAction func onMeButton(_ sender: Any) {
         delegate?.onCenterPlayerButton()
+    }
+
+    @IBAction func onMoveButton(_ sender: Any) {
+        delegate?.onMovePlayerButton()
     }
 }
