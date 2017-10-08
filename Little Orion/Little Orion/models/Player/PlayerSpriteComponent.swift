@@ -19,6 +19,7 @@ class PlayerSpriteComponent: GKSKNodeComponent {
         node.name = "System node"
         node.fillTexture = texture
         node.fillColor = .white
+        node.zPosition = 5
         super.init(node: node)
     }
 
