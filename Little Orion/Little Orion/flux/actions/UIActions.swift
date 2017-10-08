@@ -9,18 +9,20 @@
 import Foundation
 import ReSwift
 
-struct ShowSelectedSystemModal: Action {
-    let system: System
-}
+class UIActions {
+    struct ShowSelectedSystemModal: Action {
+        let system: System
+    }
 
-struct ShowPlanetDetail: Action {
-    let planet: Planet
-}
+    struct ShowPlanetDetail: Action {
+        let planet: Planet
+    }
 
-struct ShowUniverseScene: Action {
-    
-}
+    struct ShowUniverseScene: Action {
 
-struct DismissSystemModal: Action {
+    }
 
+    struct DismissSystemModal: Action {
+
+    }
 }

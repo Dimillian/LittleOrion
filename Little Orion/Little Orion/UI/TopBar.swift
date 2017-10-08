@@ -41,15 +41,15 @@ class TopBar: BaseUI {
 
     @IBAction func onPlayButton(_ sender: Any) {
         if store.state.playerState.isPlaying {
-            store.dispatch(PauseDateTimer())
+            store.dispatch(PlayerActions.PauseTimer())
         }
         else {
-            store.dispatch(StartDateTimer())
+            store.dispatch(PlayerActions.StartTimer())
         }
     }
     
     @IBAction func onSpeedButton(_ sender: Any) {
-        store.dispatch(UpdatePlayerSpeed(speed: store.state.playerState.currentSpeed.nextValue()))
+        store.dispatch(PlayerActions.UpdateSpeed(speed: store.state.playerState.currentSpeed.nextValue()))
     }
 }
 

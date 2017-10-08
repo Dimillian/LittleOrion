@@ -9,6 +9,8 @@
 import Foundation
 import ReSwift
 
-struct CreateUnivserse: Action {
-    let size: Universe.UniverseSize
+class UniverseActions {
+    struct CreateUnivserse: Action {
+        let size: Universe.UniverseSize
+    }
 }

@@ -12,14 +12,10 @@ import ReSwift
 func universeReducer(state: UniverseState?, action: Action) -> UniverseState {
     var state = state ?? UniverseState()
     switch action {
-    case let action as CreateUnivserse:
+    case let action as UniverseActions.CreateUnivserse:
         state.universe = Universe(size: action.size)
     default:
         break
     }
     return state
 }
-
-
-
-

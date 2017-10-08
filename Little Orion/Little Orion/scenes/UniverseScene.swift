@@ -67,8 +67,8 @@ class UniverseScene: SKScene {
 
             lastUpdateTime = 0
 
-            store.dispatch(CreateUnivserse(size: .standard))
-            store.dispatch(StartDateTimer())
+            store.dispatch(UniverseActions.CreateUnivserse(size: .standard))
+            store.dispatch(PlayerActions.StartTimer())
         }
         
         loaded = true
@@ -254,7 +254,7 @@ extension UniverseScene {
 //MARK: - UI
 extension UniverseScene: SystemUiDelegate {
     func systemUISelectedPlanet(planet: Planet) {
-        store.dispatch(ShowPlanetDetail(planet: planet))
+        store.dispatch(UIActions.ShowPlanetDetail(planet: planet))
     }
     
 }
@@ -271,7 +271,7 @@ extension UniverseScene {
             startY = position.y
         }
         if systemAt(touches, with: event) == nil {
-            store.dispatch(DismissSystemModal())
+            store.dispatch(UIActions.DismissSystemModal())
         }
     }
     
@@ -301,13 +301,13 @@ extension UniverseScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !mapMoved {
             if let system = systemAt(touches, with: event) {
-                store.dispatch(ShowSelectedSystemModal(system: system))
+                store.dispatch(UIActions.ShowSelectedSystemModal(system: system))
             }
             
             if let node = nodeAt(touches, with: event) as? SKShapeNode {
                 node.highlightNode(highlight: true)
                 selectedNode = node
-                store.dispatch(UpdatePlayerPosition(position: selectedNode!.position))
+                store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
             }
         }
         

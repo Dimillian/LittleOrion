@@ -19,7 +19,7 @@ class PlanetViewController: UIViewController {
     
     init(){
         planet = store.state.uiState.selectedPlanet!
-        store.dispatch(PlayerVisitPlanet(planet: planet))
+        store.dispatch(PlayerActions.VisitPlanet(planet: planet))
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -53,7 +53,7 @@ extension PlanetViewController: StoreSubscriber {
 extension PlanetViewController {
     
     @objc func onClose() {
-        store.dispatch(ShowUniverseScene())
+        store.dispatch(UIActions.ShowUniverseScene())
     }
 }
 
