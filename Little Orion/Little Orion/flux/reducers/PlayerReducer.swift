@@ -13,6 +13,12 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
     var state = state ?? PlayerState()
     
     switch action {
+    case _ as PlayerActions.Initialize:
+        let gridNodes = store.state.universeState.universe!.grid.nodes!
+        let randomNodeIndex = arc4random_uniform(UInt32(gridNodes.count))
+        if let node = gridNodes[Int(randomNodeIndex)] as? UniverseNode {
+            state.player.position = Universe.grideNodePositionToMapPosition(gridNode: node)
+        }
     case let action as PlayerActions.StartTimer:
         state.dateTimer = action.timer
         state.isPlaying = true

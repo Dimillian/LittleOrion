@@ -116,6 +116,20 @@ class Universe: GKEntity {
     public func nodeAt(location: Location) -> UniverseNode? {
         return grid.node(atGridPosition: int2(location.x, location.y))
     }
+
+    public static func grideNodePositionToMapPosition(gridNode: UniverseNode) -> CGPoint {
+        let size = UniverseSpriteComponent.nodeSize
+        let position = CGPoint(x: CGFloat(CGFloat(gridNode.gridPosition.x) * size.width),
+                               y: CGFloat(CGFloat(gridNode.gridPosition.y) * size.height))
+        return position
+    }
+
+    public static func mapNodePositionToGridPosition(mapNode: SKNode) -> Location {
+        let size = UniverseSpriteComponent.nodeSize
+        let gridPosition = Location(x: Int32(Int32(mapNode.position.x) / Int32(size.width)),
+                                    y: Int32(Int32(mapNode.position.y) / Int32(size.height)))
+        return gridPosition
+    }
     
 }
 

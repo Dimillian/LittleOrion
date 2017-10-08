@@ -10,6 +10,8 @@ import Foundation
 import ReSwift
 
 class PlayerActions {
+    struct Initialize: Action {}
+
     struct StartTimer: Action {
         var timer: Timer!
         var currentDate: Date!

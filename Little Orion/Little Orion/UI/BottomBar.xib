@@ -31,11 +31,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tva-Iu-cp4" customClass="BarButton" customModule="UI">
-                                <rect key="frame" x="266" y="2" width="46" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="ypp-Is-lOD"/>
-                                </constraints>
-                                <state key="normal" title="Me">
+                                <rect key="frame" x="265" y="8.5" width="47" height="30"/>
+                                <state key="normal" title="Center">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -46,10 +43,9 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bpc-74-Af4" secondAttribute="bottom" id="1tr-9i-tmj"/>
                             <constraint firstItem="bpc-74-Af4" firstAttribute="top" secondItem="jtI-vm-cnP" secondAttribute="top" id="7VQ-j5-Lbq"/>
-                            <constraint firstItem="tva-Iu-cp4" firstAttribute="top" secondItem="jtI-vm-cnP" secondAttribute="top" constant="2" id="Asy-QG-YQZ"/>
-                            <constraint firstAttribute="bottom" secondItem="tva-Iu-cp4" secondAttribute="bottom" constant="2" id="DEH-cm-H0A"/>
                             <constraint firstItem="bpc-74-Af4" firstAttribute="leading" secondItem="jtI-vm-cnP" secondAttribute="leading" constant="8" id="HsE-dQ-Mxn"/>
                             <constraint firstAttribute="trailing" secondItem="tva-Iu-cp4" secondAttribute="trailing" constant="8" id="XcA-oD-1Os"/>
+                            <constraint firstItem="tva-Iu-cp4" firstAttribute="centerY" secondItem="jtI-vm-cnP" secondAttribute="centerY" id="fad-Fc-QYn"/>
                         </constraints>
                     </view>
                     <blurEffect style="dark"/>

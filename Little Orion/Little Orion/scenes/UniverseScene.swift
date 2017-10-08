@@ -69,7 +69,10 @@ class UniverseScene: SKScene {
             lastUpdateTime = 0
 
             store.dispatch(UniverseActions.CreateUnivserse(size: .standard))
+            store.dispatch(PlayerActions.Initialize())
             store.dispatch(PlayerActions.StartTimer())
+
+            onCenterPlayerButton()
 
             bottomBar.delegate = self
         }
@@ -82,10 +85,8 @@ class UniverseScene: SKScene {
             universeLoaded = true
             for node in universe.grid.nodes! {
                 if let node = node as? UniverseNode {
-                    let size = UniverseSpriteComponent.nodeSize
                     let spriteNode = node.entity.spriteNode
-                    spriteNode.position = CGPoint(x: CGFloat(CGFloat(node.gridPosition.x) * size.width),
-                                                  y: CGFloat(CGFloat(node.gridPosition.y) * size.height))
+                    spriteNode.position = Universe.grideNodePositionToMapPosition(gridNode: node)
                     if spriteNode.parent == nil {
                         mapNode.addChild(spriteNode)
                     }
@@ -260,10 +261,7 @@ extension UniverseScene {
     }
 
     func gridNodeRelativeTo(node: SKNode) -> UniverseNode? {
-        let size = UniverseSpriteComponent.nodeSize
-        let gridPosition = Location(x: Int32(Int32(node.position.x) / Int32(size.width)),
-                                    y: Int32(Int32(node.position.y) / Int32(size.height)))
-        let entity = universe?.nodeAt(location: gridPosition)
+        let entity = universe?.nodeAt(location: Universe.mapNodePositionToGridPosition(mapNode: node))
         return entity
     }
 }
