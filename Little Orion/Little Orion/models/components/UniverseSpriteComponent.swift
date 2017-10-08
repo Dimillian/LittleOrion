@@ -12,8 +12,7 @@ class UniverseSpriteComponent: GKSKNodeComponent {
     
     static let size = ResourcesLoader.loadDimensionResource(name: "universeDimensions", dimensionName: "node")!
     static let nodeSize = CGSize(width: Int(UniverseSpriteComponent.size.width), height: Int(UniverseSpriteComponent.size.height))
-    
-        
+
     static public func component(with entity: UniverseEntity) -> UniverseSpriteComponent {
         var component: UniverseSpriteComponent
         let node: SKShapeNode

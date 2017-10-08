@@ -70,6 +70,10 @@ struct UpdateDateTimerMonth: Action {
     }
 }
 
+struct UpdatePlayerPosition: Action {
+    let position: CGPoint
+}
+
 struct PauseDateTimer: Action {
 
 }

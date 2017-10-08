@@ -36,6 +36,8 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         if !state.player.ownedPlanets.contains(action.planet.id) {
             state.player.ownedPlanets.append(action.planet.id)
         }
+    case let action as UpdatePlayerPosition:
+        state.player.position = action.position
     default:
         break
     }

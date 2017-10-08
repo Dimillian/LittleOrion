@@ -26,6 +26,7 @@ class UniverseScene: SKScene {
 
     var universeSubscriber: UniverseSubscriber?
     var uiSubscriber: UISubscriber?
+    var playerSubscriber: PlayerSubcriber?
 
     var loaded = false
     var universeLoaded = false
@@ -50,6 +51,7 @@ class UniverseScene: SKScene {
 
             universeSubscriber = UniverseSubscriber(scene: self)
             uiSubscriber = UISubscriber(scene: self)
+            playerSubscriber = PlayerSubcriber(scene: self)
 
             store.subscribe(universeSubscriber!) {
                 $0.select{ $0.universeState }.skipRepeats()
@@ -57,6 +59,10 @@ class UniverseScene: SKScene {
 
             store.subscribe(uiSubscriber!) {
                 $0.select{ $0.uiState }.skipRepeats()
+            }
+
+            store.subscribe(playerSubscriber!) {
+                $0.select{ $0.playerState }.skipRepeats()
             }
 
             lastUpdateTime = 0
@@ -85,7 +91,7 @@ class UniverseScene: SKScene {
             mapNode.position = CGPoint(x: CGFloat(-((UniverseSpriteComponent.size.width * universe.size.width) / 2)),
                                        y: CGFloat(-((UniverseSpriteComponent.size.height * universe.size.height) / 2)))
             addChild(mapNode)
-            
+
             generateStarField()
         }
     }
@@ -181,6 +187,18 @@ class UISubscriber: StoreSubscriber {
     }
 }
 
+class PlayerSubcriber: StoreSubscriber {
+    weak var scene: UniverseScene?
+
+    init(scene: UniverseScene) {
+        self.scene = scene
+    }
+
+    func newState(state: PlayerState) {
+        scene?.updatePlayer(state: state)
+    }
+}
+
 extension UniverseScene {
     func updateUniverse(state: UniverseState) {
         if let universe = state.universe {
@@ -207,6 +225,12 @@ extension UniverseScene {
         case .system:
             ModalUI.presentSystemUI(from: self, delegate: self)
             break
+        }
+    }
+
+    func updatePlayer(state: PlayerState) {
+        if state.player.spriteNode.parent == nil {
+            mapNode.addChild(state.player.spriteNode)
         }
     }
 }
@@ -283,6 +307,7 @@ extension UniverseScene {
             if let node = nodeAt(touches, with: event) as? SKShapeNode {
                 node.highlightNode(highlight: true)
                 selectedNode = node
+                store.dispatch(UpdatePlayerPosition(position: selectedNode!.position))
             }
         }
         

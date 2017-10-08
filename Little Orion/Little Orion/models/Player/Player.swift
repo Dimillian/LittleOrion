@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class Player: NSObject, GKGameModelPlayer {
+class Player: GKEntity, GKGameModelPlayer {
     let name: String
 
     public var playerId: Int {
@@ -23,8 +23,27 @@ class Player: NSObject, GKGameModelPlayer {
     var visitedPlanets: [PlanetId] = []
     var ownedPlanets: [PlanetId] = []
 
+    var spriteNode: SKNode {
+        get {
+            return component(ofType: PlayerSpriteComponent.self)!.node
+        }
+    }
+
+    var position = CGPoint.zero {
+        didSet {
+            spriteNode.position = position
+        }
+    }
+
     init(name: String) {
         self.name = name
+        super.init()
+
+        addComponent(PlayerSpriteComponent())
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }

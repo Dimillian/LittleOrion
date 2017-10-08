@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
-    pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift', :commit => '27f24d2d0c2a895184a36aabcdccd069bd5a703e'
+    pod 'ReSwift'
 end
 
 target 'LittleOrion' do

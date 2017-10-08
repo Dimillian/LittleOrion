@@ -20,28 +20,32 @@ class ResourcesLoader {
     }
     
     static func loadTextResource(name: String) -> [String : String]? {
-        if let path = Bundle.main.path(forResource: name, ofType: "plist"), let dic = NSDictionary(contentsOfFile: path) as? [String : String] {
+        if let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) as? [String : String] {
             return dic
         }
         return nil
     }
 
     static func loadArrayTextResource(name: String) -> [String]? {
-        if let path = Bundle.main.path(forResource: name, ofType: "plist"), let dic = NSArray(contentsOfFile: path) as? [String] {
+        if let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let dic = NSArray(contentsOfFile: path) as? [String] {
             return dic
         }
         return nil
     }
 
     static func loadModifierResource(name: String) -> [String : Float]? {
-        if let path = Bundle.main.path(forResource: name, ofType: "plist"), let dic = NSDictionary(contentsOfFile: path) as? [String : Float] {
+        if let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) as? [String : Float] {
             return dic
         }
         return nil
     }
     
     static func loadDimensionResource(name: String, dimensionName: String) -> Size? {
-        if let path = Bundle.main.path(forResource: name, ofType: "plist"), let dic = NSDictionary(contentsOfFile: path) {
+        if let path = Bundle.main.path(forResource: name, ofType: "plist"),
+            let dic = NSDictionary(contentsOfFile: path) {
             if let sizeDic = dic[dimensionName] as? [String: Int],
                 let width = sizeDic["width"],
                 let height = sizeDic["height"] {

@@ -22,6 +22,7 @@
 		9F35DAC11E34EB35000B1FBA /* BottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F35DAC01E34EB35000B1FBA /* BottomBar.xib */; };
 		9F44B9BA1DEB0E3100DFAFE2 /* planetResourcesModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */; };
 		9F82F97D1EA79C6E0036D648 /* AIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82F97C1EA79C6E0036D648 /* AIController.swift */; };
+		9F8E4A8D1F8A27060029E6A9 /* PlayerSpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E4A8C1F8A27060029E6A9 /* PlayerSpriteComponent.swift */; };
 		9F9644E51DE72D20002328AC /* testsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9644E41DE72D20002328AC /* testsText.plist */; };
 		9F9644E71DE72F66002328AC /* RacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9644E61DE72F66002328AC /* RacesTests.swift */; };
 		9F9644E91DE73119002328AC /* Nation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9644E81DE73119002328AC /* Nation.swift */; };
@@ -95,6 +96,7 @@
 		9F35DAC01E34EB35000B1FBA /* BottomBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BottomBar.xib; path = UI/BottomBar.xib; sourceTree = "<group>"; };
 		9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetResourcesModifier.plist; path = resources/modifiers/planetResourcesModifier.plist; sourceTree = "<group>"; };
 		9F82F97C1EA79C6E0036D648 /* AIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIController.swift; path = AI/AIController.swift; sourceTree = "<group>"; };
+		9F8E4A8C1F8A27060029E6A9 /* PlayerSpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerSpriteComponent.swift; path = models/Player/PlayerSpriteComponent.swift; sourceTree = "<group>"; };
 		9F9644E41DE72D20002328AC /* testsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testsText.plist; path = resources/text/testsText.plist; sourceTree = "<group>"; };
 		9F9644E61DE72F66002328AC /* RacesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacesTests.swift; sourceTree = "<group>"; };
 		9F9644E81DE73119002328AC /* Nation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nation.swift; path = models/pop/Nation.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				9FA36E541DE873C00050A53F /* UniverseSpriteComponent.swift */,
+				9F8E4A8C1F8A27060029E6A9 /* PlayerSpriteComponent.swift */,
 			);
 			name = components;
 			sourceTree = "<group>";
@@ -551,9 +554,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -581,13 +587,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LittleOrion-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -598,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FA36E611DE883570050A53F /* UniverseScene.swift in Sources */,
+				9F8E4A8D1F8A27060029E6A9 /* PlayerSpriteComponent.swift in Sources */,
 				9FBA3E871E33D73100B0B70D /* Modal.swift in Sources */,
 				9F32D0B21DE33240004455BB /* Universe.swift in Sources */,
 				9FD2C4811DEDD05800968FCD /* PlanetViewController.swift in Sources */,
