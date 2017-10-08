@@ -30,6 +30,7 @@ class UniverseScene: SKScene {
 
     var loaded = false
     var universeLoaded = false
+    var dismissiveInteraction = false
     
     var startX: CGFloat = 0.0
     var startY: CGFloat = 0.0
@@ -284,7 +285,9 @@ extension UniverseScene {
             startX = position.x
             startY = position.y
         }
-        if systemAt(touches, with: event) == nil {
+
+        if systemAt(touches, with: event) == nil && store.state.uiState.currentModal == .system {
+            dismissiveInteraction = true
             store.dispatch(UIActions.DismissSystemModal())
         }
     }
@@ -313,7 +316,7 @@ extension UniverseScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !mapMoved {
+        if !mapMoved && !dismissiveInteraction {
             if let system = systemAt(touches, with: event) {
                 store.dispatch(UIActions.ShowSelectedSystemModal(system: system))
             }
@@ -336,7 +339,8 @@ extension UniverseScene {
                 store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
             }
         }
-        
+
+        dismissiveInteraction = false
         mapMoved = false
     }
     
