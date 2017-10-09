@@ -300,9 +300,10 @@ extension UniverseScene: BottomBarDelegate {
                 }
                 let fromLocation = Universe.mapNodePositionToGridPosition(mapNode: store.state.playerState.player.spriteNode)
                 let toLocation = Universe.mapNodePositionToGridPosition(mapNode: node)
-                let movement = PlayerMovementComponent(startDate: store.state.playerState.currentDate, from: fromLocation, to: toLocation)
+                let movement = PlayerMovementComponent(startDate: store.state.playerState.currentDate,
+                                                       from: fromLocation, 
+                                                       to: toLocation)
                 store.dispatch(PlayerActions.MoveToPosition(movement: movement))
-                store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
             }
         } else {
 
