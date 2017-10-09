@@ -31,7 +31,7 @@ func ==(lhs: PlanetId, rhs: PlanetId) -> Bool {
 
 
 //MARK: - Planet
-class Planet: SystemBody {
+class PlanetEntity: SystemBody {
 
     static let planetRessourceModifier = ResourcesLoader.loadPlanetResource(name: "planetResourcesModifier")!
     static let planetNames = ResourcesLoader.loadArrayTextResource(name: "planetsText")!
@@ -106,9 +106,9 @@ class Planet: SystemBody {
     private var inhabitants: [Pop]?
     
     //The parent system of the planet.
-    let system: System
+    let system: SystemEntity
     
-    public init(in system: System, order: Int) {
+    public init(in system: SystemEntity, order: Int) {
         id = PlanetId(systemId: system.id, index: order)
         self.system = system
         kind = Kind.randomKind()
@@ -185,9 +185,9 @@ class Planet3D {
         }
     }
  
-    var planet: Planet! = nil
+    var planet: PlanetEntity! = nil
     
-    init(planet: Planet) {
+    init(planet: PlanetEntity) {
         self.planet = planet
     }
 }

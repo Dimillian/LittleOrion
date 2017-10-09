@@ -11,8 +11,8 @@ import ReSwift
 
 struct UIState: Equatable {
 
-    var selectedSystem: System?
-    var selectedPlanet: Planet?
+    var selectedSystem: SystemEntity?
+    var selectedPlanet: PlanetEntity?
     var currentModal: Modal
     var currentScene: Scene
 }

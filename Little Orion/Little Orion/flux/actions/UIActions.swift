@@ -11,11 +11,11 @@ import ReSwift
 
 class UIActions {
     struct ShowSelectedSystemModal: Action {
-        let system: System
+        let system: SystemEntity
     }
 
     struct ShowPlanetDetail: Action {
-        let planet: Planet
+        let planet: PlanetEntity
     }
 
     struct ShowUniverseScene: Action {

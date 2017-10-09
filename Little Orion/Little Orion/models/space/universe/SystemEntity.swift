@@ -30,19 +30,23 @@ func ==(lhs: SystemId, rhs: SystemId) -> Bool {
     return lhs.location == rhs.location
 }
 
-class System: UniverseEntity {
+class SystemEntity: UniverseEntity {
 
     let id: SystemId
 
-    private var _planets = [Planet]()
+    private var _planets = [PlanetEntity]()
 
-    var planets: [Planet] {
+    var planets: [PlanetEntity] {
         get {
             return _planets
         }
     }
+
+    override var travelTimeDay: Int {
+        return 5
+    }
     
-    var star = Star(name: "Star")
+    var star = StarEntity(name: "Star")
 
     override var description: String {
         get {
@@ -74,12 +78,12 @@ class System: UniverseEntity {
     private func makePlanets() {
         let planetsCount = Int(arc4random_uniform(6))
         for index in 0...planetsCount {
-            let star = Planet(in: self, order: index)
+            let star = PlanetEntity(in: self, order: index)
             _planets.append(star)
         }
     }
     
-    func planet(at: Int) -> Planet {
+    func planet(at: Int) -> PlanetEntity {
         return _planets[at]
     }
     

@@ -7,66 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F163D131DE84A2C000CE8F5 /* Dimension.swift */; };
 		9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D08D1DE32ED8004455BB /* AppDelegate.swift */; };
 		9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D0971DE32ED8004455BB /* Main.storyboard */; };
 		9F32D09B1DE32ED8004455BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D09A1DE32ED8004455BB /* Assets.xcassets */; };
 		9F32D09E1DE32ED8004455BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D09C1DE32ED8004455BB /* LaunchScreen.storyboard */; };
-		9F32D0B01DE33240004455BB /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D0AD1DE33240004455BB /* Star.swift */; };
-		9F32D0B11DE33240004455BB /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D0AE1DE33240004455BB /* System.swift */; };
-		9F32D0B21DE33240004455BB /* Universe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D0AF1DE33240004455BB /* Universe.swift */; };
-		9F32D0B51DE33280004455BB /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D0B41DE33280004455BB /* Race.swift */; };
-		9F35DABB1E34E8E2000B1FBA /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABA1E34E8E2000B1FBA /* Player.swift */; };
-		9F35DABD1E34E9C6000B1FBA /* AIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */; };
-		9F35DABF1E34EB27000B1FBA /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F35DABE1E34EB27000B1FBA /* BottomBar.swift */; };
-		9F35DAC11E34EB35000B1FBA /* BottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F35DAC01E34EB35000B1FBA /* BottomBar.xib */; };
 		9F3C04D11F8A417400E9636F /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3C04CF1F8A417400E9636F /* UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3C04D41F8A417400E9636F /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3C04CD1F8A417400E9636F /* UI.framework */; };
 		9F3C04D51F8A417400E9636F /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3C04CD1F8A417400E9636F /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F3C04DC1F8A418E00E9636F /* BarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3C04DB1F8A418E00E9636F /* BarButton.swift */; };
-		9F44B9BA1DEB0E3100DFAFE2 /* planetResourcesModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */; };
-		9F82F97D1EA79C6E0036D648 /* AIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82F97C1EA79C6E0036D648 /* AIController.swift */; };
-		9F8E4A8D1F8A27060029E6A9 /* PlayerSpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E4A8C1F8A27060029E6A9 /* PlayerSpriteComponent.swift */; };
-		9F9644E51DE72D20002328AC /* testsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F9644E41DE72D20002328AC /* testsText.plist */; };
 		9F9644E71DE72F66002328AC /* RacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9644E61DE72F66002328AC /* RacesTests.swift */; };
-		9F9644E91DE73119002328AC /* Nation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9644E81DE73119002328AC /* Nation.swift */; };
-		9FA0E7681DE9A6510086BFD8 /* universeRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA0E7671DE9A6510086BFD8 /* universeRules.plist */; };
-		9FA36E531DE861190050A53F /* universeDimensions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E521DE861190050A53F /* universeDimensions.plist */; };
-		9FA36E551DE873C00050A53F /* UniverseSpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E541DE873C00050A53F /* UniverseSpriteComponent.swift */; };
-		9FA36E571DE877050050A53F /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E561DE877050050A53F /* Empty.swift */; };
-		9FA36E591DE87F370050A53F /* starsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E581DE87F370050A53F /* starsText.plist */; };
-		9FA36E601DE883570050A53F /* UniverseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E5E1DE883570050A53F /* UniverseScene.sks */; };
-		9FA36E611DE883570050A53F /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E5F1DE883570050A53F /* UniverseScene.swift */; };
-		9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E631DE8837A0050A53F /* GameViewController.swift */; };
-		9FA36E671DE886B10050A53F /* SystemUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E661DE886B10050A53F /* SystemUI.xib */; };
-		9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA36E681DE889AB0050A53F /* SystemUI.swift */; };
-		9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA36E6A1DE890F40050A53F /* StarCell.xib */; };
-		9FBA3E6E1E33977800B0B70D /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6D1E33977800B0B70D /* AppState.swift */; };
-		9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */; };
-		9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E711E33979D00B0B70D /* PlayerState.swift */; };
-		9FBA3E761E3397B700B0B70D /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E751E3397B700B0B70D /* UIState.swift */; };
-		9FBA3E781E3398AA00B0B70D /* UniverseActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E771E3398AA00B0B70D /* UniverseActions.swift */; };
-		9FBA3E7A1E33991C00B0B70D /* UniverseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E791E33991C00B0B70D /* UniverseReducer.swift */; };
-		9FBA3E7C1E33993700B0B70D /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E7B1E33993700B0B70D /* AppReducer.swift */; };
-		9FBA3E7E1E33997500B0B70D /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E7D1E33997500B0B70D /* PlayerReducer.swift */; };
-		9FBA3E801E33998200B0B70D /* UIReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E7F1E33998200B0B70D /* UIReducer.swift */; };
-		9FBA3E831E339A8A00B0B70D /* LogMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */; };
-		9FBA3E851E33D16200B0B70D /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E841E33D16200B0B70D /* UIActions.swift */; };
-		9FBA3E871E33D73100B0B70D /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E861E33D73100B0B70D /* Modal.swift */; };
-		9FBA3E891E33E2CA00B0B70D /* PlayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E881E33E2CA00B0B70D /* PlayerActions.swift */; };
-		9FBA3E8B1E33E5F900B0B70D /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E8A1E33E5F900B0B70D /* TopBar.swift */; };
-		9FBA3E8D1E33E60700B0B70D /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA3E8C1E33E60700B0B70D /* TopBar.xib */; };
-		9FBA3E901E33F2B600B0B70D /* PlayerResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */; };
-		9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47F31DE7294D00334D7B /* Pop.swift */; };
-		9FCF47F81DE72A3E00334D7B /* raceText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FCF47F71DE72A3E00334D7B /* raceText.plist */; };
-		9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */; };
 		9FCF480B1DE72BCB00334D7B /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */; };
-		9FD2C4811DEDD05800968FCD /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2C4801DEDD05800968FCD /* PlanetViewController.swift */; };
-		9FED3FCA1DE8CA3900DFC36E /* BaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FED3FC91DE8CA3900DFC36E /* BaseUI.swift */; };
-		9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFB1DE89B5300085666 /* SystemBody.swift */; };
-		9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFD1DE89C5700085666 /* Planet.swift */; };
-		9FEF6B001DE89D2600085666 /* planetsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FEF6AFF1DE89D2600085666 /* planetsText.plist */; };
-		9FF941B01DE734A9009658F7 /* raceForceModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF941AF1DE734A9009658F7 /* raceForceModifier.plist */; };
+		9FDA42951F8BBB8200E056BD /* UniverseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325BB1F8BB87800892986 /* UniverseScene.sks */; };
+		9FDA42961F8BBBA200E056BD /* BottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325B21F8BB86900892986 /* BottomBar.xib */; };
+		9FDA42971F8BBBA200E056BD /* StarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325B41F8BB86900892986 /* StarCell.xib */; };
+		9FDA42981F8BBBA200E056BD /* SystemUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325AF1F8BB86900892986 /* SystemUI.xib */; };
+		9FDA42991F8BBBA200E056BD /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325AE1F8BB86900892986 /* TopBar.xib */; };
+		9FDA429C1F8BBBE900E056BD /* PlayerMovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA429B1F8BBBE900E056BD /* PlayerMovementComponent.swift */; };
+		9FF325AA1F8BB83D00892986 /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A81F8BB83C00892986 /* PlanetViewController.swift */; };
+		9FF325AB1F8BB83D00892986 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A91F8BB83D00892986 /* GameViewController.swift */; };
+		9FF325B51F8BB86900892986 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325AC1F8BB86900892986 /* TopBar.swift */; };
+		9FF325B61F8BB86900892986 /* SystemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325AD1F8BB86900892986 /* SystemUI.swift */; };
+		9FF325B71F8BB86900892986 /* BaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325B01F8BB86900892986 /* BaseUI.swift */; };
+		9FF325B81F8BB86900892986 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325B11F8BB86900892986 /* BottomBar.swift */; };
+		9FF325B91F8BB86900892986 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325B31F8BB86900892986 /* Modal.swift */; };
+		9FF325BC1F8BB87800892986 /* UniverseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325BA1F8BB87800892986 /* UniverseScene.swift */; };
+		9FF325BE1F8BB88500892986 /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325BD1F8BB88500892986 /* ResourcesLoader.swift */; };
+		9FF325CC1F8BB8A300892986 /* AIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325CB1F8BB8A300892986 /* AIController.swift */; };
+		9FF325EF1F8BB8E900892986 /* UniverseSpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325CE1F8BB8B400892986 /* UniverseSpriteComponent.swift */; };
+		9FF325F01F8BB8E900892986 /* AIPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D01F8BB8B400892986 /* AIPlayer.swift */; };
+		9FF325F11F8BB8E900892986 /* PlayerSpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D11F8BB8B400892986 /* PlayerSpriteComponent.swift */; };
+		9FF325F21F8BB8E900892986 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D21F8BB8B400892986 /* Player.swift */; };
+		9FF325F31F8BB8E900892986 /* PlayerResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D31F8BB8B400892986 /* PlayerResources.swift */; };
+		9FF325F41F8BB8E900892986 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D51F8BB8B400892986 /* Race.swift */; };
+		9FF325F51F8BB8E900892986 /* Nation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D61F8BB8B400892986 /* Nation.swift */; };
+		9FF325F61F8BB8E900892986 /* Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D71F8BB8B400892986 /* Pop.swift */; };
+		9FF325F71F8BB8E900892986 /* Traversable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325D91F8BB8B400892986 /* Traversable.swift */; };
+		9FF325F81F8BB8E900892986 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325DA1F8BB8B400892986 /* Dimension.swift */; };
+		9FF325F91F8BB8E900892986 /* PlanetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325DB1F8BB8B400892986 /* PlanetEntity.swift */; };
+		9FF325FA1F8BB8E900892986 /* SystemBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325DC1F8BB8B400892986 /* SystemBody.swift */; };
+		9FF325FB1F8BB8E900892986 /* SystemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325DD1F8BB8B400892986 /* SystemEntity.swift */; };
+		9FF325FC1F8BB8E900892986 /* UniverseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325DE1F8BB8B400892986 /* UniverseEntity.swift */; };
+		9FF325FD1F8BB8E900892986 /* StarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325DF1F8BB8B400892986 /* StarEntity.swift */; };
+		9FF325FE1F8BB8F700892986 /* universeDimensions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C01F8BB89900892986 /* universeDimensions.plist */; };
+		9FF325FF1F8BB8F700892986 /* planetResourcesModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C91F8BB89900892986 /* planetResourcesModifier.plist */; };
+		9FF326001F8BB8F700892986 /* raceForceModifier.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325CA1F8BB89900892986 /* raceForceModifier.plist */; };
+		9FF326011F8BB8F700892986 /* universeRules.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C71F8BB89900892986 /* universeRules.plist */; };
+		9FF326021F8BB8F700892986 /* planetsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C21F8BB89900892986 /* planetsText.plist */; };
+		9FF326031F8BB8F700892986 /* starsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C31F8BB89900892986 /* starsText.plist */; };
+		9FF326041F8BB8F700892986 /* raceText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C41F8BB89900892986 /* raceText.plist */; };
+		9FF326051F8BB8F700892986 /* testsText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325C51F8BB89900892986 /* testsText.plist */; };
+		9FF326061F8BB90900892986 /* UIActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3259D1F8BB81C00892986 /* UIActions.swift */; };
+		9FF326071F8BB90900892986 /* PlayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3259E1F8BB81C00892986 /* PlayerActions.swift */; };
+		9FF326081F8BB90900892986 /* UniverseActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3259F1F8BB81C00892986 /* UniverseActions.swift */; };
+		9FF326091F8BB90900892986 /* LogMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A11F8BB81C00892986 /* LogMiddleware.swift */; };
+		9FF3260A1F8BB90900892986 /* FilterMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A21F8BB81C00892986 /* FilterMiddleware.swift */; };
+		9FF3260B1F8BB90900892986 /* UniverseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A41F8BB81C00892986 /* UniverseReducer.swift */; };
+		9FF3260C1F8BB90900892986 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A51F8BB81C00892986 /* AppReducer.swift */; };
+		9FF3260D1F8BB90900892986 /* PlayerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A61F8BB81C00892986 /* PlayerReducer.swift */; };
+		9FF3260E1F8BB90900892986 /* UIReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A71F8BB81C00892986 /* UIReducer.swift */; };
+		9FF3260F1F8BB90900892986 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325981F8BB81B00892986 /* AppState.swift */; };
+		9FF326101F8BB90900892986 /* UniverseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325991F8BB81B00892986 /* UniverseState.swift */; };
+		9FF326111F8BB90900892986 /* UIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3259A1F8BB81B00892986 /* UIState.swift */; };
+		9FF326121F8BB90900892986 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF3259B1F8BB81B00892986 /* PlayerState.swift */; };
+		9FF326141F8BB92F00892986 /* EmptyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF326131F8BB92E00892986 /* EmptyEntity.swift */; };
 		F8FFA4E678A24A207D169127 /* Pods_LittleOrion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565605096015777D3B071676 /* Pods_LittleOrion.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,70 +107,73 @@
 /* Begin PBXFileReference section */
 		565605096015777D3B071676 /* Pods_LittleOrion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittleOrion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.release.xcconfig"; sourceTree = "<group>"; };
-		9F163D131DE84A2C000CE8F5 /* Dimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = models/space/Dimension.swift; sourceTree = "<group>"; };
 		9F32D08A1DE32ED8004455BB /* LittleOrion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleOrion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F32D08D1DE32ED8004455BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F32D0981DE32ED8004455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F32D09A1DE32ED8004455BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F32D09D1DE32ED8004455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F32D09F1DE32ED8004455BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F32D0AD1DE33240004455BB /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Star.swift; path = models/space/Star.swift; sourceTree = "<group>"; };
-		9F32D0AE1DE33240004455BB /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = System.swift; path = models/space/System.swift; sourceTree = "<group>"; };
-		9F32D0AF1DE33240004455BB /* Universe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Universe.swift; path = models/space/Universe.swift; sourceTree = "<group>"; };
-		9F32D0B41DE33280004455BB /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Race.swift; path = models/pop/Race.swift; sourceTree = "<group>"; };
-		9F35DABA1E34E8E2000B1FBA /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = models/Player/Player.swift; sourceTree = "<group>"; };
-		9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIPlayer.swift; path = models/Player/AIPlayer.swift; sourceTree = "<group>"; };
-		9F35DABE1E34EB27000B1FBA /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomBar.swift; path = UI/BottomBar.swift; sourceTree = "<group>"; };
-		9F35DAC01E34EB35000B1FBA /* BottomBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BottomBar.xib; path = UI/BottomBar.xib; sourceTree = "<group>"; };
 		9F3C04CD1F8A417400E9636F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3C04CF1F8A417400E9636F /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		9F3C04D01F8A417400E9636F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F3C04DB1F8A418E00E9636F /* BarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButton.swift; sourceTree = "<group>"; };
-		9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetResourcesModifier.plist; path = resources/modifiers/planetResourcesModifier.plist; sourceTree = "<group>"; };
-		9F82F97C1EA79C6E0036D648 /* AIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AIController.swift; path = AI/AIController.swift; sourceTree = "<group>"; };
-		9F8E4A8C1F8A27060029E6A9 /* PlayerSpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerSpriteComponent.swift; path = models/Player/PlayerSpriteComponent.swift; sourceTree = "<group>"; };
-		9F9644E41DE72D20002328AC /* testsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = testsText.plist; path = resources/text/testsText.plist; sourceTree = "<group>"; };
 		9F9644E61DE72F66002328AC /* RacesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RacesTests.swift; sourceTree = "<group>"; };
-		9F9644E81DE73119002328AC /* Nation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nation.swift; path = models/pop/Nation.swift; sourceTree = "<group>"; };
-		9FA0E7671DE9A6510086BFD8 /* universeRules.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = universeRules.plist; path = resources/rules/universeRules.plist; sourceTree = "<group>"; };
-		9FA36E521DE861190050A53F /* universeDimensions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = universeDimensions.plist; path = resources/dimensions/universeDimensions.plist; sourceTree = "<group>"; };
-		9FA36E541DE873C00050A53F /* UniverseSpriteComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseSpriteComponent.swift; path = models/components/UniverseSpriteComponent.swift; sourceTree = "<group>"; };
-		9FA36E561DE877050050A53F /* Empty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
-		9FA36E581DE87F370050A53F /* starsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = starsText.plist; path = resources/text/starsText.plist; sourceTree = "<group>"; };
-		9FA36E5E1DE883570050A53F /* UniverseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = UniverseScene.sks; path = scenes/UniverseScene.sks; sourceTree = "<group>"; };
-		9FA36E5F1DE883570050A53F /* UniverseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseScene.swift; path = scenes/UniverseScene.swift; sourceTree = "<group>"; };
-		9FA36E631DE8837A0050A53F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = viewControllers/GameViewController.swift; sourceTree = "<group>"; };
-		9FA36E661DE886B10050A53F /* SystemUI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SystemUI.xib; path = UI/SystemUI.xib; sourceTree = "<group>"; };
-		9FA36E681DE889AB0050A53F /* SystemUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemUI.swift; path = UI/SystemUI.swift; sourceTree = "<group>"; };
-		9FA36E6A1DE890F40050A53F /* StarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StarCell.xib; path = UI/StarCell.xib; sourceTree = "<group>"; };
-		9FBA3E6D1E33977800B0B70D /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = flux/state/AppState.swift; sourceTree = "<group>"; };
-		9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseState.swift; path = flux/state/UniverseState.swift; sourceTree = "<group>"; };
-		9FBA3E711E33979D00B0B70D /* PlayerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerState.swift; path = flux/state/PlayerState.swift; sourceTree = "<group>"; };
-		9FBA3E751E3397B700B0B70D /* UIState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIState.swift; path = flux/state/UIState.swift; sourceTree = "<group>"; };
-		9FBA3E771E3398AA00B0B70D /* UniverseActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseActions.swift; path = flux/actions/UniverseActions.swift; sourceTree = "<group>"; };
-		9FBA3E791E33991C00B0B70D /* UniverseReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UniverseReducer.swift; path = flux/reducers/UniverseReducer.swift; sourceTree = "<group>"; };
-		9FBA3E7B1E33993700B0B70D /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = flux/reducers/AppReducer.swift; sourceTree = "<group>"; };
-		9FBA3E7D1E33997500B0B70D /* PlayerReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerReducer.swift; path = flux/reducers/PlayerReducer.swift; sourceTree = "<group>"; };
-		9FBA3E7F1E33998200B0B70D /* UIReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIReducer.swift; path = flux/reducers/UIReducer.swift; sourceTree = "<group>"; };
-		9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogMiddleware.swift; path = flux/middleware/LogMiddleware.swift; sourceTree = "<group>"; };
-		9FBA3E841E33D16200B0B70D /* UIActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIActions.swift; path = flux/actions/UIActions.swift; sourceTree = "<group>"; };
-		9FBA3E861E33D73100B0B70D /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Modal.swift; path = UI/Modal.swift; sourceTree = "<group>"; };
-		9FBA3E881E33E2CA00B0B70D /* PlayerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerActions.swift; path = flux/actions/PlayerActions.swift; sourceTree = "<group>"; };
-		9FBA3E8A1E33E5F900B0B70D /* TopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopBar.swift; path = UI/TopBar.swift; sourceTree = "<group>"; };
-		9FBA3E8C1E33E60700B0B70D /* TopBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TopBar.xib; path = UI/TopBar.xib; sourceTree = "<group>"; };
-		9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerResources.swift; path = models/Player/PlayerResources.swift; sourceTree = "<group>"; };
-		9FCF47F31DE7294D00334D7B /* Pop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pop.swift; path = models/pop/Pop.swift; sourceTree = "<group>"; };
-		9FCF47F71DE72A3E00334D7B /* raceText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceText.plist; path = resources/text/raceText.plist; sourceTree = "<group>"; };
-		9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesLoader.swift; path = helpers/ResourcesLoader.swift; sourceTree = "<group>"; };
 		9FCF48001DE72B4A00334D7B /* OrionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCF48041DE72B4A00334D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
-		9FD2C4801DEDD05800968FCD /* PlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanetViewController.swift; path = viewControllers/PlanetViewController.swift; sourceTree = "<group>"; };
-		9FED3FC91DE8CA3900DFC36E /* BaseUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseUI.swift; path = UI/BaseUI.swift; sourceTree = "<group>"; };
-		9FEF6AFB1DE89B5300085666 /* SystemBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SystemBody.swift; path = models/space/SystemBody.swift; sourceTree = "<group>"; };
-		9FEF6AFD1DE89C5700085666 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Planet.swift; path = models/space/Planet.swift; sourceTree = "<group>"; };
-		9FEF6AFF1DE89D2600085666 /* planetsText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = planetsText.plist; path = resources/text/planetsText.plist; sourceTree = "<group>"; };
-		9FF941AF1DE734A9009658F7 /* raceForceModifier.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = raceForceModifier.plist; path = resources/modifiers/raceForceModifier.plist; sourceTree = "<group>"; };
+		9FDA429B1F8BBBE900E056BD /* PlayerMovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMovementComponent.swift; sourceTree = "<group>"; };
+		9FF325981F8BB81B00892986 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9FF325991F8BB81B00892986 /* UniverseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseState.swift; sourceTree = "<group>"; };
+		9FF3259A1F8BB81B00892986 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
+		9FF3259B1F8BB81B00892986 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		9FF3259D1F8BB81C00892986 /* UIActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActions.swift; sourceTree = "<group>"; };
+		9FF3259E1F8BB81C00892986 /* PlayerActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActions.swift; sourceTree = "<group>"; };
+		9FF3259F1F8BB81C00892986 /* UniverseActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseActions.swift; sourceTree = "<group>"; };
+		9FF325A11F8BB81C00892986 /* LogMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMiddleware.swift; sourceTree = "<group>"; };
+		9FF325A21F8BB81C00892986 /* FilterMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMiddleware.swift; sourceTree = "<group>"; };
+		9FF325A41F8BB81C00892986 /* UniverseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseReducer.swift; sourceTree = "<group>"; };
+		9FF325A51F8BB81C00892986 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		9FF325A61F8BB81C00892986 /* PlayerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReducer.swift; sourceTree = "<group>"; };
+		9FF325A71F8BB81C00892986 /* UIReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIReducer.swift; sourceTree = "<group>"; };
+		9FF325A81F8BB83C00892986 /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
+		9FF325A91F8BB83D00892986 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		9FF325AC1F8BB86900892986 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		9FF325AD1F8BB86900892986 /* SystemUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUI.swift; sourceTree = "<group>"; };
+		9FF325AE1F8BB86900892986 /* TopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBar.xib; sourceTree = "<group>"; };
+		9FF325AF1F8BB86900892986 /* SystemUI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SystemUI.xib; sourceTree = "<group>"; };
+		9FF325B01F8BB86900892986 /* BaseUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUI.swift; sourceTree = "<group>"; };
+		9FF325B11F8BB86900892986 /* BottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
+		9FF325B21F8BB86900892986 /* BottomBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomBar.xib; sourceTree = "<group>"; };
+		9FF325B31F8BB86900892986 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		9FF325B41F8BB86900892986 /* StarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarCell.xib; sourceTree = "<group>"; };
+		9FF325BA1F8BB87800892986 /* UniverseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseScene.swift; sourceTree = "<group>"; };
+		9FF325BB1F8BB87800892986 /* UniverseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = UniverseScene.sks; sourceTree = "<group>"; };
+		9FF325BD1F8BB88500892986 /* ResourcesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesLoader.swift; sourceTree = "<group>"; };
+		9FF325C01F8BB89900892986 /* universeDimensions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = universeDimensions.plist; sourceTree = "<group>"; };
+		9FF325C21F8BB89900892986 /* planetsText.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = planetsText.plist; sourceTree = "<group>"; };
+		9FF325C31F8BB89900892986 /* starsText.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = starsText.plist; sourceTree = "<group>"; };
+		9FF325C41F8BB89900892986 /* raceText.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = raceText.plist; sourceTree = "<group>"; };
+		9FF325C51F8BB89900892986 /* testsText.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = testsText.plist; sourceTree = "<group>"; };
+		9FF325C71F8BB89900892986 /* universeRules.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = universeRules.plist; sourceTree = "<group>"; };
+		9FF325C91F8BB89900892986 /* planetResourcesModifier.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = planetResourcesModifier.plist; sourceTree = "<group>"; };
+		9FF325CA1F8BB89900892986 /* raceForceModifier.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = raceForceModifier.plist; sourceTree = "<group>"; };
+		9FF325CB1F8BB8A300892986 /* AIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIController.swift; sourceTree = "<group>"; };
+		9FF325CE1F8BB8B400892986 /* UniverseSpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseSpriteComponent.swift; sourceTree = "<group>"; };
+		9FF325D01F8BB8B400892986 /* AIPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPlayer.swift; sourceTree = "<group>"; };
+		9FF325D11F8BB8B400892986 /* PlayerSpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSpriteComponent.swift; sourceTree = "<group>"; };
+		9FF325D21F8BB8B400892986 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		9FF325D31F8BB8B400892986 /* PlayerResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResources.swift; sourceTree = "<group>"; };
+		9FF325D51F8BB8B400892986 /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		9FF325D61F8BB8B400892986 /* Nation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nation.swift; sourceTree = "<group>"; };
+		9FF325D71F8BB8B400892986 /* Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pop.swift; sourceTree = "<group>"; };
+		9FF325D91F8BB8B400892986 /* Traversable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traversable.swift; sourceTree = "<group>"; };
+		9FF325DA1F8BB8B400892986 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
+		9FF325DB1F8BB8B400892986 /* PlanetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetEntity.swift; sourceTree = "<group>"; };
+		9FF325DC1F8BB8B400892986 /* SystemBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBody.swift; sourceTree = "<group>"; };
+		9FF325DD1F8BB8B400892986 /* SystemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemEntity.swift; sourceTree = "<group>"; };
+		9FF325DE1F8BB8B400892986 /* UniverseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseEntity.swift; sourceTree = "<group>"; };
+		9FF325DF1F8BB8B400892986 /* StarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEntity.swift; sourceTree = "<group>"; };
+		9FF326131F8BB92E00892986 /* EmptyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEntity.swift; sourceTree = "<group>"; };
 		C0AE64F64B1E89A5A9C08279 /* Pods-LittleOrion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,13 +237,13 @@
 		9F32D08C1DE32ED8004455BB /* Little Orion */ = {
 			isa = PBXGroup;
 			children = (
-				9FBA3E691E33970500B0B70D /* flux */,
 				9FA36E621DE883620050A53F /* viewControllers */,
-				9FA36E651DE8869A0050A53F /* UI */,
 				9FA36E5A1DE883090050A53F /* scenes */,
+				9FA36E651DE8869A0050A53F /* ui */,
 				9FCF47F91DE72A9F00334D7B /* helpers */,
 				9FCF47F51DE72A1800334D7B /* resources */,
 				9F82F97B1EA79C560036D648 /* AI */,
+				9FBA3E691E33970500B0B70D /* flux */,
 				9F32D0A51DE32FC4004455BB /* models */,
 				9F32D08D1DE32ED8004455BB /* AppDelegate.swift */,
 				9F32D0971DE32ED8004455BB /* Main.storyboard */,
@@ -251,36 +257,11 @@
 		9F32D0A51DE32FC4004455BB /* models */ = {
 			isa = PBXGroup;
 			children = (
-				9FBA3E8E1E33F29A00B0B70D /* player */,
-				9FF941B11DE737FA009658F7 /* components */,
-				9F32D0B31DE33252004455BB /* pop */,
-				9F32D0AC1DE3322B004455BB /* space */,
+				9FF325CF1F8BB8B400892986 /* player */,
+				9FF325D41F8BB8B400892986 /* pop */,
+				9FF325D81F8BB8B400892986 /* space */,
 			);
-			name = models;
-			sourceTree = "<group>";
-		};
-		9F32D0AC1DE3322B004455BB /* space */ = {
-			isa = PBXGroup;
-			children = (
-				9F32D0AF1DE33240004455BB /* Universe.swift */,
-				9FA36E561DE877050050A53F /* Empty.swift */,
-				9F32D0AE1DE33240004455BB /* System.swift */,
-				9FEF6AFB1DE89B5300085666 /* SystemBody.swift */,
-				9F32D0AD1DE33240004455BB /* Star.swift */,
-				9FEF6AFD1DE89C5700085666 /* Planet.swift */,
-				9F163D131DE84A2C000CE8F5 /* Dimension.swift */,
-			);
-			name = space;
-			sourceTree = "<group>";
-		};
-		9F32D0B31DE33252004455BB /* pop */ = {
-			isa = PBXGroup;
-			children = (
-				9F32D0B41DE33280004455BB /* Race.swift */,
-				9FCF47F31DE7294D00334D7B /* Pop.swift */,
-				9F9644E81DE73119002328AC /* Nation.swift */,
-			);
-			name = pop;
+			path = models;
 			sourceTree = "<group>";
 		};
 		9F3C04CE1F8A417400E9636F /* UI */ = {
@@ -304,150 +285,73 @@
 		9F82F97B1EA79C560036D648 /* AI */ = {
 			isa = PBXGroup;
 			children = (
-				9F82F97C1EA79C6E0036D648 /* AIController.swift */,
+				9FF325CB1F8BB8A300892986 /* AIController.swift */,
 			);
-			name = AI;
-			sourceTree = "<group>";
-		};
-		9FA0E7661DE9A61F0086BFD8 /* rules */ = {
-			isa = PBXGroup;
-			children = (
-				9FA0E7671DE9A6510086BFD8 /* universeRules.plist */,
-			);
-			name = rules;
-			sourceTree = "<group>";
-		};
-		9FA36E511DE860760050A53F /* dimensions */ = {
-			isa = PBXGroup;
-			children = (
-				9FA36E521DE861190050A53F /* universeDimensions.plist */,
-			);
-			name = dimensions;
+			path = AI;
 			sourceTree = "<group>";
 		};
 		9FA36E5A1DE883090050A53F /* scenes */ = {
 			isa = PBXGroup;
 			children = (
-				9FA36E5E1DE883570050A53F /* UniverseScene.sks */,
-				9FA36E5F1DE883570050A53F /* UniverseScene.swift */,
+				9FF325BB1F8BB87800892986 /* UniverseScene.sks */,
+				9FF325BA1F8BB87800892986 /* UniverseScene.swift */,
 			);
-			name = scenes;
+			path = scenes;
 			sourceTree = "<group>";
 		};
 		9FA36E621DE883620050A53F /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9FA36E631DE8837A0050A53F /* GameViewController.swift */,
-				9FD2C4801DEDD05800968FCD /* PlanetViewController.swift */,
+				9FF325A91F8BB83D00892986 /* GameViewController.swift */,
+				9FF325A81F8BB83C00892986 /* PlanetViewController.swift */,
 			);
-			name = viewControllers;
+			path = viewControllers;
 			sourceTree = "<group>";
 		};
-		9FA36E651DE8869A0050A53F /* UI */ = {
+		9FA36E651DE8869A0050A53F /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				9FBA3E861E33D73100B0B70D /* Modal.swift */,
-				9FED3FC91DE8CA3900DFC36E /* BaseUI.swift */,
-				9FA36E661DE886B10050A53F /* SystemUI.xib */,
-				9FA36E681DE889AB0050A53F /* SystemUI.swift */,
-				9FA36E6A1DE890F40050A53F /* StarCell.xib */,
-				9FBA3E8A1E33E5F900B0B70D /* TopBar.swift */,
-				9FBA3E8C1E33E60700B0B70D /* TopBar.xib */,
-				9F35DABE1E34EB27000B1FBA /* BottomBar.swift */,
-				9F35DAC01E34EB35000B1FBA /* BottomBar.xib */,
+				9FF325B01F8BB86900892986 /* BaseUI.swift */,
+				9FF325B11F8BB86900892986 /* BottomBar.swift */,
+				9FF325B21F8BB86900892986 /* BottomBar.xib */,
+				9FF325B31F8BB86900892986 /* Modal.swift */,
+				9FF325B41F8BB86900892986 /* StarCell.xib */,
+				9FF325AD1F8BB86900892986 /* SystemUI.swift */,
+				9FF325AF1F8BB86900892986 /* SystemUI.xib */,
+				9FF325AC1F8BB86900892986 /* TopBar.swift */,
+				9FF325AE1F8BB86900892986 /* TopBar.xib */,
 			);
-			name = UI;
+			path = ui;
 			sourceTree = "<group>";
 		};
 		9FBA3E691E33970500B0B70D /* flux */ = {
 			isa = PBXGroup;
 			children = (
-				9FBA3E811E339A7D00B0B70D /* middleware */,
-				9FBA3E6C1E33972000B0B70D /* state */,
-				9FBA3E6A1E33970D00B0B70D /* actions */,
-				9FBA3E6B1E33971300B0B70D /* reducers */,
+				9FF3259C1F8BB81C00892986 /* actions */,
+				9FF325A01F8BB81C00892986 /* middleware */,
+				9FF325A31F8BB81C00892986 /* reducers */,
+				9FF325971F8BB81B00892986 /* state */,
 			);
-			name = flux;
-			sourceTree = "<group>";
-		};
-		9FBA3E6A1E33970D00B0B70D /* actions */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA3E771E3398AA00B0B70D /* UniverseActions.swift */,
-				9FBA3E841E33D16200B0B70D /* UIActions.swift */,
-				9FBA3E881E33E2CA00B0B70D /* PlayerActions.swift */,
-			);
-			name = actions;
-			sourceTree = "<group>";
-		};
-		9FBA3E6B1E33971300B0B70D /* reducers */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA3E7B1E33993700B0B70D /* AppReducer.swift */,
-				9FBA3E791E33991C00B0B70D /* UniverseReducer.swift */,
-				9FBA3E7D1E33997500B0B70D /* PlayerReducer.swift */,
-				9FBA3E7F1E33998200B0B70D /* UIReducer.swift */,
-			);
-			name = reducers;
-			sourceTree = "<group>";
-		};
-		9FBA3E6C1E33972000B0B70D /* state */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA3E6D1E33977800B0B70D /* AppState.swift */,
-				9FBA3E751E3397B700B0B70D /* UIState.swift */,
-				9FBA3E6F1E33978C00B0B70D /* UniverseState.swift */,
-				9FBA3E711E33979D00B0B70D /* PlayerState.swift */,
-			);
-			name = state;
-			sourceTree = "<group>";
-		};
-		9FBA3E811E339A7D00B0B70D /* middleware */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA3E821E339A8A00B0B70D /* LogMiddleware.swift */,
-			);
-			name = middleware;
-			sourceTree = "<group>";
-		};
-		9FBA3E8E1E33F29A00B0B70D /* player */ = {
-			isa = PBXGroup;
-			children = (
-				9F35DABA1E34E8E2000B1FBA /* Player.swift */,
-				9FBA3E8F1E33F2B600B0B70D /* PlayerResources.swift */,
-				9F35DABC1E34E9C6000B1FBA /* AIPlayer.swift */,
-			);
-			name = player;
+			path = flux;
 			sourceTree = "<group>";
 		};
 		9FCF47F51DE72A1800334D7B /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				9FA0E7661DE9A61F0086BFD8 /* rules */,
-				9FA36E511DE860760050A53F /* dimensions */,
-				9FF941AE1DE73490009658F7 /* modifiers */,
-				9FCF47F61DE72A1D00334D7B /* text */,
+				9FF325BF1F8BB89900892986 /* dimensions */,
+				9FF325C81F8BB89900892986 /* modifiers */,
+				9FF325C61F8BB89900892986 /* rules */,
+				9FF325C11F8BB89900892986 /* text */,
 			);
-			name = resources;
-			sourceTree = "<group>";
-		};
-		9FCF47F61DE72A1D00334D7B /* text */ = {
-			isa = PBXGroup;
-			children = (
-				9FCF47F71DE72A3E00334D7B /* raceText.plist */,
-				9F9644E41DE72D20002328AC /* testsText.plist */,
-				9FA36E581DE87F370050A53F /* starsText.plist */,
-				9FEF6AFF1DE89D2600085666 /* planetsText.plist */,
-			);
-			name = text;
+			path = resources;
 			sourceTree = "<group>";
 		};
 		9FCF47F91DE72A9F00334D7B /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9FCF47FA1DE72AD400334D7B /* ResourcesLoader.swift */,
+				9FF325BD1F8BB88500892986 /* ResourcesLoader.swift */,
 			);
-			name = helpers;
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		9FCF48011DE72B4A00334D7B /* OrionTests */ = {
@@ -460,22 +364,159 @@
 			path = OrionTests;
 			sourceTree = "<group>";
 		};
-		9FF941AE1DE73490009658F7 /* modifiers */ = {
+		9FDA429A1F8BBBCD00E056BD /* components */ = {
 			isa = PBXGroup;
 			children = (
-				9FF941AF1DE734A9009658F7 /* raceForceModifier.plist */,
-				9F44B9B91DEB0E3100DFAFE2 /* planetResourcesModifier.plist */,
+				9FF325D11F8BB8B400892986 /* PlayerSpriteComponent.swift */,
+				9FDA429B1F8BBBE900E056BD /* PlayerMovementComponent.swift */,
 			);
-			name = modifiers;
+			path = components;
 			sourceTree = "<group>";
 		};
-		9FF941B11DE737FA009658F7 /* components */ = {
+		9FF325971F8BB81B00892986 /* state */ = {
 			isa = PBXGroup;
 			children = (
-				9FA36E541DE873C00050A53F /* UniverseSpriteComponent.swift */,
-				9F8E4A8C1F8A27060029E6A9 /* PlayerSpriteComponent.swift */,
+				9FF325981F8BB81B00892986 /* AppState.swift */,
+				9FF325991F8BB81B00892986 /* UniverseState.swift */,
+				9FF3259A1F8BB81B00892986 /* UIState.swift */,
+				9FF3259B1F8BB81B00892986 /* PlayerState.swift */,
 			);
-			name = components;
+			path = state;
+			sourceTree = "<group>";
+		};
+		9FF3259C1F8BB81C00892986 /* actions */ = {
+			isa = PBXGroup;
+			children = (
+				9FF3259D1F8BB81C00892986 /* UIActions.swift */,
+				9FF3259E1F8BB81C00892986 /* PlayerActions.swift */,
+				9FF3259F1F8BB81C00892986 /* UniverseActions.swift */,
+			);
+			path = actions;
+			sourceTree = "<group>";
+		};
+		9FF325A01F8BB81C00892986 /* middleware */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325A11F8BB81C00892986 /* LogMiddleware.swift */,
+				9FF325A21F8BB81C00892986 /* FilterMiddleware.swift */,
+			);
+			path = middleware;
+			sourceTree = "<group>";
+		};
+		9FF325A31F8BB81C00892986 /* reducers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325A41F8BB81C00892986 /* UniverseReducer.swift */,
+				9FF325A51F8BB81C00892986 /* AppReducer.swift */,
+				9FF325A61F8BB81C00892986 /* PlayerReducer.swift */,
+				9FF325A71F8BB81C00892986 /* UIReducer.swift */,
+			);
+			path = reducers;
+			sourceTree = "<group>";
+		};
+		9FF325BF1F8BB89900892986 /* dimensions */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325C01F8BB89900892986 /* universeDimensions.plist */,
+			);
+			path = dimensions;
+			sourceTree = "<group>";
+		};
+		9FF325C11F8BB89900892986 /* text */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325C21F8BB89900892986 /* planetsText.plist */,
+				9FF325C31F8BB89900892986 /* starsText.plist */,
+				9FF325C41F8BB89900892986 /* raceText.plist */,
+				9FF325C51F8BB89900892986 /* testsText.plist */,
+			);
+			path = text;
+			sourceTree = "<group>";
+		};
+		9FF325C61F8BB89900892986 /* rules */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325C71F8BB89900892986 /* universeRules.plist */,
+			);
+			path = rules;
+			sourceTree = "<group>";
+		};
+		9FF325C81F8BB89900892986 /* modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325C91F8BB89900892986 /* planetResourcesModifier.plist */,
+				9FF325CA1F8BB89900892986 /* raceForceModifier.plist */,
+			);
+			path = modifiers;
+			sourceTree = "<group>";
+		};
+		9FF325CD1F8BB8B400892986 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325CE1F8BB8B400892986 /* UniverseSpriteComponent.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		9FF325CF1F8BB8B400892986 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA429A1F8BBBCD00E056BD /* components */,
+				9FF325D01F8BB8B400892986 /* AIPlayer.swift */,
+				9FF325D21F8BB8B400892986 /* Player.swift */,
+				9FF325D31F8BB8B400892986 /* PlayerResources.swift */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
+		9FF325D41F8BB8B400892986 /* pop */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325D51F8BB8B400892986 /* Race.swift */,
+				9FF325D61F8BB8B400892986 /* Nation.swift */,
+				9FF325D71F8BB8B400892986 /* Pop.swift */,
+			);
+			path = pop;
+			sourceTree = "<group>";
+		};
+		9FF325D81F8BB8B400892986 /* space */ = {
+			isa = PBXGroup;
+			children = (
+				9FF326171F8BB99700892986 /* bodies */,
+				9FF326161F8BB98D00892986 /* universe */,
+				9FF326151F8BB93200892986 /* protocols */,
+				9FF325DA1F8BB8B400892986 /* Dimension.swift */,
+			);
+			path = space;
+			sourceTree = "<group>";
+		};
+		9FF326151F8BB93200892986 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325D91F8BB8B400892986 /* Traversable.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		9FF326161F8BB98D00892986 /* universe */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325CD1F8BB8B400892986 /* components */,
+				9FF325DD1F8BB8B400892986 /* SystemEntity.swift */,
+				9FF325DE1F8BB8B400892986 /* UniverseEntity.swift */,
+				9FF326131F8BB92E00892986 /* EmptyEntity.swift */,
+			);
+			path = universe;
+			sourceTree = "<group>";
+		};
+		9FF326171F8BB99700892986 /* bodies */ = {
+			isa = PBXGroup;
+			children = (
+				9FF325DC1F8BB8B400892986 /* SystemBody.swift */,
+				9FF325DB1F8BB8B400892986 /* PlanetEntity.swift */,
+				9FF325DF1F8BB8B400892986 /* StarEntity.swift */,
+			);
+			path = bodies;
 			sourceTree = "<group>";
 		};
 		B9CC439AA08C4B85E98FC23F /* Pods */ = {
@@ -613,22 +654,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF325FE1F8BB8F700892986 /* universeDimensions.plist in Resources */,
+				9FF326051F8BB8F700892986 /* testsText.plist in Resources */,
+				9FF325FF1F8BB8F700892986 /* planetResourcesModifier.plist in Resources */,
+				9FDA42991F8BBBA200E056BD /* TopBar.xib in Resources */,
+				9FDA42981F8BBBA200E056BD /* SystemUI.xib in Resources */,
+				9FDA42971F8BBBA200E056BD /* StarCell.xib in Resources */,
+				9FF326001F8BB8F700892986 /* raceForceModifier.plist in Resources */,
 				9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */,
+				9FF326031F8BB8F700892986 /* starsText.plist in Resources */,
+				9FF326011F8BB8F700892986 /* universeRules.plist in Resources */,
+				9FDA42951F8BBB8200E056BD /* UniverseScene.sks in Resources */,
 				9F32D09B1DE32ED8004455BB /* Assets.xcassets in Resources */,
-				9FF941B01DE734A9009658F7 /* raceForceModifier.plist in Resources */,
-				9FBA3E8D1E33E60700B0B70D /* TopBar.xib in Resources */,
-				9FA36E531DE861190050A53F /* universeDimensions.plist in Resources */,
+				9FDA42961F8BBBA200E056BD /* BottomBar.xib in Resources */,
 				9F32D09E1DE32ED8004455BB /* LaunchScreen.storyboard in Resources */,
-				9FA36E591DE87F370050A53F /* starsText.plist in Resources */,
-				9FA36E6B1DE890F40050A53F /* StarCell.xib in Resources */,
-				9F35DAC11E34EB35000B1FBA /* BottomBar.xib in Resources */,
-				9FA0E7681DE9A6510086BFD8 /* universeRules.plist in Resources */,
-				9F9644E51DE72D20002328AC /* testsText.plist in Resources */,
-				9FCF47F81DE72A3E00334D7B /* raceText.plist in Resources */,
-				9FEF6B001DE89D2600085666 /* planetsText.plist in Resources */,
-				9F44B9BA1DEB0E3100DFAFE2 /* planetResourcesModifier.plist in Resources */,
-				9FA36E671DE886B10050A53F /* SystemUI.xib in Resources */,
-				9FA36E601DE883570050A53F /* UniverseScene.sks in Resources */,
+				9FF326041F8BB8F700892986 /* raceText.plist in Resources */,
+				9FF326021F8BB8F700892986 /* planetsText.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,44 +748,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FA36E611DE883570050A53F /* UniverseScene.swift in Sources */,
-				9F8E4A8D1F8A27060029E6A9 /* PlayerSpriteComponent.swift in Sources */,
-				9FBA3E871E33D73100B0B70D /* Modal.swift in Sources */,
-				9F32D0B21DE33240004455BB /* Universe.swift in Sources */,
-				9FD2C4811DEDD05800968FCD /* PlanetViewController.swift in Sources */,
-				9FED3FCA1DE8CA3900DFC36E /* BaseUI.swift in Sources */,
-				9FA36E691DE889AB0050A53F /* SystemUI.swift in Sources */,
-				9FBA3E7E1E33997500B0B70D /* PlayerReducer.swift in Sources */,
-				9FBA3E831E339A8A00B0B70D /* LogMiddleware.swift in Sources */,
-				9FBA3E891E33E2CA00B0B70D /* PlayerActions.swift in Sources */,
-				9F32D0B51DE33280004455BB /* Race.swift in Sources */,
-				9F9644E91DE73119002328AC /* Nation.swift in Sources */,
-				9FBA3E761E3397B700B0B70D /* UIState.swift in Sources */,
-				9FBA3E781E3398AA00B0B70D /* UniverseActions.swift in Sources */,
-				9FA36E641DE8837A0050A53F /* GameViewController.swift in Sources */,
-				9FBA3E901E33F2B600B0B70D /* PlayerResources.swift in Sources */,
-				9F35DABD1E34E9C6000B1FBA /* AIPlayer.swift in Sources */,
-				9FBA3E701E33978C00B0B70D /* UniverseState.swift in Sources */,
-				9FBA3E8B1E33E5F900B0B70D /* TopBar.swift in Sources */,
-				9F35DABB1E34E8E2000B1FBA /* Player.swift in Sources */,
-				9FCF47F41DE7294D00334D7B /* Pop.swift in Sources */,
-				9F82F97D1EA79C6E0036D648 /* AIController.swift in Sources */,
-				9FBA3E721E33979D00B0B70D /* PlayerState.swift in Sources */,
-				9F32D0B01DE33240004455BB /* Star.swift in Sources */,
-				9FBA3E6E1E33977800B0B70D /* AppState.swift in Sources */,
-				9FBA3E851E33D16200B0B70D /* UIActions.swift in Sources */,
-				9FCF47FB1DE72AD400334D7B /* ResourcesLoader.swift in Sources */,
-				9F32D0B11DE33240004455BB /* System.swift in Sources */,
-				9FA36E571DE877050050A53F /* Empty.swift in Sources */,
-				9FEF6AFE1DE89C5700085666 /* Planet.swift in Sources */,
-				9FBA3E7C1E33993700B0B70D /* AppReducer.swift in Sources */,
-				9FBA3E7A1E33991C00B0B70D /* UniverseReducer.swift in Sources */,
-				9F163D141DE84A2C000CE8F5 /* Dimension.swift in Sources */,
-				9FBA3E801E33998200B0B70D /* UIReducer.swift in Sources */,
-				9F35DABF1E34EB27000B1FBA /* BottomBar.swift in Sources */,
+				9FF326071F8BB90900892986 /* PlayerActions.swift in Sources */,
+				9FF326081F8BB90900892986 /* UniverseActions.swift in Sources */,
+				9FF325BE1F8BB88500892986 /* ResourcesLoader.swift in Sources */,
+				9FF3260F1F8BB90900892986 /* AppState.swift in Sources */,
+				9FF3260A1F8BB90900892986 /* FilterMiddleware.swift in Sources */,
+				9FF326061F8BB90900892986 /* UIActions.swift in Sources */,
+				9FF325B51F8BB86900892986 /* TopBar.swift in Sources */,
+				9FF325FC1F8BB8E900892986 /* UniverseEntity.swift in Sources */,
+				9FF3260D1F8BB90900892986 /* PlayerReducer.swift in Sources */,
+				9FF325F61F8BB8E900892986 /* Pop.swift in Sources */,
+				9FF3260E1F8BB90900892986 /* UIReducer.swift in Sources */,
+				9FF325F71F8BB8E900892986 /* Traversable.swift in Sources */,
+				9FF325FD1F8BB8E900892986 /* StarEntity.swift in Sources */,
+				9FF325FB1F8BB8E900892986 /* SystemEntity.swift in Sources */,
+				9FF3260B1F8BB90900892986 /* UniverseReducer.swift in Sources */,
+				9FF3260C1F8BB90900892986 /* AppReducer.swift in Sources */,
+				9FF325F51F8BB8E900892986 /* Nation.swift in Sources */,
+				9FF325F91F8BB8E900892986 /* PlanetEntity.swift in Sources */,
+				9FF325AB1F8BB83D00892986 /* GameViewController.swift in Sources */,
+				9FF325F11F8BB8E900892986 /* PlayerSpriteComponent.swift in Sources */,
+				9FF326091F8BB90900892986 /* LogMiddleware.swift in Sources */,
+				9FF325F01F8BB8E900892986 /* AIPlayer.swift in Sources */,
+				9FDA429C1F8BBBE900E056BD /* PlayerMovementComponent.swift in Sources */,
+				9FF325AA1F8BB83D00892986 /* PlanetViewController.swift in Sources */,
+				9FF325CC1F8BB8A300892986 /* AIController.swift in Sources */,
+				9FF325B91F8BB86900892986 /* Modal.swift in Sources */,
+				9FF325F81F8BB8E900892986 /* Dimension.swift in Sources */,
+				9FF325F31F8BB8E900892986 /* PlayerResources.swift in Sources */,
+				9FF325BC1F8BB87800892986 /* UniverseScene.swift in Sources */,
+				9FF325B81F8BB86900892986 /* BottomBar.swift in Sources */,
+				9FF325B71F8BB86900892986 /* BaseUI.swift in Sources */,
 				9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */,
-				9FA36E551DE873C00050A53F /* UniverseSpriteComponent.swift in Sources */,
-				9FEF6AFC1DE89B5300085666 /* SystemBody.swift in Sources */,
+				9FF326121F8BB90900892986 /* PlayerState.swift in Sources */,
+				9FF325FA1F8BB8E900892986 /* SystemBody.swift in Sources */,
+				9FF325F41F8BB8E900892986 /* Race.swift in Sources */,
+				9FF325B61F8BB86900892986 /* SystemUI.swift in Sources */,
+				9FF325F21F8BB8E900892986 /* Player.swift in Sources */,
+				9FF325EF1F8BB8E900892986 /* UniverseSpriteComponent.swift in Sources */,
+				9FF326141F8BB92F00892986 /* EmptyEntity.swift in Sources */,
+				9FF326101F8BB90900892986 /* UniverseState.swift in Sources */,
+				9FF326111F8BB90900892986 /* UIState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,6 +1001,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -988,6 +1033,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

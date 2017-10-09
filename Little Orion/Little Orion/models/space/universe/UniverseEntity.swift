@@ -24,17 +24,21 @@ class UniverseNode: GKGridGraphNode {
     var entity: UniverseEntity!
 }
 
-class UniverseEntity: GKEntity {
+class UniverseEntity: GKEntity, Travelable {
         
     var spriteNode: SKNode {
         get {
             return (component(ofType: UniverseSpriteComponent.self)?.node)!
         }
     }
+
+    var travelTimeDay: Int {
+        return 0
+    }
     
     override var description: String {
         get {
-            return "Unknown"
+            return "Default Universe Entity"
         }
     }
     
@@ -88,9 +92,9 @@ class Universe: GKEntity {
         for node in grid.nodes! {
             if let node = node as? UniverseNode {
                 if arc4random_uniform(UniverseRules.systemSpawnProbability) == 1 {
-                    node.entity = System(location: Location(x: node.gridPosition.x, y: node.gridPosition.y))
+                    node.entity = SystemEntity(location: Location(x: node.gridPosition.x, y: node.gridPosition.y))
                 } else {
-                    node.entity = Empty()
+                    node.entity = EmptyEntity()
                 }
             }
         }
@@ -100,8 +104,8 @@ class Universe: GKEntity {
                 let neighboors = node.connectedNodes
                 for neighboor in neighboors {
                     if let neighboor = neighboor as? UniverseNode {
-                        if let _ = neighboor.entity as? System, let _ = node.entity as? System {
-                            neighboor.entity = Empty()
+                        if let _ = neighboor.entity as? SystemEntity, let _ = node.entity as? SystemEntity {
+                            neighboor.entity = EmptyEntity()
                         }
                     }
                 }

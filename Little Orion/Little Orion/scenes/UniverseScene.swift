@@ -247,9 +247,9 @@ extension UniverseScene {
 
 //MARK: - Nodes
 extension UniverseScene {
-    func systemAt(_ touches: Set<UITouch>, with event: UIEvent?) -> System? {
+    func systemAt(_ touches: Set<UITouch>, with event: UIEvent?) -> SystemEntity? {
         let node = nodeAt(touches, with: event)
-        if let entity = node?.entity as? System {
+        if let entity = node?.entity as? SystemEntity {
             return entity
         }
         return nil
@@ -274,7 +274,7 @@ extension UniverseScene {
 
 //MARK: - UI
 extension UniverseScene: SystemUiDelegate {
-    func systemUISelectedPlanet(planet: Planet) {
+    func systemUISelectedPlanet(planet: PlanetEntity) {
         store.dispatch(UIActions.ShowPlanetDetail(planet: planet))
     }
     
@@ -298,6 +298,10 @@ extension UniverseScene: BottomBarDelegate {
                         shapeNode.highlightNode(highlight: true)
                     }
                 }
+                let fromLocation = Universe.mapNodePositionToGridPosition(mapNode: store.state.playerState.player.spriteNode)
+                let toLocation = Universe.mapNodePositionToGridPosition(mapNode: node)
+                let movement = PlayerMovementComponent(startDate: store.state.playerState.currentDate, from: fromLocation, to: toLocation)
+                store.dispatch(PlayerActions.MoveToPosition(movement: movement))
                 store.dispatch(PlayerActions.UpdatePosition(position: selectedNode!.position))
             }
         } else {

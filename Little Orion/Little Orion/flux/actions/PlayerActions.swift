@@ -73,6 +73,10 @@ class PlayerActions {
         }
     }
 
+    struct MoveToPosition: Action {
+        let movement: PlayerMovementComponent
+    }
+    
     struct UpdatePosition: Action {
         let position: CGPoint
     }
@@ -82,10 +86,10 @@ class PlayerActions {
     }
 
     struct VisitPlanet: Action {
-        let planet: Planet
+        let planet: PlanetEntity
     }
 
     struct ColonizePlanet: Action {
-        let planet: Planet
+        let planet: PlanetEntity
     }
 }

@@ -8,7 +8,7 @@
 
 import GameplayKit
 
-class Star: SystemBody {
+class StarEntity: SystemBody {
     
     enum Kind: UInt32 {
         case nova, supernova, dwarf

@@ -12,7 +12,7 @@ import ReSwift
 
 class PlanetViewController: UIViewController {
 
-    let planet: Planet
+    let planet: PlanetEntity
     
     var mainScene: SCNScene! = nil
     var mainSceneView: SCNView! = nil

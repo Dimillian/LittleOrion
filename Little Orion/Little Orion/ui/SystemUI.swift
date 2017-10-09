@@ -16,7 +16,7 @@ class StarCell: UITableViewCell {
     @IBOutlet var starTitleLabel: UILabel!
     @IBOutlet var kindTitleLabel: UILabel!
     
-    public var planet: Planet? {
+    public var planet: PlanetEntity? {
         didSet {
             starTitleLabel.text = "\(planet!.name) (\(planet!.kind.name()))"
             let radius = String(format: "%.0f", planet!.radius)
@@ -28,7 +28,7 @@ class StarCell: UITableViewCell {
 }
 
 protocol SystemUiDelegate {
-    func systemUISelectedPlanet(planet: Planet)
+    func systemUISelectedPlanet(planet: PlanetEntity)
 }
 
 class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource, StoreSubscriber {
@@ -40,7 +40,7 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource, StoreSubscri
     
     var delegate: SystemUiDelegate?
     
-    public var system: System? {
+    public var system: SystemEntity? {
         didSet {
             if let system = system {
                 titleLabel.text = system.description

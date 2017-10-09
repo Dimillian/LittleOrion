@@ -8,7 +8,11 @@
 
 import GameplayKit
 
-class Empty: UniverseEntity {
+class EmptyEntity: UniverseEntity {
+    
+    override var travelTimeDay: Int {
+        return 5
+    }
     
     override var description: String {
         get {

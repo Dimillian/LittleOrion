@@ -16,7 +16,7 @@ class UniverseSpriteComponent: GKSKNodeComponent {
     static public func component(with entity: UniverseEntity) -> UniverseSpriteComponent {
         var component: UniverseSpriteComponent
         let node: SKShapeNode
-        if let system = entity as? System {
+        if let system = entity as? SystemEntity {
             let texture = SKTexture(imageNamed: system.star.kind.imageName())
             node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: nodeSize.width, height: nodeSize.height))
             node.name = "System node"
