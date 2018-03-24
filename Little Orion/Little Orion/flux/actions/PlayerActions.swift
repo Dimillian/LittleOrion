@@ -86,12 +86,4 @@ class PlayerActions {
     struct PauseTimer: Action {
 
     }
-
-    struct VisitPlanet: Action {
-        let planet: PlanetEntity
-    }
-
-    struct ColonizePlanet: Action {
-        let planet: PlanetEntity
-    }
 }

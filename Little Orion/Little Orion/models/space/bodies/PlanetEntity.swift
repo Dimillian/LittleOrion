@@ -10,7 +10,7 @@ import GameplayKit
 import SceneKit
 
 struct PlanetId: Equatable, Hashable {
-    let systemId: SystemId
+    let systemId: UniverseId
     let index: Int
     
     var hashValue: Int {
@@ -19,14 +19,14 @@ struct PlanetId: Equatable, Hashable {
         }
     }
 
-    init(systemId: SystemId, index: Int) {
+    init(systemId: UniverseId, index: Int) {
         self.systemId = systemId
         self.index = index
     }
 }
 
 //MARK: - Planet
-class PlanetEntity: SystemBody {
+class PlanetEntity: SystemBody, Discoverable {
 
     static let planetRessourceModifier = ResourcesLoader.loadPlanetResource(name: "planetResourcesModifier")!
     static let planetNames = ResourcesLoader.loadArrayTextResource(name: "planetsText")!
@@ -59,6 +59,14 @@ class PlanetEntity: SystemBody {
             return planetRessourceModifier[name()]!
         }
         
+    }
+
+    var discovered: Bool {
+        return store.state.playerState.player.discoveredPlanets.contains(id)
+    }
+
+    var dayToDiscover: Int {
+        return 200
     }
 
     let id: PlanetId

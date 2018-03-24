@@ -19,7 +19,6 @@ class PlanetViewController: UIViewController {
     
     init(){
         planet = store.state.uiState.selectedPlanet!
-        store.dispatch(PlayerActions.VisitPlanet(planet: planet))
         super.init(nibName: nil, bundle: nil)
         
     }

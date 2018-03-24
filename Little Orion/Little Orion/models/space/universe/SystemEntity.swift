@@ -8,28 +8,8 @@
 
 import GameplayKit
 
-struct SystemId: Equatable, Hashable {
-    let location: Location
-    var name: String {
-        get {
-            return "Node x:\(location.x) y:\(location.y)"
-        }
-    }
-    var hashValue: Int {
-        get {
-            return name.hashValue
-        }
-    }
-
-    init(location: Location) {
-        self.location = location
-    }
-}
-
 class SystemEntity: UniverseEntity {
-
-    let id: SystemId
-
+    
     private var _planets = [PlanetEntity]()
 
     var planets: [PlanetEntity] {
@@ -60,9 +40,8 @@ class SystemEntity: UniverseEntity {
         }
     }
     
-    public init(location: Location) {
-        self.id = SystemId(location: location)
-        super.init()
+    public override init(location: Location) {
+        super.init(location: location)
         
         makePlanets()
     }

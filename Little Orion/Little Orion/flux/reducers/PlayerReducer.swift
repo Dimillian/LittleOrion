@@ -34,14 +34,6 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         state.dateTimer?.invalidate()
         state.dateTimer = nil
         state.isPlaying = false
-    case let action as PlayerActions.VisitPlanet:
-        if !state.player.visitedPlanets.contains(action.planet.id) {
-            state.player.visitedPlanets.append(action.planet.id)
-        }
-    case let action as PlayerActions.ColonizePlanet:
-        if !state.player.ownedPlanets.contains(action.planet.id) {
-            state.player.ownedPlanets.append(action.planet.id)
-        }
     case let action as PlayerActions.MoveToPosition:
         state.player.addComponent(action.movement)
     case _ as PlayerActions.StopMovement:

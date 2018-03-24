@@ -24,8 +24,28 @@ class UniverseNode: GKGridGraphNode {
     var entity: UniverseEntity!
 }
 
-class UniverseEntity: GKEntity, Travelable {
-        
+struct UniverseId: Equatable, Hashable {
+    let location: Location
+    var name: String {
+        get {
+            return "Node x:\(location.x) y:\(location.y)"
+        }
+    }
+    var hashValue: Int {
+        get {
+            return name.hashValue
+        }
+    }
+
+    init(location: Location) {
+        self.location = location
+    }
+}
+
+class UniverseEntity: GKEntity, Travelable, Discoverable {
+
+    var id: UniverseId
+
     var spriteNode: SKNode {
         get {
             return (component(ofType: UniverseSpriteComponent.self)?.node)!
@@ -34,6 +54,14 @@ class UniverseEntity: GKEntity, Travelable {
 
     var travelTimeDay: Int {
         return 0
+    }
+
+    var discovered: Bool {
+        return store.state.playerState.player.discoveredEntities.contains(self.id)
+    }
+
+    var dayToDiscover: Int {
+        return 200
     }
     
     override var description: String {
@@ -47,10 +75,10 @@ class UniverseEntity: GKEntity, Travelable {
             return nil
         }
     }
-    
-    override init() {
+
+    public init(location: Location) {
+        self.id = UniverseId(location: location)
         super.init()
-        
         addComponent(UniverseSpriteComponent.component(with: self))
     }
     
@@ -91,10 +119,11 @@ class Universe: GKEntity {
     private func generate() {
         for node in grid.nodes! {
             if let node = node as? UniverseNode {
+                let location = Location(x: node.gridPosition.x, y: node.gridPosition.y)
                 if arc4random_uniform(UniverseRules.systemSpawnProbability) == 1 {
-                    node.entity = SystemEntity(location: Location(x: node.gridPosition.x, y: node.gridPosition.y))
+                    node.entity = SystemEntity(location: location)
                 } else {
-                    node.entity = EmptyEntity()
+                    node.entity = EmptyEntity(location: location)
                 }
             }
         }
@@ -105,7 +134,8 @@ class Universe: GKEntity {
                 for neighboor in neighboors {
                     if let neighboor = neighboor as? UniverseNode {
                         if let _ = neighboor.entity as? SystemEntity, let _ = node.entity as? SystemEntity {
-                            neighboor.entity = EmptyEntity()
+                            let location = Location(x: node.gridPosition.x, y: node.gridPosition.y)
+                            neighboor.entity = EmptyEntity(location: location)
                         }
                     }
                 }

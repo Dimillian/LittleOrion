@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2479172066B8A200EBD84C /* Discoverable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2479162066B8A200EBD84C /* Discoverable.swift */; };
 		9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32D08D1DE32ED8004455BB /* AppDelegate.swift */; };
 		9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D0971DE32ED8004455BB /* Main.storyboard */; };
 		9F32D09B1DE32ED8004455BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D09A1DE32ED8004455BB /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 /* Begin PBXFileReference section */
 		565605096015777D3B071676 /* Pods_LittleOrion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittleOrion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F45EE2ED81681C119A3FA83 /* Pods-LittleOrion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleOrion.release.xcconfig"; path = "Pods/Target Support Files/Pods-LittleOrion/Pods-LittleOrion.release.xcconfig"; sourceTree = "<group>"; };
+		9F2479162066B8A200EBD84C /* Discoverable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discoverable.swift; sourceTree = "<group>"; };
 		9F32D08A1DE32ED8004455BB /* LittleOrion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleOrion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F32D08D1DE32ED8004455BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F32D0981DE32ED8004455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				9FF325D91F8BB8B400892986 /* Traversable.swift */,
+				9F2479162066B8A200EBD84C /* Discoverable.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				9FF325F51F8BB8E900892986 /* Nation.swift in Sources */,
 				9FF325F91F8BB8E900892986 /* PlanetEntity.swift in Sources */,
 				9FF325AB1F8BB83D00892986 /* GameViewController.swift in Sources */,
+				9F2479172066B8A200EBD84C /* Discoverable.swift in Sources */,
 				9FF325F11F8BB8E900892986 /* PlayerSpriteComponent.swift in Sources */,
 				9FF326091F8BB90900892986 /* LogMiddleware.swift in Sources */,
 				9FF325F01F8BB8E900892986 /* AIPlayer.swift in Sources */,

@@ -39,7 +39,7 @@ class BottomBar: BaseUI, StoreSubscriber {
     }
 
     func newState(state: PlayerState) {
-        planetNumber.text = "Planets: \(state.player.visitedPlanets.count)"
+        planetNumber.text = "Planets: \(state.player.discoveredPlanets.count)"
         moveButton.setTitle(state.player.isInMovement ? "Stop" : "Move", for: .normal)
     }
 

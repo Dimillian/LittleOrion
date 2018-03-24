@@ -111,7 +111,7 @@ class UniverseScene: SKScene {
         self.view?.addGestureRecognizer(pinch)
 
         self.view?.addSubview(topBar)
-        topBar.frame = CGRect(x: -2, y: -1, width: self.view!.frame.size.width + 4, height: 50)
+        topBar.frame = CGRect(x: -2, y: -1, width: self.view!.frame.size.width + 4, height: 80)
 
         self.view?.addSubview(bottomBar)
         bottomBar.frame = CGRect(x: -2, y: self.view!.frame.size.height - 49,
