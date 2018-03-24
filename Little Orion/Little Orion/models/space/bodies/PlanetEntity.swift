@@ -25,11 +25,6 @@ struct PlanetId: Equatable, Hashable {
     }
 }
 
-func ==(lhs: PlanetId, rhs: PlanetId) -> Bool {
-    return lhs.systemId == rhs.systemId && lhs.index == rhs.index
-}
-
-
 //MARK: - Planet
 class PlanetEntity: SystemBody {
 

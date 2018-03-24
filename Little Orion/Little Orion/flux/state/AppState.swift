@@ -15,9 +15,3 @@ struct AppState: StateType, Equatable {
     var playerState: PlayerState
     var uiState: UIState
 }
-
-func ==(lhs: AppState, rhs: AppState) -> Bool {
-    return lhs.universeState == rhs.universeState &&
-        lhs.playerState == rhs.playerState &&
-        lhs.uiState == rhs.uiState
-}

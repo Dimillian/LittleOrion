@@ -26,10 +26,6 @@ struct SystemId: Equatable, Hashable {
     }
 }
 
-func ==(lhs: SystemId, rhs: SystemId) -> Bool {
-    return lhs.location == rhs.location
-}
-
 class SystemEntity: UniverseEntity {
 
     let id: SystemId

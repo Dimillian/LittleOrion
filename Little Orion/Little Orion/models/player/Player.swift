@@ -51,10 +51,3 @@ class Player: GKEntity, GKGameModelPlayer {
     }
 
 }
-
-func ==(lhs: Player, rhs: Player) -> Bool {
-    return lhs.name == rhs.name &&
-        rhs.visitedPlanets == lhs.visitedPlanets &&
-        rhs.ownedPlanets == lhs.ownedPlanets &&
-        rhs.resources == lhs.resources
-}

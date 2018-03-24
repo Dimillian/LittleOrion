@@ -49,11 +49,3 @@ struct PlayerState: Equatable {
     var currentSpeed = PlayerSpeed.normal
     var isPlaying = false
 }
-
-func ==(lhs: PlayerState, rhs: PlayerState) -> Bool {
-    return lhs.player == rhs.player &&
-        lhs.currentDate == rhs.currentDate &&
-        lhs.dateTimer == rhs.dateTimer &&
-        lhs.currentSpeed == rhs.currentSpeed &&
-        lhs.isPlaying == rhs.isPlaying
-}

@@ -14,10 +14,4 @@ struct UniverseState: Equatable {
 }
 
 
-func ==(lhs: UniverseState, rhs: UniverseState) -> Bool {
-    return lhs.universe == rhs.universe
-}
-
-
-
 
