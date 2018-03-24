@@ -288,7 +288,9 @@ extension UniverseScene: BottomBarDelegate {
     }
 
     func onMovePlayerButton() {
-        if let node = selectedNode {
+        if store.state.playerState.player.isInMovement {
+            store.dispatch(PlayerActions.StopMovement())
+        } else if let node = selectedNode {
             if let originalGridNode = gridNodeRelativeTo(node: store.state.playerState.player.spriteNode),
                 let newGridPosition = gridNodeRelativeTo(node: node) {
                 let paths = originalGridNode.findPath(to: newGridPosition)
@@ -305,8 +307,6 @@ extension UniverseScene: BottomBarDelegate {
                                                        to: toLocation)
                 store.dispatch(PlayerActions.MoveToPosition(movement: movement))
             }
-        } else {
-
         }
     }
 }
@@ -347,9 +347,7 @@ extension UniverseScene {
                 mapMoved = true
                 selectedNode?.highlightNode(highlight: false)
             }
-            
         }
-        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

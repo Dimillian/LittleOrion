@@ -73,6 +73,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="moveButton" destination="nFT-Bf-tV6" id="pmc-ZZ-8lW"/>
                 <outlet property="planetNumber" destination="bpc-74-Af4" id="eMv-Oz-tj4"/>
             </connections>
             <point key="canvasLocation" x="-54" y="-268.5"/>

@@ -81,6 +81,8 @@ class PlayerActions {
         let position: CGPoint
     }
 
+    struct StopMovement: Action {}
+
     struct PauseTimer: Action {
 
     }

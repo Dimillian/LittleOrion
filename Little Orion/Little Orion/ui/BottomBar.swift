@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ReSwift
+import UI
 
 protocol BottomBarDelegate: class {
     func onCenterPlayerButton()
@@ -18,6 +19,7 @@ protocol BottomBarDelegate: class {
 class BottomBar: BaseUI, StoreSubscriber {
     
     @IBOutlet var planetNumber: UILabel!
+    @IBOutlet var moveButton: BarButton!
 
     weak var delegate: BottomBarDelegate?
     
@@ -37,7 +39,8 @@ class BottomBar: BaseUI, StoreSubscriber {
     }
 
     func newState(state: PlayerState) {
-        self.planetNumber.text = "Planets: \(state.player.visitedPlanets.count)"
+        planetNumber.text = "Planets: \(state.player.visitedPlanets.count)"
+        moveButton.setTitle(state.player.isInMovement ? "Stop" : "Move", for: .normal)
     }
 
     @IBAction func onMeButton(_ sender: Any) {

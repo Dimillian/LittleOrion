@@ -35,6 +35,10 @@ class Player: GKEntity, GKGameModelPlayer {
         }
     }
 
+    var isInMovement: Bool {
+        return component(ofType: PlayerMovementComponent.self) != nil
+    }
+
     init(name: String) {
         self.name = name
         super.init()

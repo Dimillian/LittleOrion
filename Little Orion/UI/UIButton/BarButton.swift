@@ -9,13 +9,13 @@
 import UIKit
 
 @IBDesignable
-class BarButton: UIButton {
+open class BarButton: UIButton {
 
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         setup()
     }
 
-    override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         setup()
     }
     

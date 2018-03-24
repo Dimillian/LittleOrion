@@ -44,6 +44,8 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         }
     case let action as PlayerActions.MoveToPosition:
         state.player.addComponent(action.movement)
+    case _ as PlayerActions.StopMovement:
+        state.player.removeComponent(ofType: PlayerMovementComponent.self)
     case let action as PlayerActions.UpdatePosition:
         state.player.position = action.position
     default:
