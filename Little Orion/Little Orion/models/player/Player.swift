@@ -8,8 +8,9 @@
 
 import Foundation
 import GameplayKit
+import ReSwift
 
-class Player: GKEntity, GKGameModelPlayer {
+class Player: GKEntity, GKGameModelPlayer, StateType {
     let name: String
 
     public var playerId: Int {

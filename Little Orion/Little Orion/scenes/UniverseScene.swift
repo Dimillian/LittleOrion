@@ -23,6 +23,7 @@ class UniverseScene: SKScene {
 
     let topBar = TopBar.loadFromNib()
     let bottomBar = BottomBar.loadFromNib()
+    let outliner = Outliner.loadFromNib()
 
     var universeSubscriber: UniverseSubscriber?
     var uiSubscriber: UISubscriber?
@@ -73,6 +74,7 @@ class UniverseScene: SKScene {
             onCenterPlayerButton()
 
             bottomBar.delegate = self
+            outliner.delegate = self
         }
         
         loaded = true
@@ -106,6 +108,9 @@ class UniverseScene: SKScene {
         self.view?.addSubview(bottomBar)
         bottomBar.frame = CGRect(x: -2, y: self.view!.frame.size.height - 49,
                                  width: self.view!.frame.size.width + 4, height: 50)
+
+        self.view?.addSubview(outliner)
+        outliner.frame = CGRect(x: -130, y: 90, width: 150, height: self.view!.frame.size.height - 180)
     }
 
 
@@ -299,6 +304,17 @@ extension UniverseScene: BottomBarDelegate {
                                                        to: toLocation)
                 store.dispatch(PlayerActions.MoveToPosition(movement: movement))
             }
+        }
+    }
+}
+
+//MARK: - OutlinerDelegate
+extension UniverseScene: OutlinerDelegate {
+    func outlinerDidChangeExpanded(outliner: Outliner, expanded: Bool) {
+        var frame = outliner.frame
+        frame.origin.x = expanded ? 0 : -outliner.bounds.size.width + 20
+        UIView.animate(withDuration: 0.20) {
+            self.outliner.frame = frame
         }
     }
 }

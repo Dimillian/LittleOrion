@@ -12,6 +12,10 @@
 		9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D0971DE32ED8004455BB /* Main.storyboard */; };
 		9F32D09B1DE32ED8004455BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D09A1DE32ED8004455BB /* Assets.xcassets */; };
 		9F32D09E1DE32ED8004455BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F32D09C1DE32ED8004455BB /* LaunchScreen.storyboard */; };
+		9F372FFD2069921500C17E57 /* Outliner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F372FFC2069921500C17E57 /* Outliner.swift */; };
+		9F372FFF2069921F00C17E57 /* Outliner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F372FFE2069921F00C17E57 /* Outliner.xib */; };
+		9F373003206995BC00C17E57 /* OutlinerSystemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F373001206995BC00C17E57 /* OutlinerSystemTableViewCell.swift */; };
+		9F373004206995BC00C17E57 /* OutlinerSystemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F373002206995BC00C17E57 /* OutlinerSystemTableViewCell.xib */; };
 		9F3C04D11F8A417400E9636F /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F3C04CF1F8A417400E9636F /* UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9F3C04D41F8A417400E9636F /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3C04CD1F8A417400E9636F /* UI.framework */; };
 		9F3C04D51F8A417400E9636F /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3C04CD1F8A417400E9636F /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -116,6 +120,10 @@
 		9F32D09A1DE32ED8004455BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F32D09D1DE32ED8004455BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F32D09F1DE32ED8004455BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F372FFC2069921500C17E57 /* Outliner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outliner.swift; sourceTree = "<group>"; };
+		9F372FFE2069921F00C17E57 /* Outliner.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Outliner.xib; sourceTree = "<group>"; };
+		9F373001206995BC00C17E57 /* OutlinerSystemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinerSystemTableViewCell.swift; sourceTree = "<group>"; };
+		9F373002206995BC00C17E57 /* OutlinerSystemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutlinerSystemTableViewCell.xib; sourceTree = "<group>"; };
 		9F3C04CD1F8A417400E9636F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3C04CF1F8A417400E9636F /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		9F3C04D01F8A417400E9636F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -268,6 +276,25 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		9F3730002069958B00C17E57 /* outliner */ = {
+			isa = PBXGroup;
+			children = (
+				9F373005206995C100C17E57 /* cells */,
+				9F372FFC2069921500C17E57 /* Outliner.swift */,
+				9F372FFE2069921F00C17E57 /* Outliner.xib */,
+			);
+			path = outliner;
+			sourceTree = "<group>";
+		};
+		9F373005206995C100C17E57 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F373001206995BC00C17E57 /* OutlinerSystemTableViewCell.swift */,
+				9F373002206995BC00C17E57 /* OutlinerSystemTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		9F3C04CE1F8A417400E9636F /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +342,7 @@
 		9FA36E651DE8869A0050A53F /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9F3730002069958B00C17E57 /* outliner */,
 				9FF325B01F8BB86900892986 /* BaseUI.swift */,
 				9FF325B11F8BB86900892986 /* BottomBar.swift */,
 				9FF325B21F8BB86900892986 /* BottomBar.xib */,
@@ -667,6 +695,7 @@
 				9FDA42981F8BBBA200E056BD /* SystemUI.xib in Resources */,
 				9FDA42971F8BBBA200E056BD /* StarCell.xib in Resources */,
 				9FF326001F8BB8F700892986 /* raceForceModifier.plist in Resources */,
+				9F372FFF2069921F00C17E57 /* Outliner.xib in Resources */,
 				9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */,
 				9FF326031F8BB8F700892986 /* starsText.plist in Resources */,
 				9FF326011F8BB8F700892986 /* universeRules.plist in Resources */,
@@ -675,6 +704,7 @@
 				9FDA42961F8BBBA200E056BD /* BottomBar.xib in Resources */,
 				9F32D09E1DE32ED8004455BB /* LaunchScreen.storyboard in Resources */,
 				9FF326041F8BB8F700892986 /* raceText.plist in Resources */,
+				9F373004206995BC00C17E57 /* OutlinerSystemTableViewCell.xib in Resources */,
 				9FF326021F8BB8F700892986 /* planetsText.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,6 +814,7 @@
 				9FF325F81F8BB8E900892986 /* Dimension.swift in Sources */,
 				9FF325F31F8BB8E900892986 /* PlayerResources.swift in Sources */,
 				9FF325BC1F8BB87800892986 /* UniverseScene.swift in Sources */,
+				9F373003206995BC00C17E57 /* OutlinerSystemTableViewCell.swift in Sources */,
 				9FF325B81F8BB86900892986 /* BottomBar.swift in Sources */,
 				9FF325B71F8BB86900892986 /* BaseUI.swift in Sources */,
 				9F32D08E1DE32ED8004455BB /* AppDelegate.swift in Sources */,
@@ -797,6 +828,7 @@
 				9FF326141F8BB92F00892986 /* EmptyEntity.swift in Sources */,
 				9FF326101F8BB90900892986 /* UniverseState.swift in Sources */,
 				9FF326111F8BB90900892986 /* UIState.swift in Sources */,
+				9F372FFD2069921500C17E57 /* Outliner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
