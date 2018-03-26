@@ -18,6 +18,21 @@ class Outliner: BaseUI {
     @IBOutlet var expandButton: UIButton!
     @IBOutlet var tableView: UITableView!
 
+    var researchingSystems: [[UniverseId: Int]] = [] {
+        didSet {
+            if researchingSystems != oldValue {
+                tableView.reloadData()
+            }
+        }
+    }
+    var discoveredSystems: [UniverseId] = [] {
+        didSet {
+            if discoveredSystems != oldValue {
+                tableView.reloadData()
+            }
+        }
+    }
+
     weak var delegate: OutlinerDelegate?
 
     let sections = ["Researching", "Systems", "Planets"]
@@ -38,6 +53,7 @@ class Outliner: BaseUI {
 
         tableView.register(UINib(nibName: OutlinerSystemTableViewCell.id, bundle: Bundle.main),
                            forCellReuseIdentifier: OutlinerSystemTableViewCell.id)
+        tableView.backgroundColor = .clear
 
         store.subscribe(self) {
             $0.select{ $0.playerState }.skipRepeats()
@@ -51,6 +67,8 @@ class Outliner: BaseUI {
 
 extension Outliner: StoreSubscriber {
     func newState(state: PlayerState) {
+        researchingSystems = state.player.discoveringEntities.compactMap({ [$0: $1] })
+        discoveredSystems = state.player.discoveredEntities.map({ $0 })
         tableView.reloadData()
     }
 }
@@ -62,10 +80,10 @@ extension Outliner: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return store.state.playerState.player.discoveringEntities.count
+            return researchingSystems.count
         }
         else if section == 1 {
-            return store.state.playerState.player.discoveredEntities.count
+            return discoveredSystems.count
         }
         return 0
     }
@@ -80,7 +98,17 @@ extension Outliner: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: OutlinerSystemTableViewCell.id) as? OutlinerSystemTableViewCell {
-
+            if indexPath.section == 0 {
+                let system = researchingSystems[indexPath.row]
+                cell.systemName.text = system.first!.key.name
+                cell.systemDiscoveryProgress.isHidden = false
+                let progress = system.first!.value
+                cell.systemDiscoveryProgress.progress = Float(progress) / Float(UniverseEntity.dayToDisover)
+            } else if indexPath.section == 1 {
+                cell.systemName.text = discoveredSystems[indexPath.row].name
+                cell.systemDiscoveryProgress.isHidden = true
+            }
+            return cell
         }
         return UITableViewCell(frame: CGRect.zero)
     }

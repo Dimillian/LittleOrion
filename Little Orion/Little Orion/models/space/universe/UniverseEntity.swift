@@ -45,6 +45,7 @@ struct UniverseId: Equatable, Hashable {
 class UniverseEntity: GKEntity, Travelable, Discoverable {
 
     var id: UniverseId
+    static let dayToDisover = 10
 
     var spriteNode: SKNode {
         get {
@@ -61,7 +62,7 @@ class UniverseEntity: GKEntity, Travelable, Discoverable {
     }
 
     var dayToDiscover: Int {
-        return 10
+        return UniverseEntity.dayToDisover
     }
     
     override var description: String {

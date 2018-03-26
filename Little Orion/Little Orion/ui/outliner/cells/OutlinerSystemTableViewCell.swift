@@ -17,8 +17,6 @@ class OutlinerSystemTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.backgroundColor = .clear
-        backgroundColor = .clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
