@@ -317,6 +317,12 @@ extension UniverseScene: OutlinerDelegate {
             self.outliner.frame = frame
         }
     }
+
+    func outlinerDidSelectSystem(outliner: Outliner, system: UniverseId) {
+        if let system = universe!.entityAt(location: system.location) as? SystemEntity {
+            store.dispatch(UIActions.ShowSelectedSystemModal(system: system))
+        }
+    }
 }
 
 //MARK: - Touch

@@ -11,6 +11,7 @@ import ReSwift
 
 protocol OutlinerDelegate: class {
     func outlinerDidChangeExpanded(outliner: Outliner, expanded: Bool)
+    func outlinerDidSelectSystem(outliner: Outliner, system: UniverseId)
 }
 
 class Outliner: BaseUI {
@@ -68,7 +69,7 @@ class Outliner: BaseUI {
 extension Outliner: StoreSubscriber {
     func newState(state: PlayerState) {
         researchingSystems = state.player.discoveringEntities.compactMap({ [$0: $1] })
-        discoveredSystems = state.player.discoveredEntities.map({ $0 })
+        discoveredSystems = state.player.discoveredEntities.filter({ store.state.universeState.universe!.entityAt(location: $0.location) is SystemEntity })
         tableView.reloadData()
     }
 }
@@ -111,6 +112,16 @@ extension Outliner: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell(frame: CGRect.zero)
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let system = researchingSystems[indexPath.row]
+            delegate?.outlinerDidSelectSystem(outliner: self, system: system.first!.key)
+        } else if indexPath.section == 1 {
+            let system = discoveredSystems[indexPath.row]
+            delegate?.outlinerDidSelectSystem(outliner: self, system: system)
+        }
     }
 
 }
