@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import GameplayKit
 
 struct UIState: Equatable {
 
@@ -15,6 +16,8 @@ struct UIState: Equatable {
     var selectedPlanet: PlanetEntity?
     var currentModal: Modal
     var currentScene: Scene
+
+    var selectedNode: SKNode?
 }
 
 enum Modal {

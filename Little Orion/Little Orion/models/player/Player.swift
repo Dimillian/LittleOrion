@@ -20,7 +20,9 @@ class Player: GKEntity, GKGameModelPlayer {
     
     var resources = PlayerResources()
 
+    var discoveringEntities: [UniverseId: Int] = [:]
     var discoveredEntities: Set<UniverseId> = []
+    var discoveringPlanets: [PlanetId: Int] = [:]
     var discoveredPlanets: Set<PlanetId> = []
 
     var spriteNode: SKNode {

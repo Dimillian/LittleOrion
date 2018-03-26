@@ -16,7 +16,7 @@ class PlayerSpriteComponent: GKSKNodeComponent {
         let texture = SKTexture(image: #imageLiteral(resourceName: "Spaceship"))
         let node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: UniverseSpriteComponent.nodeSize.width,
                                             height: UniverseSpriteComponent.nodeSize.height))
-        node.name = "System node"
+        node.name = "Player node"
         node.fillTexture = texture
         node.fillColor = .white
         node.zPosition = 5

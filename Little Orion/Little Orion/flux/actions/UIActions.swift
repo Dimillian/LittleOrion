@@ -8,6 +8,7 @@
 
 import Foundation
 import ReSwift
+import SpriteKit
 
 class UIActions {
     struct ShowSelectedSystemModal: Action {
@@ -25,4 +26,10 @@ class UIActions {
     struct DismissSystemModal: Action {
 
     }
+
+    struct SetSelectedNode: Action {
+        let node: SKNode
+    }
+
+    struct RemoveSelectedNode: Action { }
 }

@@ -81,6 +81,10 @@ class PlayerActions {
         let position: CGPoint
     }
 
+    struct startDiscoveryUniverseEntity: Action {
+        let entity: UniverseId
+    }
+
     struct StopMovement: Action {}
 
     struct PauseTimer: Action {

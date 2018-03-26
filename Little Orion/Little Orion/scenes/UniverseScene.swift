@@ -40,16 +40,6 @@ class UniverseScene: SKScene {
     var mapNewPosition: CGPoint?
     var mapNewScale: CGFloat?
     var inZoomGesture = false
-
-    var selectedNode: SKShapeNode? {
-        didSet {
-            for node in mapNode.children {
-                if let node = node as? SKShapeNode, node != selectedNode {
-                    node.highlightNode(highlight: false)
-                }
-            }
-        }
-    }
     
     override func sceneDidLoad() {
 
@@ -165,6 +155,8 @@ class UniverseScene: SKScene {
         
         mapNewPosition = nil
         mapNewScale = nil
+
+        universe?.update(deltaTime: currentTime)
     }
 
 }
@@ -290,14 +282,14 @@ extension UniverseScene: BottomBarDelegate {
     func onMovePlayerButton() {
         if store.state.playerState.player.isInMovement {
             store.dispatch(PlayerActions.StopMovement())
-        } else if let node = selectedNode {
+        } else if let node = store.state.uiState.selectedNode {
             if let originalGridNode = gridNodeRelativeTo(node: store.state.playerState.player.spriteNode),
                 let newGridPosition = gridNodeRelativeTo(node: node) {
                 let paths = originalGridNode.findPath(to: newGridPosition)
                 for universeNode in paths {
                     if let universeNode = universeNode as? UniverseNode,
                         let shapeNode = universeNode.entity.spriteNode as? SKShapeNode {
-                        shapeNode.highlightNode(highlight: true)
+                        //TODO: Hightlight travel path
                     }
                 }
                 let fromLocation = Universe.mapNodePositionToGridPosition(mapNode: store.state.playerState.player.spriteNode)
@@ -315,7 +307,8 @@ extension UniverseScene: BottomBarDelegate {
 extension UniverseScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        selectedNode?.highlightNode(highlight: false)
+        store.dispatch(UIActions.RemoveSelectedNode())
+
         if (touches.count == 1) {
             let position = touches.first!.location(in: self)
             
@@ -345,20 +338,23 @@ extension UniverseScene {
             
             if (abs(delX) >= 5 || abs(delY) >= 5) {
                 mapMoved = true
-                selectedNode?.highlightNode(highlight: false)
+                store.dispatch(UIActions.RemoveSelectedNode())
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !mapMoved && !dismissiveInteraction {
-            if let system = systemAt(touches, with: event) {
+            if let system = systemAt(touches, with: event), system.discovered {
                 store.dispatch(UIActions.ShowSelectedSystemModal(system: system))
+            }
+
+            if let universeNode = gridNodeAt(touches, with: event), !universeNode.entity.discovered {
+                store.dispatch(PlayerActions.startDiscoveryUniverseEntity(entity: universeNode.entity.id))
             }
             
             if let node = nodeAt(touches, with: event) as? SKShapeNode {
-                node.highlightNode(highlight: true)
-                selectedNode = node
+                store.dispatch(UIActions.SetSelectedNode(node: node))
             }
         }
 

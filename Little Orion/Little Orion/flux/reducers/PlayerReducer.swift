@@ -17,6 +17,7 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         let gridNodes = store.state.universeState.universe!.grid.nodes!
         let randomNodeIndex = arc4random_uniform(UInt32(gridNodes.count))
         if let node = gridNodes[Int(randomNodeIndex)] as? UniverseNode {
+            state.player.discoveredEntities.insert(node.entity.id)
             state.player.position = Universe.grideNodePositionToMapPosition(gridNode: node)
         }
     case let action as PlayerActions.StartTimer:
@@ -28,6 +29,22 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         state.dateTimer = action.timer
         state.currentDate = Calendar.current.date(byAdding: .day, value: 1, to: state.currentDate)!
         state.isPlaying = true
+
+        //Player operation
+        if let universe = store.state.universeState.universe {
+            let mapcCopy = state.player.discoveringEntities
+            mapcCopy.forEach { (params) in
+                let (id, progress) = params
+                let entity = universe.entityAt(location: id.location)
+                if progress == entity.dayToDiscover {
+                    state.player.discoveringEntities.removeValue(forKey: id)
+                    state.player.discoveredEntities.insert(id)
+                } else {
+                    state.player.discoveringEntities[id] = progress + 1
+                }
+            }
+        }
+
     case _ as PlayerActions.UpdateTimerMonth:
         state.player.resources.update()
     case _ as PlayerActions.PauseTimer:
@@ -40,6 +57,8 @@ func playerReducer(state: PlayerState?, action: Action) -> PlayerState {
         state.player.removeComponent(ofType: PlayerMovementComponent.self)
     case let action as PlayerActions.UpdatePosition:
         state.player.position = action.position
+    case let action as PlayerActions.startDiscoveryUniverseEntity:
+        state.player.discoveringEntities[action.entity] = 0
     default:
         break
     }

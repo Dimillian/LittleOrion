@@ -57,11 +57,11 @@ class UniverseEntity: GKEntity, Travelable, Discoverable {
     }
 
     var discovered: Bool {
-        return store.state.playerState.player.discoveredEntities.contains(self.id)
+        return store.state.playerState.player.discoveredEntities.contains(id)
     }
 
     var dayToDiscover: Int {
-        return 200
+        return 10
     }
     
     override var description: String {
@@ -163,6 +163,14 @@ class Universe: GKEntity {
         let gridPosition = Location(x: Int32(Int32(mapNode.position.x) / Int32(size.width)),
                                     y: Int32(Int32(mapNode.position.y) / Int32(size.height)))
         return gridPosition
+    }
+
+    override func update(deltaTime seconds: TimeInterval) {
+        super.update(deltaTime: seconds)
+    
+        for case let node as UniverseNode in grid.nodes! {
+            node.entity.components.forEach({ $0.update(deltaTime: seconds) })
+        }
     }
     
 }

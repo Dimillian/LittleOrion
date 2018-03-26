@@ -15,34 +15,57 @@ class UniverseSpriteComponent: GKSKNodeComponent {
 
     static public func component(with entity: UniverseEntity) -> UniverseSpriteComponent {
         var component: UniverseSpriteComponent
-        let node: SKShapeNode
-        if let system = entity as? SystemEntity {
-            let texture = SKTexture(imageNamed: system.star.kind.imageName())
-            node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: nodeSize.width, height: nodeSize.height))
-            node.name = "System node"
-            node.fillTexture = texture
-            node.fillColor = system.star.kind.textureFillColor()
-            node.strokeColor = UIColor.red
-            component = UniverseSpriteComponent(node: node)
-        } else {
-            node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: nodeSize.width, height: nodeSize.height))
-            node.name = "Empty node"
-            node.fillColor = UIColor.clear
-            node.strokeColor = UIColor.init(white: 1.0, alpha: 0.5)
-            component = UniverseSpriteComponent(node: node)
-        }
+        let node = SKShapeNode(rect: CGRect(x: 0, y: 0, width: nodeSize.width, height: nodeSize.height))
         node.lineWidth = 0.50
+        node.strokeColor = UIColor.init(white: 1.0, alpha: 0.5)
+        node.fillColor = node.undiscovedColor
+        if let _ = entity as? SystemEntity {
+            node.name = "System node"
+        } else {
+            node.name = "Empty node"
+        }
+        component = UniverseSpriteComponent(node: node)
         return component
         
+    }
+
+    override func update(deltaTime seconds: TimeInterval) {
+        if let universeEntity = entity as? UniverseEntity, let node = node as? SKShapeNode {
+            let discovered = universeEntity.discovered
+            if let systemEntity = universeEntity as? SystemEntity, discovered {
+                if node.fillTexture == nil {
+                    let texture = SKTexture(imageNamed: systemEntity.star.kind.imageName())
+                    node.fillTexture = texture
+                }
+                node.fillColor = systemEntity.star.kind.textureFillColor()
+                node.strokeColor = .red
+                node.glowWidth = 3
+            } else {
+                node.fillColor = discovered ? .clear : node.undiscovedColor
+                node.glowWidth = discovered ? 2 : 0
+                node.strokeColor = UIColor.init(white: 1.0, alpha: 0.5)
+            }
+
+            if let dayProgress = store.state.playerState.player.discoveringEntities[universeEntity.id] {
+                let progress = Float(dayProgress) / Float(universeEntity.dayToDiscover)
+                node.strokeColor = UIColor.green.withAlphaComponent(CGFloat(progress))
+            }
+
+            if node == store.state.uiState.selectedNode {
+                node.glowWidth = 5
+            }
+
+            if let movement = store.state.playerState.player.component(ofType: PlayerMovementComponent.self) {
+                // TODO: Highlight node for player movement
+            }
+        }
     }
     
 }
 
 extension SKShapeNode {
-    
-    func highlightNode(highlight: Bool) {
-        strokeColor = highlight ? UIColor.yellow : UIColor.init(white: 1.0, alpha: 0.5)
-        lineWidth = highlight ? 1 : 0.50
-        glowWidth = highlight ? 5 : 0
+
+    var undiscovedColor: UIColor {
+        return UIColor.gray.withAlphaComponent(0.3)
     }
 }
