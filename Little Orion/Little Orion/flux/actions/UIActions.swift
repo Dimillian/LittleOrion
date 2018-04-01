@@ -15,6 +15,10 @@ class UIActions {
         let system: SystemEntity
     }
 
+    struct ShowSelectionModal: Action {
+        let entity: UniverseEntity
+    }
+
     struct ShowPlanetDetail: Action {
         let planet: PlanetEntity
     }
@@ -23,7 +27,7 @@ class UIActions {
 
     }
 
-    struct DismissSystemModal: Action {
+    struct DismissModal: Action {
 
     }
 

@@ -228,10 +228,11 @@ extension UniverseScene {
         switch state.currentModal {
         case .none:
             ModalUI.dismissSystemUI()
-            break
+            ModalUI.dismissSelectionUI()
         case .system:
             ModalUI.presentSystemUI(from: self, delegate: self)
-            break
+        case .entity:
+            ModalUI.presentSelectionUI(from: self)
         }
     }
 
@@ -274,7 +275,6 @@ extension UniverseScene: SystemUiDelegate {
     func systemUISelectedPlanet(planet: PlanetEntity) {
         store.dispatch(UIActions.ShowPlanetDetail(planet: planet))
     }
-    
 }
 
 //MARK: - BottomBar delegate
@@ -338,9 +338,9 @@ extension UniverseScene {
             startY = position.y
         }
 
-        if systemAt(touches, with: event) == nil && store.state.uiState.currentModal == .system {
+        if store.state.uiState.currentModal != .none {
+            store.dispatch(UIActions.DismissModal())
             dismissiveInteraction = true
-            store.dispatch(UIActions.DismissSystemModal())
         }
     }
     
@@ -372,7 +372,7 @@ extension UniverseScene {
             }
 
             if let universeNode = gridNodeAt(touches, with: event), !universeNode.entity.discovered {
-                store.dispatch(PlayerActions.startDiscoveryUniverseEntity(entity: universeNode.entity.id))
+                store.dispatch(UIActions.ShowSelectionModal(entity: universeNode.entity))
             }
             
             if let node = nodeAt(touches, with: event) as? SKShapeNode {

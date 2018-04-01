@@ -12,6 +12,7 @@ import GameplayKit
 
 struct UIState: Equatable {
 
+    var selectedEntity: UniverseEntity?
     var selectedSystem: SystemEntity?
     var selectedPlanet: PlanetEntity?
     var currentModal: Modal
@@ -22,6 +23,7 @@ struct UIState: Equatable {
 
 enum Modal {
     case none
+    case entity
     case system
 
 }
