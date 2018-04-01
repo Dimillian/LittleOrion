@@ -24,11 +24,6 @@ class TopBar: BaseUI {
     @IBOutlet var scienceIcon: UIImageView!
     @IBOutlet var scienceLabel: UILabel!
 
-    public static func loadFromNib() -> TopBar {
-        let nib = UINib(nibName: "TopBar", bundle: Bundle.main)
-        return nib.instantiate(withOwner: self, options: nil)[0] as! TopBar
-    }
-
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
 

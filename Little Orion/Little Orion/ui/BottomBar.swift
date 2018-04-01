@@ -22,11 +22,6 @@ class BottomBar: BaseUI, StoreSubscriber {
     @IBOutlet var moveButton: BarButton!
 
     weak var delegate: BottomBarDelegate?
-    
-    public static func loadFromNib() -> BottomBar {
-        let nib = UINib(nibName: "BottomBar", bundle: Bundle.main)
-        return nib.instantiate(withOwner: self, options: nil)[0] as! BottomBar
-    }
 
     override func didMoveToSuperview() {
         super.didMoveToSuperview()

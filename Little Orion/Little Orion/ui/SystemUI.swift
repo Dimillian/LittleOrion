@@ -50,12 +50,7 @@ class SystemUI: BaseUI, UITableViewDelegate, UITableViewDataSource, StoreSubscri
             }
         }
     }
-    
-    public static func loadFromNib() -> SystemUI {
-        let nib = UINib(nibName: "SystemUI", bundle: Bundle.main)
-        return nib.instantiate(withOwner: self, options: nil)[0] as! SystemUI
-    }
-    
+        
     public func show() {
         system = store.state.uiState.selectedSystem
         store.subscribe(self) {

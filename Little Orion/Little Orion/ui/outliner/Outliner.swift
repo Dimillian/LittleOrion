@@ -44,11 +44,6 @@ class Outliner: BaseUI {
         }
     }
 
-    public static func loadFromNib() -> Outliner {
-        let nib = UINib(nibName: "Outliner", bundle: Bundle.main)
-        return nib.instantiate(withOwner: self, options: nil)[0] as! Outliner
-    }
-
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
 
@@ -70,7 +65,6 @@ extension Outliner: StoreSubscriber {
     func newState(state: PlayerState) {
         researchingSystems = state.player.discoveringEntities.compactMap({ [$0: $1] })
         discoveredSystems = state.player.discoveredEntities.filter({ store.state.universeState.universe!.entityAt(location: $0.location) is SystemEntity })
-        tableView.reloadData()
     }
 }
 

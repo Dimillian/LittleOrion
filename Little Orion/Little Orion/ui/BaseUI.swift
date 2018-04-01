@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension UIView {
+    public static func loadFromNib<T>() -> T {
+        let nib = UINib(nibName: String(describing: self), bundle: Bundle.main)
+        return nib.instantiate(withOwner: self, options: nil)[0] as! T
+    }
+}
+
 class BaseUI: UIView {
     
     override func didMoveToSuperview() {

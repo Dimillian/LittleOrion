@@ -21,9 +21,9 @@ class UniverseScene: SKScene {
         }
     }
 
-    let topBar = TopBar.loadFromNib()
-    let bottomBar = BottomBar.loadFromNib()
-    let outliner = Outliner.loadFromNib()
+    let topBar: TopBar = TopBar.loadFromNib()
+    let bottomBar: BottomBar = BottomBar.loadFromNib()
+    let outliner: Outliner = Outliner.loadFromNib()
 
     var universeSubscriber: UniverseSubscriber?
     var uiSubscriber: UISubscriber?

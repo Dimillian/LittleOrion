@@ -29,6 +29,8 @@
 		9FDA42981F8BBBA200E056BD /* SystemUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325AF1F8BB86900892986 /* SystemUI.xib */; };
 		9FDA42991F8BBBA200E056BD /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF325AE1F8BB86900892986 /* TopBar.xib */; };
 		9FDA429C1F8BBBE900E056BD /* PlayerMovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA429B1F8BBBE900E056BD /* PlayerMovementComponent.swift */; };
+		9FF14BA12070FAEF00FAA610 /* SelectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF14BA02070FAEF00FAA610 /* SelectionMenu.swift */; };
+		9FF14BA32070FB1B00FAA610 /* SelectionMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF14BA22070FB1B00FAA610 /* SelectionMenu.xib */; };
 		9FF325AA1F8BB83D00892986 /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A81F8BB83C00892986 /* PlanetViewController.swift */; };
 		9FF325AB1F8BB83D00892986 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325A91F8BB83D00892986 /* GameViewController.swift */; };
 		9FF325B51F8BB86900892986 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF325AC1F8BB86900892986 /* TopBar.swift */; };
@@ -134,6 +136,8 @@
 		9FCF48041DE72B4A00334D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FCF480A1DE72BCB00334D7B /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
 		9FDA429B1F8BBBE900E056BD /* PlayerMovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMovementComponent.swift; sourceTree = "<group>"; };
+		9FF14BA02070FAEF00FAA610 /* SelectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionMenu.swift; sourceTree = "<group>"; };
+		9FF14BA22070FB1B00FAA610 /* SelectionMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectionMenu.xib; sourceTree = "<group>"; };
 		9FF325981F8BB81B00892986 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9FF325991F8BB81B00892986 /* UniverseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseState.swift; sourceTree = "<group>"; };
 		9FF3259A1F8BB81B00892986 /* UIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIState.swift; sourceTree = "<group>"; };
@@ -352,6 +356,8 @@
 				9FF325AF1F8BB86900892986 /* SystemUI.xib */,
 				9FF325AC1F8BB86900892986 /* TopBar.swift */,
 				9FF325AE1F8BB86900892986 /* TopBar.xib */,
+				9FF14BA02070FAEF00FAA610 /* SelectionMenu.swift */,
+				9FF14BA22070FB1B00FAA610 /* SelectionMenu.xib */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -695,6 +701,7 @@
 				9FDA42981F8BBBA200E056BD /* SystemUI.xib in Resources */,
 				9FDA42971F8BBBA200E056BD /* StarCell.xib in Resources */,
 				9FF326001F8BB8F700892986 /* raceForceModifier.plist in Resources */,
+				9FF14BA32070FB1B00FAA610 /* SelectionMenu.xib in Resources */,
 				9F372FFF2069921F00C17E57 /* Outliner.xib in Resources */,
 				9F32D0991DE32ED8004455BB /* Main.storyboard in Resources */,
 				9FF326031F8BB8F700892986 /* starsText.plist in Resources */,
@@ -821,6 +828,7 @@
 				9FF326121F8BB90900892986 /* PlayerState.swift in Sources */,
 				9FF325FA1F8BB8E900892986 /* SystemBody.swift in Sources */,
 				9FF325F41F8BB8E900892986 /* Race.swift in Sources */,
+				9FF14BA12070FAEF00FAA610 /* SelectionMenu.swift in Sources */,
 				9FF325B61F8BB86900892986 /* SystemUI.swift in Sources */,
 				9FF325F21F8BB8E900892986 /* Player.swift in Sources */,
 				9FC825A61F8C0D8600C73043 /* Date.swift in Sources */,
