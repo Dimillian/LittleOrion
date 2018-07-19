@@ -4,9 +4,13 @@ PODS:
 DEPENDENCIES:
   - ReSwift
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ReSwift
+
 SPEC CHECKSUMS:
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
 
 PODFILE CHECKSUM: 2fe51f449151dd8f9ecb3b4507d5c20cedd44411
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

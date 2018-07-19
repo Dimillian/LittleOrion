@@ -34,6 +34,8 @@ class Player: GKEntity, GKGameModelPlayer, StateType {
 
     var position = CGPoint.zero {
         didSet {
+            let movement = SKAction.move(to: position, duration: 1.0)
+            spriteNode.run(movement)
             spriteNode.position = position
         }
     }

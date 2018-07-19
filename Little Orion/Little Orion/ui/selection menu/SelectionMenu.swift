@@ -16,7 +16,7 @@ class SelectionMenu: BaseUI {
         func datasource() -> [String] {
             switch self {
             case .unknown:
-                return ["Discover", "Cancel"]
+                return ["Survey", "Cancel"]
             }
         }
     }

@@ -297,6 +297,7 @@ extension UniverseScene: BottomBarDelegate {
                         //TODO: Hightlight travel path
                     }
                 }
+
                 let fromLocation = Universe.mapNodePositionToGridPosition(mapNode: store.state.playerState.player.spriteNode)
                 let toLocation = Universe.mapNodePositionToGridPosition(mapNode: node)
                 let movement = PlayerMovementComponent(startDate: store.state.playerState.currentDate,
@@ -367,6 +368,10 @@ extension UniverseScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !mapMoved && !dismissiveInteraction {
+            if let node = nodeAt(touches, with: event) as? SKShapeNode {
+                store.dispatch(UIActions.SetSelectedNode(node: node))
+            }
+            
             if let system = systemAt(touches, with: event), system.discovered {
                 store.dispatch(UIActions.ShowSelectedSystemModal(system: system))
             }
@@ -374,10 +379,7 @@ extension UniverseScene {
             if let universeNode = gridNodeAt(touches, with: event), !universeNode.entity.discovered {
                 store.dispatch(UIActions.ShowSelectionModal(entity: universeNode.entity))
             }
-            
-            if let node = nodeAt(touches, with: event) as? SKShapeNode {
-                store.dispatch(UIActions.SetSelectedNode(node: node))
-            }
+
         }
 
         dismissiveInteraction = false
